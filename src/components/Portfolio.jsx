@@ -31,7 +31,7 @@ const Portfolio = () => {
       src: paperdaz,
       link: "https://paperdaz.com/",
       name: "Paperdaz",
-      disc: "This is a working clone of the Sugar Cosmetics website where you can buy beauty products like makeup kits, powder, and brushes.",
+      disc: "This is a website which Provide Paperdaz anytime anywhere for clients to complete. Save time and money for everyone!.",
     },
     {
       id: 4,
