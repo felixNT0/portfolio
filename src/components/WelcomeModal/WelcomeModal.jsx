@@ -32,8 +32,8 @@ function WelcomeModal() {
             Welcome to my Portfolio
           </h1>
           <p className="text-center text-gray-700 dark:text-black text-1xl font-bold mt-3">
-            This is where you see everything about my experience, works, skills
-            and lot more...
+            This is where you will see everything about my experience, works,
+            skills and lot more...
           </p>
           <p
             style={{ fontSize: "10px" }}

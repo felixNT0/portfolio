@@ -1,6 +1,8 @@
+import AGORA from "../assets/Agora.jpg";
 import ANTD from "../assets/antd.png";
 import BOOTSTRAP from "../assets/bootstrap.jpg";
 import css from "../assets/css.png";
+import FIGMA from "../assets/figma.png";
 import framerMotion from "../assets/framer_motion.jpeg";
 import GIT from "../assets/git.png";
 import { default as github } from "../assets/github.png";
@@ -22,6 +24,7 @@ import STYLED_COMPONENT from "../assets/styled-components.png";
 import TAILWIND from "../assets/tailwind.png";
 import typrscript from "../assets/typescript.png";
 import vite from "../assets/vite.png";
+import WEBSOCKET from "../assets/websocket.png";
 
 export const allSkills = [
   {
@@ -170,5 +173,23 @@ export const allSkills = [
     src: photoshop,
     title: "PHOTOSHOP",
     style: "shadow-blue-400",
+  },
+  {
+    id: 25,
+    src: FIGMA,
+    title: "FIGMA",
+    style: "shadow-red-500",
+  },
+  {
+    id: 26,
+    src: AGORA,
+    title: "AGORA",
+    style: "shadow-blue-500",
+  },
+  {
+    id: 27,
+    src: WEBSOCKET,
+    title: "WEBSOCKET",
+    style: "shadow-orange-400",
   },
 ];
