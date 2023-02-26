@@ -13,19 +13,17 @@ const About = () => {
           data-aos-delay="50"
           data-aos-duration="1000"
         >
-          <p className="text-4xl font-bold inline border-b-4 color-red border-gray-500">
+          <p className="text-4xl font-bold inline border-b-4 dark:text-white text-black color-red border-gray-500">
             About Me
           </p>
         </div>
-        {/* 
-        <div style={{display:"flex",width:"100%",gap:"40px"}}>
-          <div style={{width:"88%"}}> */}
+
         <div>
           <p
             data-aos="zoom-in"
             data-aos-delay="30"
             data-aos-duration="700"
-            className="text-xl mt-5 "
+            className="text-xl mt-5 dark:text-white text-black"
           >
             Hi there, I'm{" "}
             <span style={{ color: "tomato" }}>Felix Kolo Tsowa</span> - a
@@ -40,7 +38,7 @@ const About = () => {
             data-aos="zoom-out"
             data-aos-delay="30"
             data-aos-duration="500"
-            className="text-xl"
+            className="text-xl dark:text-white text-black"
           >
             Talking about my personality, I describe myself as a{" "}
             <span style={{ color: "teal" }}>result-oriented </span> person,
@@ -55,11 +53,6 @@ const About = () => {
             moments and playing musical instruments.
           </p>
         </div>
-        {/* </div> */}
-        {/* <div style={{marginTop:"20px",paddingTop:"20px"}}>
-              <img src="C:\Users\vishe\Downloads\vishesh1.png" width="500" height="auto" ></img>
-            </div> */}
-        {/* </div> */}
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ body {
 }
 
 .nav {
-  z-index: 10;
+  background: rgb(252, 166, 31);
 }
 
 .link-underline {
@@ -106,7 +106,6 @@ body {
   .home h2 {
     font-size: 2.7rem;
     line-height: 3rem;
-    margin-top: 7%;
   }
 
   .portfolio_btn {
@@ -120,6 +119,7 @@ body {
     padding-right: 1rem;
   }
 }
+
 @media screen and (min-width: 770px) {
   .about_component {
     margin-bottom: 500px !important;
@@ -165,59 +165,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 @media screen and (max-width: 770px) {
   .home_welcome_texts {
-    padding-top: 10px;
+    padding-top: 7px;
   }
-}
-
-.label {
-  width: 100px;
-  height: 50px;
-  position: relative;
-  display: block;
-  background: #ebebeb;
-  border-radius: 200px;
-  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
-    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-}
-
-.label:after {
-  content: "";
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: linear-gradient(180deg, #777, #3a3a3a);
-  border-radius: 180px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-}
-.input {
-  width: 0;
-  height: 0;
-  visibility: hidden;
-}
-
-.input:checked + .label {
-  background: #242424;
-}
-.input:checked + .label:after {
-  left: 90px;
-  transform: translateX(-100%);
-  background: linear-gradient(180deg, #06b6d4, #3b82f6);
-}
-.label,
-.label:after {
-  transition: 0.3s;
-}
-
-.label:active:after {
-  width: 260px;
 }
 
 .dark_mode_button {
@@ -225,4 +179,47 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+}
+
+.navbar_bg {
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: -500px;
+  width: 95% !important;
+  border-radius: 50px;
+  transition: top 0.3s;
+  transform: translateX(-50%);
+  backdrop-filter: blur(15px);
+  left: 50%;
+  right: 50%;
+  margin-top: 15px !important;
+}
+
+.side_bar_style {
+  backdrop-filter: blur(15px) !important;
+}
+
+::-webkit-scrollbar {
+  background-color: #f5f5f5;
+  width: 0px !important;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #0296ff;
+  background-image: -webkit-linear-gradient(
+    0deg,
+    hsla(0, 0%, 100%, 0.5) 25%,
+    transparent 0,
+    transparent 50%,
+    hsla(0, 0%, 100%, 0.5) 0,
+    hsla(0, 0%, 100%, 0.5) 75%,
+    transparent 0,
+    transparent
+  );
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
 }

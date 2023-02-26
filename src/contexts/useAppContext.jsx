@@ -4,15 +4,18 @@ export const AppContext = createContext({
   toggleDarkMode: () => {},
   changeActiveTab: () => {},
   toggleShowOtherSideBar: () => {},
-  currentTab: "",
-  darkMode: false,
+  currentTab: 0,
+  darkMode: true,
   showOtherSideBar: false,
+  toggleModal: () => {},
+  modalState: false,
 });
 
 const AppContextProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
-  const [currentTab, setCurrentTab] = useState("");
+  const [darkMode, setDarkMode] = useState(true);
+  const [currentTab, setCurrentTab] = useState(0);
   const [showOtherSideBar, setShowOtherSideBar] = useState(false);
+  const [modalState, setModalState] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -24,6 +27,10 @@ const AppContextProvider = ({ children }) => {
 
   const changeActiveTab = (tab) => {
     setCurrentTab(tab);
+  };
+
+  const toggleModal = () => {
+    setModalState(!modalState);
   };
 
   useEffect(() => {
@@ -45,6 +52,8 @@ const AppContextProvider = ({ children }) => {
         darkMode,
         toggleDarkMode,
         currentTab,
+        modalState,
+        toggleModal,
         changeActiveTab,
         showOtherSideBar,
         toggleShowOtherSideBar,
