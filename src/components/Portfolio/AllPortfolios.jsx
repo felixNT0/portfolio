@@ -22,7 +22,7 @@ function AllPortfolios() {
               className="w-1/2 px-6 py-1 m-2 duration-200 hover:scale-105 rounded bg-[#fca61f] dark:bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer dark:text-white text-black"
               onClick={() => window.open(link, "_blank")}
             >
-              Demo
+              Live Link
             </button>
           </div>
           <p

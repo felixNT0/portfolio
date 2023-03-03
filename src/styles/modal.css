@@ -21,9 +21,11 @@
 }
 
 .close {
-  position: absolute;
-  right: 25px;
-  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: 10px;
+  margin-top: -10px;
   color: #000;
   font-size: 35px;
   font-weight: bold;
@@ -60,6 +62,16 @@
   }
 }
 
+.welcome_text {
+  margin-top: -30px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .welcome_text {
+    margin-top: -20px !important;
+  }
+}
+
 .container {
-  padding: 16px;
+  padding: 0px 15px 15px 15px;
 }

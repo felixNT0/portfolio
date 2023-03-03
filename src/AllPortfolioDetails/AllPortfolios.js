@@ -2,7 +2,9 @@ import farmeasy from "../assets/portfolio/farmeasy.png";
 import geek from "../assets/portfolio/geek.png";
 import houseacq from "../assets/portfolio/houseacq.png";
 import investyield from "../assets/portfolio/investyield.png";
+import mapapp from "../assets/portfolio/mapapp.png";
 import monsterindia from "../assets/portfolio/monsterindia.png";
+import movieapp from "../assets/portfolio/movieapp.png";
 import omdb from "../assets/portfolio/omdb.png";
 import paperdaz from "../assets/portfolio/paperdaz.png";
 import politicsthreadadmin from "../assets/portfolio/politicsthreaadmin.png";
@@ -44,6 +46,20 @@ export const allPortfolios = [
     link: "https://rpt.politicsthread.com/",
     name: "Politics Thread Admin Dashboard",
     disc: "This is a website for the admins where they will have to approve the post of each users before it show on the website.",
+  },
+  {
+    id: 11,
+    src: movieapp,
+    link: "https://yoke-marketing-nigeria.vercel.app/",
+    name: "Movie Website",
+    disc: "This is a website where you can search for any series and movies type.",
+  },
+  {
+    id: 12,
+    src: mapapp,
+    link: "https://mymovieapp-six.vercel.app/",
+    name: "Map Website",
+    disc: "This is a website where you see you current loaction from the map, click on any country from the side bar to take you to that country and search for any country of your choice.",
   },
   {
     id: 6,

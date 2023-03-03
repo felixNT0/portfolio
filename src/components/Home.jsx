@@ -21,8 +21,9 @@ const Home = () => {
             data-aos-duration="1000"
             className="text-gray-500 dark:text-white max-w-md text-center mt-5 px-5"
           >
-            Frontend Developer | React JS | React Native | UI/UX & Graphic |
-            Figma | Wordpress or WIX Designer with producting Quality work
+            Frontend Developer | React JS | React Native | UI/UX & Graphic -
+            Figma & Photoshop | Wordpress or WIX Designer with producting
+            Quality work
           </p>
 
           <div

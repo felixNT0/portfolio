@@ -50,7 +50,7 @@ const About = () => {
             good sense of humour.
             <br /> <br />I enjoy designing new stuff and learning new
             Technologies. If I'm not on my computer, am travelling, capturing
-            moments and playing musical instruments.
+            moments or playing musical instruments.
           </p>
         </div>
       </div>

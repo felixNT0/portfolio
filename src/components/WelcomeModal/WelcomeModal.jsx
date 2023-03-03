@@ -22,13 +22,12 @@ function WelcomeModal() {
 
   return (
     <div id="showModal" class="modal">
-      <span onClick={closeModal} className="close" title="Close Modal">
-        &times;
-      </span>
-
       <div className="modal-content animate">
+        <span onClick={closeModal} className="close" title="Close Modal">
+          &times;
+        </span>
         <div className="container ">
-          <h1 className="text-center text-[#fca61f] dark:text-[#4db5ff] text-3xl font-bold">
+          <h1 className="text-center text-[#fca61f] dark:text-[#4db5ff] text-3xl font-bold welcome_text">
             Welcome to my Portfolio
           </h1>
           <p className="text-center text-gray-700 dark:text-black text-1xl font-bold mt-3">
