@@ -32,7 +32,7 @@ function OtherNavBar({ setNavBarState, navBarState }) {
               key={id}
               className={
                 link === currentTab
-                  ? "nav-links px-4 cursor-pointer capitalize font-medium text-white dark:text-white scale-105 text-white duration-200 link-underline"
+                  ? "nav-links px-4 cursor-pointer capitalize font-medium text-white dark:text-white scale-105 duration-200 link-underline"
                   : "nav-links px-4 cursor-pointer capitalize font-medium text-white dark:text-white hover:scale-105 hover:text-white duration-200 link-underline"
               }
             >

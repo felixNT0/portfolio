@@ -54,7 +54,7 @@ function MainNavBar({ setNav, nav }) {
       </div>
 
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen mt-20 bg-black z-10 text-gray-500 dark:text-black ">
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen mt-20 bg-black z-10 text-gray-500">
           {componentLinks.map(({ id, link }) => (
             <li
               onClick={() => changeActiveTab(link)}
