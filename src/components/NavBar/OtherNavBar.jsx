@@ -1,6 +1,7 @@
 import React from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
+import HeroImage from "../../assets/image.jpg";
 import { useAppContext } from "../../contexts/useAppContext";
 import { componentLinks } from "../../routers/componentRoutes";
 
@@ -13,7 +14,9 @@ function OtherNavBar({ setNavBarState, navBarState }) {
       id={"navbar"}
       className={`flex justify-between items-center w-full h-20 px-4 text-white navbar_bg `}
     >
-      <div>
+      <div className="flex justify-between items-center">
+        <img src={HeroImage} alt="Avatar" className="navbar_avatar" />
+
         <h1
           className="text-5xl ml-2 cursor-pointer"
           onClick={toggleShowOtherSideBar}

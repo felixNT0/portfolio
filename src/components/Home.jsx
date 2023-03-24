@@ -1,7 +1,8 @@
 import React from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
-import HeroImage from "../assets/image.jpg";
+import HeroImage2 from "../assets/preview.gif";
+import HeroImage from "../assets/programming.gif";
 
 const Home = () => {
   return (
@@ -47,19 +48,33 @@ const Home = () => {
         </div>
       </div>
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
-        <div className=" small-screen hidden" data-aos="flip-right">
+        <div className=" small-screen hidden flex flex-col justify-around mt-10 mb-7">
           <img
             src={HeroImage}
             alt="profile"
-            className="rounded-2xl mx-auto w-2/3 md:w-full"
+            data-aos="flip-right"
+            className="user_image rounded-2xl mx-auto w-full"
+          />
+          <img
+            src={HeroImage2}
+            data-aos="flip-left"
+            alt="profile"
+            className="user_image rounded-2xl mx-auto w-full"
           />
         </div>
 
-        <div className="big-screen" data-aos="slide-right">
+        <div className="big-screen flex flex-col justify-around mt-10 mb-7">
           <img
             src={HeroImage}
             alt="profile"
-            className="user_image rounded-3xl mx-auto w-1/2 duration-300 cursor-pointer hover:w-2/3 md:w-half mb-20"
+            data-aos="flip-left"
+            className="user_image rounded-3xl mx-auto duration-300 cursor-pointer w-full mb-5"
+          />
+          <img
+            src={HeroImage2}
+            alt="profile"
+            data-aos="flip-right"
+            className="user_image rounded-2xl mx-auto w-full"
           />
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
+import HeroImage from "../../assets/image.jpg";
 import { useAppContext } from "../../contexts/useAppContext";
 import { componentLinks } from "../../routers/componentRoutes";
 
@@ -11,7 +12,8 @@ function MainNavBar({ setNav, nav }) {
     <div
       className={`flex justify-between items-center w-full h-20 px-4 text-white dark:bg-gradient-to-r from-cyan-500 to-blue-500 nav`}
     >
-      <div>
+      <div className="flex justify-between items-center">
+        <img src={HeroImage} alt="Avatar" className="navbar_avatar" />
         <h1
           className="text-5xl ml-2 cursor-pointer"
           onClick={toggleShowOtherSideBar}

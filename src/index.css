@@ -119,9 +119,17 @@ body {
   }
 }
 
+@media screen and (max-width: 770px) {
+  .user_image {
+    width: 750px !important;
+    height: 30% !important;
+  }
+}
+
 @media screen and (min-width: 770px) {
   .user_image {
-    margin-top: 100px !important;
+    width: fit-content !important;
+    height: fit-content !important;
   }
 }
 
@@ -205,8 +213,18 @@ body {
   );
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: #f5f5f5;
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+}
+
+.navbar_avatar {
+  vertical-align: middle;
+  align-items: center;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  object-fit: fill;
 }
