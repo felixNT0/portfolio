@@ -10,10 +10,15 @@ function MainNavBar({ setNav, nav }) {
     useAppContext();
   return (
     <div
+      name="_navbar_"
       className={`flex justify-between items-center w-full h-20 px-4 text-white dark:bg-gradient-to-r from-cyan-500 to-blue-500 nav`}
     >
       <div className="flex justify-between items-center">
-        <img src={HeroImage} alt="Avatar" className="navbar_avatar" />
+        <img
+          src={HeroImage}
+          alt="Avatar"
+          className="navbar_avatar cursor-pointer"
+        />
         <h1
           className="text-5xl ml-2 cursor-pointer"
           onClick={toggleShowOtherSideBar}

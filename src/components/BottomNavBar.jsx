@@ -36,7 +36,7 @@ const BottomNavBar = () => {
             {download ? (
               <div
                 className="flex justify-between items-center w-full text-white cursor-pointer"
-                onClick={openModal}
+                onClick={() => openModal()}
               >
                 {child}
               </div>

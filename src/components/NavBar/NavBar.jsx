@@ -9,7 +9,7 @@ const NavBar = () => {
   const [navBarState, setNavBarState] = useState(false);
 
   return (
-    <div name="_navbar_">
+    <div >
       <MainNavBar nav={nav} setNav={setNav} />
 
       {!nav && (

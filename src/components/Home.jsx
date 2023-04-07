@@ -2,7 +2,6 @@ import React from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
 import HeroImage2 from "../assets/preview.gif";
-import HeroImage from "../assets/programming.gif";
 
 const Home = () => {
   return (
@@ -22,7 +21,7 @@ const Home = () => {
             data-aos-duration="1000"
             className="text-gray-500 dark:text-white max-w-md text-center mt-5 px-5"
           >
-            Frontend Developer | React JS | React Native | UI/UX & Graphic -
+            Front-End Engineer | React JS | React Native | UI/UX & Graphic -
             Figma & Photoshop | Wordpress or WIX Designer with producting
             Quality work
           </p>
@@ -50,12 +49,6 @@ const Home = () => {
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
         <div className=" small-screen hidden flex flex-col justify-around mt-10 mb-7">
           <img
-            src={HeroImage}
-            alt="profile"
-            data-aos="flip-right"
-            className="user_image rounded-2xl mx-auto w-full"
-          />
-          <img
             src={HeroImage2}
             data-aos="flip-left"
             alt="profile"
@@ -64,12 +57,6 @@ const Home = () => {
         </div>
 
         <div className="big-screen flex flex-col justify-around mt-10 mb-7">
-          <img
-            src={HeroImage}
-            alt="profile"
-            data-aos="flip-left"
-            className="user_image rounded-3xl mx-auto duration-300 cursor-pointer w-full mb-5"
-          />
           <img
             src={HeroImage2}
             alt="profile"

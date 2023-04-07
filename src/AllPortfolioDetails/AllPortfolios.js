@@ -21,17 +21,17 @@ export const allPortfolios = [
   },
   {
     id: 2,
-    src: politicthread,
-    link: "https://politicsthread.com/",
-    name: "Politics Thread",
-    disc: "This is a working that allows everyone that comes to the website to express their feeling about politics.",
-  },
-  {
-    id: 3,
     src: paperdaz,
     link: "https://paperdaz.com/",
     name: "Paperdaz",
     disc: "This is a website which Provide Paperdaz anytime anywhere for clients to complete. Save time and money for everyone!.",
+  },
+  {
+    id: 3,
+    src: politicthread,
+    link: "https://politicsthread.com/",
+    name: "Politics Thread",
+    disc: "This is a working that allows everyone that comes to the website to express their feeling about politics.",
   },
   {
     id: 4,

@@ -33,6 +33,34 @@ const About = () => {
           </p>
 
           <br />
+          <p
+            data-aos="zoom-out"
+            data-aos-delay="30"
+            data-aos-duration="500"
+            className="text-xl dark:text-white text-black"
+          >
+            4+ years experienced in Front-End Developing with hands-on
+            experience in identifying web-based user interactions along with
+            designing & implementing highly-responsive user interface components
+            by deploying React concepts. also experienced with graphic design
+            applications (e.g., Adobe Illustrator, Photoshop and Figma).
+            Proficient in translating designs & wireframes into high-quality
+            code, and writing application interface code via Javascript and
+            React workflows. Also good at monitoring & maintaining frontend
+            performance and troubleshooting & debugging the same time for better
+            overall performance. As a highly skilled front-end developer with
+            [number of years] years of experience, I am adept in creating and
+            implementing user-friendly interfaces, developing and maintaining
+            responsive websites, and collaborating with cross-functional teams
+            to deliver high-quality digital experiences. With a keen eye for
+            design and a passion for clean, efficient code, I am committed to
+            staying up-to-date with the latest front-end technologies and best
+            practices. Through my strong problem-solving skills and attention to
+            detail, I have successfully delivered projects for clients ranging
+            from small startups to large enterprises. I am excited to leverage
+            my skills and experience to contribute to the success of your team.
+          </p>
+          <br />
 
           <p
             data-aos="zoom-out"

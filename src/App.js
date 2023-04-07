@@ -1,6 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import About from "./components/About";
 import BackToTop from "./components/BackToTop";
 import BottomNavBar from "./components/BottomNavBar";
@@ -16,9 +16,7 @@ import WelcomeModal from "./components/WelcomeModal/WelcomeModal";
 import { useAppContext } from "./contexts/useAppContext";
 
 function App() {
-  const { showOtherSideBar, modalState } = useAppContext();
-
-  const [loading, setLoading] = useState(true);
+  const { showOtherSideBar, modalState, loading } = useAppContext();
 
   useEffect(() => {
     document.getElementById("bottom").style.display = "none";
@@ -58,34 +56,34 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setInterval(() => setLoading(false), 5000);
-  }, []);
-
-  useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
 
-  // if (loading) return <AppLoader />;
-
   return (
-    <div className="dark:bg-[#1f1f38] bg-[#ffffff]">
-      <ScrollIndicator />
-      <NavBar />
-      <Home />
-      <About />
-      <Portfolio />
-      <Skills />
-      <Contact />
-      <Footer />
-      {!showOtherSideBar && (
-        <>
-          <SocialLinks />
-          <BottomNavBar />
-        </>
-      )}
-      {!modalState && <WelcomeModal />}
-      <BackToTop />
-    </div>
+    <>
+      {/* {loading ? (
+        <AppLoader />
+      ) : ( */}
+      <div className="dark:bg-[#1f1f38] bg-[#ffffff]">
+        <ScrollIndicator />
+        <NavBar />
+        <Home />
+        <About />
+        <Portfolio />
+        <Skills />
+        <Contact />
+        <Footer />
+        {!showOtherSideBar && (
+          <>
+            <SocialLinks />
+            <BottomNavBar />
+          </>
+        )}
+        {!modalState && <WelcomeModal />}
+        <BackToTop />
+      </div>
+      {/* )} */}
+    </>
   );
 }
 

@@ -226,5 +226,5 @@ body {
   width: 47px;
   height: 47px;
   border-radius: 50%;
-  object-fit: fill;
+  object-fit: cover;
 }

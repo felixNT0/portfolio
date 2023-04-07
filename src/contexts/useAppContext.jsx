@@ -9,6 +9,7 @@ export const AppContext = createContext({
   showOtherSideBar: false,
   toggleModal: () => {},
   modalState: false,
+  loading: false,
 });
 
 const AppContextProvider = ({ children }) => {
@@ -16,6 +17,7 @@ const AppContextProvider = ({ children }) => {
   const [currentTab, setCurrentTab] = useState(0);
   const [showOtherSideBar, setShowOtherSideBar] = useState(false);
   const [modalState, setModalState] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -32,6 +34,12 @@ const AppContextProvider = ({ children }) => {
   const toggleModal = () => {
     setModalState(!modalState);
   };
+
+  useEffect(() => {
+    if (loading) {
+      setInterval(() => setLoading(true), 1000);
+    }
+  }, [loading]);
 
   useEffect(() => {
     switch (darkMode) {
@@ -54,6 +62,7 @@ const AppContextProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        loading,
         darkMode,
         toggleDarkMode,
         currentTab,

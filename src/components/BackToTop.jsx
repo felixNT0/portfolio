@@ -11,7 +11,6 @@ function BackToTop() {
   return (
     <Link to={"_navbar_"} smooth duration={1000}>
       <div
-        onClick={topFunction}
         id="bottom"
         data-aos="slide-up"
         data-aos-delay="50"
