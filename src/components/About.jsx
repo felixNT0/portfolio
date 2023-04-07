@@ -49,7 +49,7 @@ const About = () => {
             React workflows. Also good at monitoring & maintaining frontend
             performance and troubleshooting & debugging the same time for better
             overall performance. As a highly skilled front-end developer with
-            [number of years] years of experience, I am adept in creating and
+            4+ years of experience, I am adept in creating and
             implementing user-friendly interfaces, developing and maintaining
             responsive websites, and collaborating with cross-functional teams
             to deliver high-quality digital experiences. With a keen eye for

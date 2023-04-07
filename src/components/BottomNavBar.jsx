@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+
 import resumePdf from "../assets/resume.pdf";
 import { useAppContext } from "../contexts/useAppContext";
 import useSocialLinks from "../hooks/useSocialLinks";
 
-const BottomNavBar = () => {
+function BottomNavBar() {
   const { allBottomSocialLinks } = useSocialLinks();
+
   const { showOtherSideBar } = useAppContext();
 
   const [toggleModal, setToggleModal] = useState(false);
@@ -18,7 +20,6 @@ const BottomNavBar = () => {
     setToggleModal(true);
     document.getElementById("showConfimationModal").style.display = "block";
   };
-
   return (
     <>
       <div
@@ -88,6 +89,6 @@ const BottomNavBar = () => {
       </div>
     </>
   );
-};
+}
 
 export default BottomNavBar;
