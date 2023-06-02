@@ -1,3 +1,4 @@
+import contactlist from "../assets/portfolio/contactlist.png";
 import farmeasy from "../assets/portfolio/farmeasy.png";
 import geek from "../assets/portfolio/geek.png";
 import houseacq from "../assets/portfolio/houseacq.png";
@@ -48,49 +49,56 @@ export const allPortfolios = [
     disc: "This is a website for the admins where they will have to approve the post of each users before it show on the website.",
   },
   {
-    id: 11,
+    id: 13,
+    src: contactlist,
+    link: "https://taiyo-interview.netlify.app/",
+    name: "Contact List, Graph and Map App",
+    disc: "A website where a user can add, edit, delete and view contact details, also where u can view graph and map about covid-19 details showing all the details.",
+  },
+  {
+    id: 6,
     src: movieapp,
-    link: "https://yoke-marketing-nigeria.vercel.app/",
+    link: "https://mymovieapp-six.vercel.app/",
     name: "Movie Website",
     disc: "This is a website where you can search for any series and movies type.",
   },
   {
-    id: 12,
+    id: 7,
     src: mapapp,
-    link: "https://mymovieapp-six.vercel.app/",
+    link: "https://yoke-marketing-nigeria.vercel.app/",
     name: "Map Website",
     disc: "This is a website where you see you current loaction from the map, click on any country from the side bar to take you to that country and search for any country of your choice.",
   },
   {
-    id: 6,
+    id: 8,
     src: farmeasy,
     link: "https://ephemeral-visheshsingh-farmeasy.netlify.app/",
     name: "FarmEasy Clone",
     disc: "This is a working clone of Pharmeasy website where you can search for any medicine and healthcare products.",
   },
   {
-    id: 7,
+    id: 9,
     src: sugarcosmetic,
     link: "https://melodic-malabi-d69a87.netlify.app/",
     name: "Sugarcosmetic Clone",
     disc: "This is a working clone of the Sugar Cosmetics website where you can buy beauty products like makeup kits, powder, and brushes.",
   },
   {
-    id: 8,
+    id: 10,
     src: omdb,
     link: "https://singhvishesh9484.github.io/Asynchronus-movie-app/",
     name: "Hotstar Mini",
     disc: "This is mini clone of Hotstar where you can see list of movies and sort them accoring to rating.",
   },
   {
-    id: 9,
+    id: 11,
     src: geek,
     link: "https://benevolent-fudge-ac5ed4.netlify.app/",
     name: "Geekbuying Clone",
     disc: "This is clone of geekbuying website where you can browse some electric items.",
   },
   {
-    id: 10,
+    id: 12,
     src: monsterindia,
     link: "https://monster-india-clone.netlify.app/",
     name: "monsterindia Clone",
