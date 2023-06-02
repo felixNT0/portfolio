@@ -4,7 +4,7 @@ import { allPortfolios } from "../../AllPortfolioDetails/AllPortfolios";
 function AllPortfolios() {
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-      {allPortfolios.map(({ id, src, link, name, disc }) => (
+      {allPortfolios.map(({ id, src, link, name, disc, appLink }) => (
         <div
           key={id}
           data-aos="zoom-in-down"
@@ -25,6 +25,16 @@ function AllPortfolios() {
               link
             </button>
           </div>
+          {appLink && (
+            <div className="flex items-center justify-center">
+              <button
+                className="w-1/2 px-6 py-1 m-2 duration-200 hover:scale-105 rounded bg-[#fca61f] dark:bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer dark:text-white text-black"
+                onClick={() => window.open(appLink, "_blank")}
+              >
+                appLink
+              </button>
+            </div>
+          )}
           <p
             style={{ textAlign: "center" }}
             className="text-[#fca61f] dark:text-[#4db5ff]"

@@ -17,6 +17,7 @@ export const allPortfolios = [
     id: 1,
     src: investyield,
     link: "https://www.investyield.ng/",
+    appLink: "https://play.google.com/store/apps/details?id=com.investyield",
     name: "Invest Yield",
     disc: "This is a website and app where you can make transactions of money in dollars, naira and other currencies.",
   },
