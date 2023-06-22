@@ -5,8 +5,10 @@ const Portfolio = () => {
   return (
     <div
       name="portfolio"
-      className="portfolio_component w-full text-white md:h-screen portfolio"
+      className="portfolio_component w-full text-white md:h-screen portfolio overflow-hidden"
     >
+      {" "}
+      overflow-hidden
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
           <div

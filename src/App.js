@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -16,7 +17,7 @@ import WelcomeModal from "./components/WelcomeModal/WelcomeModal";
 import { useAppContext } from "./contexts/useAppContext";
 
 function App() {
-  const { showOtherSideBar, modalState, loading } = useAppContext();
+  const { showOtherSideBar, modalState } = useAppContext();
 
   useEffect(() => {
     document.getElementById("bottom").style.display = "none";
@@ -69,7 +70,9 @@ function App() {
         <NavBar />
         <Home />
         <About />
+        <br />
         <Portfolio />
+        <br />
         <Skills />
         <Contact />
         <Footer />

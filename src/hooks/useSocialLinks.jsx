@@ -3,6 +3,9 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import resume from "../assets/resume.pdf";
+import cover_letter from "../assets/cover_letter.pdf";
+import { SlEnvolopeLetter } from "react-icons/sl";
+
 import { useAppContext } from "../contexts/useAppContext";
 
 function useSocialLinks() {
@@ -74,9 +77,29 @@ function useSocialLinks() {
         </>
       ),
       href: resume,
+      type: "resume",
+      download: true,
+    },
+    {
+      id: 6,
+      child: (
+        <>
+          Cover Letter
+          <SlEnvolopeLetter
+            size={30}
+            style={{
+              color: darkMode ? "#4db5ff" : "#fca61f",
+              marginLeft: "7px",
+            }}
+          />
+        </>
+      ),
+      href: cover_letter,
+      type: "cover_letter",
       download: true,
     },
   ];
+
   const allBottomSocialLinks = [
     {
       id: 1,
@@ -139,6 +162,19 @@ function useSocialLinks() {
         </>
       ),
       href: resume,
+      download: true,
+    },
+    {
+      id: 6,
+      child: (
+        <>
+          <SlEnvolopeLetter
+            size={30}
+            style={{ color: darkMode ? "#4db5ff" : "#fca61f" }}
+          />
+        </>
+      ),
+      href: cover_letter,
       download: true,
     },
   ];

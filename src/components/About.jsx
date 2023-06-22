@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div
       name="about"
-      className="about_component w-full h-auto  text-white about mb-10 "
+      className="about_component w-full h-auto  text-white about"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div
@@ -48,13 +48,13 @@ const About = () => {
             code, and writing application interface code via Javascript and
             React workflows. Also good at monitoring & maintaining frontend
             performance and troubleshooting & debugging the same time for better
-            overall performance. As a highly skilled front-end developer with
-            4+ years of experience, I am adept in creating and
-            implementing user-friendly interfaces, developing and maintaining
-            responsive websites, and collaborating with cross-functional teams
-            to deliver high-quality digital experiences. With a keen eye for
-            design and a passion for clean, efficient code, I am committed to
-            staying up-to-date with the latest front-end technologies and best
+            overall performance. As a highly skilled front-end developer with 4+
+            years of experience, I am adept in creating and implementing
+            user-friendly interfaces, developing and maintaining responsive
+            websites, and collaborating with cross-functional teams to deliver
+            high-quality digital experiences. With a keen eye for design and a
+            passion for clean, efficient code, I am committed to staying
+            up-to-date with the latest front-end technologies and best
             practices. Through my strong problem-solving skills and attention to
             detail, I have successfully delivered projects for clients ranging
             from small startups to large enterprises. I am excited to leverage

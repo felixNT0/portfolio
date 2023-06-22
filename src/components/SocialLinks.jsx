@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import resumePdf from "../assets/resume.pdf";
+import cover_letter from "../assets/cover_letter.pdf";
+
 import { useAppContext } from "../contexts/useAppContext";
 import useSocialLinks from "../hooks/useSocialLinks";
 
@@ -10,14 +12,17 @@ const SocialLinks = () => {
   const { showOtherSideBar } = useAppContext();
 
   const [toggleModal, setToggleModal] = useState(false);
+  const [modalType, setModalType] = useState("");
 
   const closeModal = () => {
     setToggleModal(false);
+    setModalType("");
     document.getElementById("showConfimationModal").style.display = "none";
   };
 
-  const openModal = () => {
+  const openModal = (ModalType) => {
     setToggleModal(true);
+    setModalType(ModalType);
     document.getElementById("showConfimationModal").style.display = "block";
   };
 
@@ -29,7 +34,7 @@ const SocialLinks = () => {
         className="hidden lg:flex  flex-col top-[35%] left-0 fixed "
       >
         <ul>
-          {allSocialLinks.map(({ id, child, href, style, download }) => {
+          {allSocialLinks.map(({ id, child, href, style, download, type }) => {
             return (
               <li
                 key={id}
@@ -42,7 +47,7 @@ const SocialLinks = () => {
                 {download ? (
                   <div
                     className="flex justify-between items-center w-full text-white cursor-pointer"
-                    onClick={() => openModal()}
+                    onClick={() => openModal(type)}
                   >
                     {child}
                   </div>
@@ -68,7 +73,7 @@ const SocialLinks = () => {
               &times;
             </span>
             <div className="container ">
-              <h1 className="text-center text-black text-3xl font-bold welcome_text">
+              <h1 className="text-center text-black text-1xl font-bold welcome_text">
                 Did you want to{" "}
                 <span className="text-[#fca61f] dark:text-[#4db5ff]">
                   Preview
@@ -77,11 +82,11 @@ const SocialLinks = () => {
                 <span className="text-[#fca61f] dark:text-[#4db5ff]">
                   Download
                 </span>{" "}
-                the resume?
+                the {modalType === "resume" ? "resume" : "cover letter"}
               </h1>
 
               <a
-                href={resumePdf}
+                href={modalType === "resume" ? resumePdf : cover_letter}
                 target="_blank"
                 rel="noreferrer"
                 className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-md bg-[#fca61f] dark:bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
@@ -89,7 +94,7 @@ const SocialLinks = () => {
                 Preview
               </a>
               <a
-                href={resumePdf}
+                href={modalType === "resume" ? resumePdf : cover_letter}
                 download
                 target="_blank"
                 rel="noreferrer"
