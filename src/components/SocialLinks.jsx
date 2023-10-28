@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import resumePdf from "../assets/resume.pdf";
 import cover_letter from "../assets/cover_letter.pdf";
@@ -13,17 +13,22 @@ const SocialLinks = () => {
 
   const [toggleModal, setToggleModal] = useState(false);
   const [modalType, setModalType] = useState("");
-
   const closeModal = () => {
     setToggleModal(false);
     setModalType("");
-    document.getElementById("showConfimationModal").style.display = "none";
+    const confirmationModal = document.getElementById("showConfirmationModal");
+    if (confirmationModal) {
+      confirmationModal.style.display = "none";
+    }
   };
 
   const openModal = (ModalType) => {
     setToggleModal(true);
     setModalType(ModalType);
-    document.getElementById("showConfimationModal").style.display = "block";
+    const confirmationModal = document.getElementById("showConfirmationModal");
+    if (confirmationModal) {
+      confirmationModal.style.display = "block";
+    }
   };
 
   return (
@@ -31,7 +36,7 @@ const SocialLinks = () => {
       <div
         data-aos={!showOtherSideBar ? "slide-down" : "slide-up"}
         data-aos-delay="50"
-        className="hidden lg:flex  flex-col top-[35%] left-0 fixed "
+        className="max-md:bottom_navbar max-sm:hidden flex flex-col max-md:bottom-5 max-md:right-[50%] max-md:left-[50%] max-md:justify-center max-md:items-center max-md:flex-row lg:top-[35%]  lg:left-0 fixed "
       >
         <ul>
           {allSocialLinks.map(({ id, child, href, style, download, type }) => {
@@ -67,7 +72,7 @@ const SocialLinks = () => {
         </ul>
       </div>
       {toggleModal ? (
-        <div id="showConfimationModal" class="modal">
+        <div id="showConfimationModal" className="modal">
           <div className="modal-content animate">
             <span onClick={closeModal} className="close" title="Close Modal">
               &times;

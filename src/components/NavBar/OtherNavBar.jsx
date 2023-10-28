@@ -1,4 +1,3 @@
-import React from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 import HeroImage from "../../assets/image.jpg";
@@ -12,7 +11,7 @@ function OtherNavBar({ setNavBarState, navBarState }) {
   return (
     <div
       id={"navbar"}
-      className={`flex justify-between items-center w-full h-20 px-4 text-white navbar_bg `}
+      className={`flex justify-between items-center w-[95%] h-20 px-4  text-white navbar_bg `}
     >
       <div className="flex justify-between items-center">
         <img

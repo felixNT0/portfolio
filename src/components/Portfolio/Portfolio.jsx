@@ -1,11 +1,10 @@
-import React from "react";
 import AllPortfolios from "./AllPortfolios";
 
 const Portfolio = () => {
   return (
     <div
       name="portfolio"
-      className="portfolio_component w-full text-white md:h-screen portfolio"
+      className="portfolio_component w-full my-10 text-white h-auto portfolio"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">

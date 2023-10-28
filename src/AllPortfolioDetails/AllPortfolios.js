@@ -7,12 +7,61 @@ import mapapp from "../assets/portfolio/mapapp.png";
 import monsterindia from "../assets/portfolio/monsterindia.png";
 import movieapp from "../assets/portfolio/movieapp.png";
 import omdb from "../assets/portfolio/omdb.png";
-import paperdaz from "../assets/portfolio/paperdaz.png";
+import paperdazLink from "../assets/portfolio/PaperLink.png";
+import risevest from "../assets/portfolio/risevest.png";
+import callingApp from "../assets/portfolio/calling-app.png";
 import politicsthreadadmin from "../assets/portfolio/politicsthreaadmin.png";
 import politicthread from "../assets/portfolio/politicsthread.png";
 import sugarcosmetic from "../assets/portfolio/sugarcosmetic.png";
+import Junologix from "../assets/portfolio/Junologix.png";
+import paperdaz from "../assets/portfolio/Paperdaz.png";
+import Autozard from "../assets/portfolio/Autozard.png";
 
 export const allPortfolios = [
+  {
+    id: 18,
+    src: Autozard,
+    link: "https://coder.dev.autozard.com/",
+    name: "Autozard",
+    disc: "This is a website which Provide clients easy access to ai and other applications to interact with.",
+  },
+  {
+    id: 17,
+    src: paperdaz,
+    link: "https://paperdaz.com/",
+    name: "pedardaz",
+    disc: "This is a website that every size office will no longer hand paper to clients, patients or employees to fill out.",
+  },
+  {
+    id: 16,
+    src: Junologix,
+    link: "https://junologix.com/",
+    name: "Junologix",
+    disc: "This is a website to provide a platform with all the latest technology on the market to save time and money for tax professionals.",
+  },
+  {
+    id: 2,
+    src: paperdazLink,
+    link: "https://paperlink.app/",
+    name: "Paperlink",
+    disc: "This is a website which Provide PaperdazLink anytime anywhere for clients to complete. Save time and money for everyone!.",
+  },
+  {
+    id: 14,
+    src: risevest,
+    link: "https://risevest.com/",
+    appLink: "https://play.google.com/store/apps/details?id=com.rise.mobile",
+    name: "Rise Vest",
+    disc: "To solve this problem, we built Rise as a simple way of connecting our users to dollar-denominated investments in developed markets, managed by a world class team using smart algorithms to guide our decisions, while helping our users become more financially literate.",
+  },
+  {
+    id: 15,
+    src: callingApp,
+    link: "https://fkt-calling-app.vercel.app/",
+    name: "Video Calling",
+    disc: "This is a website for all users that have a video meeting remotely with anyone over the world to communicate with there eachother",
+  },
+
   {
     id: 1,
     src: investyield,
@@ -21,13 +70,7 @@ export const allPortfolios = [
     name: "Invest Yield",
     disc: "This is a website and app where you can make transactions of money in dollars, naira and other currencies.",
   },
-  {
-    id: 2,
-    src: paperdaz,
-    link: "https://paperdaz.com/",
-    name: "Paperdaz",
-    disc: "This is a website which Provide Paperdaz anytime anywhere for clients to complete. Save time and money for everyone!.",
-  },
+
   {
     id: 3,
     src: politicthread,

@@ -4,7 +4,6 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import About from "./components/About";
 import BackToTop from "./components/BackToTop";
-import BottomNavBar from "./components/BottomNavBar";
 import Contact from "./components/Contacts/Contact";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -14,6 +13,7 @@ import ScrollIndicator from "./components/ScrollIndicator/ScrollIndicator";
 import Skills from "./components/Skills";
 import SocialLinks from "./components/SocialLinks";
 import WelcomeModal from "./components/WelcomeModal/WelcomeModal";
+import BottomNavBar from "./components/BottomNavBar";
 import { useAppContext } from "./contexts/useAppContext";
 
 function App() {
@@ -48,15 +48,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (modalState === false) {
-      setInterval(
-        () => (document.getElementById("showModal").style.display = "block"),
-        3000
-      );
-    }
-  }, []);
-
-  useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
 
@@ -65,14 +56,12 @@ function App() {
       {/* {loading ? (
         <AppLoader />
       ) : ( */}
-      <div className="dark:bg-[#1f1f38] bg-[#ffffff]">
+      <div className="dark:bg-[#1f1f38] w-full bg-[#ffffff] overflow-hidden">
         <ScrollIndicator />
         <NavBar />
         <Home />
         <About />
-        <br />
         <Portfolio />
-        <br />
         <Skills />
         <Contact />
         <Footer />
@@ -82,7 +71,7 @@ function App() {
             <BottomNavBar />
           </>
         )}
-        {!modalState && <WelcomeModal />}
+        {modalState && <WelcomeModal />}
         <BackToTop />
       </div>
       {/* )} */}

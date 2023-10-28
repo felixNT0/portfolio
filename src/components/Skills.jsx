@@ -1,9 +1,8 @@
-import React from "react";
 import { allSkills } from "../AllSkillsDetails/AllSkills";
 
 const Skills = () => {
   return (
-    <div name="skills" className="w-full h-auto experience">
+    <div name="skills" className="w-full my-20 h-auto experience">
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
         <div>
           <p

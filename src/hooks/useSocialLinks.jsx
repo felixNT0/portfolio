@@ -1,10 +1,7 @@
-import React from "react";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import resume from "../assets/resume.pdf";
-import cover_letter from "../assets/cover_letter.pdf";
-import { SlEnvolopeLetter } from "react-icons/sl";
 
 import { useAppContext } from "../contexts/useAppContext";
 
@@ -15,7 +12,7 @@ function useSocialLinks() {
       id: 1,
       child: (
         <>
-          LinkedIn{" "}
+          <p className="max-md:hidden">LinkedIn</p>
           <FaLinkedin
             size={30}
             style={{ color: darkMode ? "#4db5ff" : "#fca61f" }}
@@ -29,7 +26,7 @@ function useSocialLinks() {
       id: 2,
       child: (
         <>
-          GitHub{" "}
+          <p className="max-md:hidden">GitHub</p>
           <FaGithub
             size={30}
             style={{ color: darkMode ? "#4db5ff" : "#fca61f" }}
@@ -42,7 +39,7 @@ function useSocialLinks() {
       id: 3,
       child: (
         <>
-          Email{" "}
+          <p className="max-md:hidden">Email</p>
           <HiOutlineMail
             size={30}
             style={{ color: darkMode ? "#4db5ff" : "#fca61f" }}
@@ -55,7 +52,7 @@ function useSocialLinks() {
       id: 4,
       child: (
         <>
-          Twitter{" "}
+          <p className="max-md:hidden">Twitter</p>
           <FaTwitter
             size={30}
             style={{ color: darkMode ? "#4db5ff" : "#fca61f" }}
@@ -69,7 +66,7 @@ function useSocialLinks() {
       id: 5,
       child: (
         <>
-          Resume{" "}
+          <p className="max-md:hidden">Resume</p>
           <BsFillPersonLinesFill
             size={30}
             style={{ color: darkMode ? "#4db5ff" : "#fca61f" }}
@@ -80,24 +77,24 @@ function useSocialLinks() {
       type: "resume",
       download: true,
     },
-    {
-      id: 6,
-      child: (
-        <>
-          Cover Letter
-          <SlEnvolopeLetter
-            size={30}
-            style={{
-              color: darkMode ? "#4db5ff" : "#fca61f",
-              marginLeft: "7px",
-            }}
-          />
-        </>
-      ),
-      href: cover_letter,
-      type: "cover_letter",
-      download: true,
-    },
+    // {
+    //   id: 6,
+    //   child: (
+    //     <>
+    //       Cover Letter
+    //       <SlEnvolopeLetter
+    //         size={30}
+    //         style={{
+    //           color: darkMode ? "#4db5ff" : "#fca61f",
+    //           marginLeft: "7px",
+    //         }}
+    //       />
+    //     </>
+    //   ),
+    //   href: cover_letter,
+    //   type: "cover_letter",
+    //   download: true,
+    // },
   ];
 
   const allBottomSocialLinks = [
@@ -164,19 +161,19 @@ function useSocialLinks() {
       href: resume,
       download: true,
     },
-    {
-      id: 6,
-      child: (
-        <>
-          <SlEnvolopeLetter
-            size={30}
-            style={{ color: darkMode ? "#4db5ff" : "#fca61f" }}
-          />
-        </>
-      ),
-      href: cover_letter,
-      download: true,
-    },
+    // {
+    //   id: 6,
+    //   child: (
+    //     <>
+    //       <SlEnvolopeLetter
+    //         size={30}
+    //         style={{ color: darkMode ? "#4db5ff" : "#fca61f" }}
+    //       />
+    //     </>
+    //   ),
+    //   href: cover_letter,
+    //   download: true,
+    // },
   ];
   return { allSocialLinks, allBottomSocialLinks };
 }

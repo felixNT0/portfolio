@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import resumePdf from "../assets/resume.pdf";
 import { useAppContext } from "../contexts/useAppContext";
 import useSocialLinks from "../hooks/useSocialLinks";
 
 function BottomNavBar() {
-  const { allBottomSocialLinks } = useSocialLinks();
+  const { allSocialLinks } = useSocialLinks();
 
   const { showOtherSideBar } = useAppContext();
 
@@ -25,34 +25,36 @@ function BottomNavBar() {
       <div
         data-aos={!showOtherSideBar ? "slide-down" : "zoom-in"}
         data-aos-delay="50"
-        className="bottom_navbar bottom-[0.5%] fixed duration-300"
+        className="bottom_navbar sm:hidden bottom-[3%] fixed duration-300"
       >
-        {allBottomSocialLinks.map(({ id, child, href, download }) => (
-          <li
-            key={id}
-            className={
-              "flex justify-between items-center icon_spacing w-[500px] duration-300 bg-gray-700 bg-[#0000004d]  side_bar_style"
-            }
-          >
-            {download ? (
-              <div
-                className="flex justify-between items-center w-full text-white cursor-pointer"
-                onClick={() => openModal()}
-              >
-                {child}
-              </div>
-            ) : (
-              <a
-                href={href}
-                className="flex justify-between items-center w-full text-white"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {child}
-              </a>
-            )}
-          </li>
-        ))}
+        <ul className="flex flex-row">
+          {allSocialLinks.map(({ id, child, href, download }) => (
+            <li
+              key={id}
+              className={
+                "flex flex-row justify-between items-center icon_spacing w-[100%] duration-300 bg-gray-700 bg-[#0000004d]  side_bar_style"
+              }
+            >
+              {download ? (
+                <div
+                  className="flex justify-between items-center w-full text-white cursor-pointer"
+                  onClick={() => openModal()}
+                >
+                  {child}
+                </div>
+              ) : (
+                <a
+                  href={href}
+                  className="flex justify-between items-center w-full text-white"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {child}
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
       <div>
         {toggleModal ? (

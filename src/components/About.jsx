@@ -1,10 +1,8 @@
-import React from "react";
-
 const About = () => {
   return (
     <div
       name="about"
-      className="about_component w-full h-auto  text-white about"
+      className="about_component w-full h-auto my-10 text-white about"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div
