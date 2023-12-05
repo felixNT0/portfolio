@@ -71,7 +71,7 @@ function App() {
             <BottomNavBar />
           </>
         )}
-        {modalState && <WelcomeModal />}
+        {modalState && <WelcomeModal isModalOpen={modalState} />}
         <BackToTop />
       </div>
       {/* )} */}

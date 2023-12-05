@@ -21,9 +21,9 @@ const Home = () => {
               data-aos-duration="1000"
               className="h5-gray-500 dark:text-white text-center mt-5 px-1 w-[500px] max-sm:w-[300px] overflow-hidden"
             >
-              Front-End Engineer | React JS | React Native | UI/UX & Graphic -
-              Figma & Photoshop | Wordpress or WIX Designer with producting
-              Quality work
+              Front-End Engineer | React JS | Next JS | React Native | UI/UX &
+              Graphic - Figma, Photoshop & Adobe XD | Wordpress or WIX Designer
+              with producting Quality work
             </h5>
           </div>
 

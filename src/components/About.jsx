@@ -25,7 +25,7 @@ const About = () => {
           >
             Hi there, I'm{" "}
             <span style={{ color: "tomato" }}>Felix Kolo Tsowa</span> - a
-            Front-End Developer. I develop beautiful and user-friendly websites.
+            Front-End Engineer. I develop beautiful and user-friendly websites.
             I like what I’m currently doing (Web Development! and App
             Development!…).
           </p>

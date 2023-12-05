@@ -16,13 +16,29 @@ import sugarcosmetic from "../assets/portfolio/sugarcosmetic.png";
 import Junologix from "../assets/portfolio/Junologix.png";
 import paperdaz from "../assets/portfolio/Paperdaz.png";
 import Autozard from "../assets/portfolio/Autozard.png";
+import AutozardWebsite from "../assets/portfolio/Autozard-Website.png";
+import InvoiceHub from "../assets/portfolio/InvoiceHub.png";
 
 export const allPortfolios = [
   {
+    id: 20,
+    src: InvoiceHub,
+    link: "https://invoicehub.vercel.app/",
+    name: "InvoiceHub",
+    disc: "This is a website which Provide clients a Kind in Payment Solution Implementation At InvoiceHub, we believe in making business payments hassle-free. Our innovative application empowers business owners to effortlessly create client profiles, track payment transactions, and receive real-time alerts foe unpaid invoices.",
+  },
+  {
+    id: 19,
+    src: AutozardWebsite,
+    link: "https://autozard.com/",
+    name: "Autozard Website",
+    disc: "This is a website describe everything about Autozard.",
+  },
+  {
     id: 18,
     src: Autozard,
-    link: "https://coder.dev.autozard.com/",
-    name: "Autozard",
+    link: "https://app.autozard.com/",
+    name: "Autozard Web App",
     disc: "This is a website which Provide clients easy access to ai and other applications to interact with.",
   },
   {
@@ -35,7 +51,7 @@ export const allPortfolios = [
   {
     id: 16,
     src: Junologix,
-    link: "https://junologix.com/",
+    link: "https://junologix-test.vercel.app/",
     name: "Junologix",
     disc: "This is a website to provide a platform with all the latest technology on the market to save time and money for tax professionals.",
   },

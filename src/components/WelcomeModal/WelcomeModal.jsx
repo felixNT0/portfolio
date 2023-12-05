@@ -1,7 +1,8 @@
 import { useAppContext } from "../../contexts/useAppContext";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
-function WelcomeModal() {
+function WelcomeModal({ isModalOpen }) {
   const { toggleModal, modalState } = useAppContext();
 
   const closeModal = (event) => {
@@ -9,6 +10,18 @@ function WelcomeModal() {
       toggleModal();
     }
   };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isModalOpen]);
 
   return (
     <AnimatePresence>
