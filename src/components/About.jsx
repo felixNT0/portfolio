@@ -21,7 +21,7 @@ const About = () => {
             data-aos="zoom-in"
             data-aos-delay="30"
             data-aos-duration="700"
-            className="text-xl mt-5 dark:text-white text-black"
+            className="text-lg mt-5 dark:text-white text-black"
           >
             Hi there, I'm{" "}
             <span style={{ color: "tomato" }}>Felix Kolo Tsowa</span> - a
@@ -35,9 +35,9 @@ const About = () => {
             data-aos="zoom-out"
             data-aos-delay="30"
             data-aos-duration="500"
-            className="text-xl dark:text-white text-black"
+            className="text-lg dark:text-white text-black"
           >
-            4+ years experienced in Front-End Developing with hands-on
+            3+ years experienced in Front-End Developing with hands-on
             experience in identifying web-based user interactions along with
             designing & implementing highly-responsive user interface components
             by deploying React concepts. also experienced with graphic design
@@ -64,7 +64,7 @@ const About = () => {
             data-aos="zoom-out"
             data-aos-delay="30"
             data-aos-duration="500"
-            className="text-xl dark:text-white text-black"
+            className="text-lg dark:text-white text-black"
           >
             Talking about my personality, I describe myself as a{" "}
             <span style={{ color: "teal" }}>result-oriented </span> person,

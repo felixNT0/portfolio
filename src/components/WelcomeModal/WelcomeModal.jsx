@@ -1,6 +1,6 @@
-import { useAppContext } from "../../contexts/useAppContext";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
+import { useAppContext } from "../../contexts/useAppContext";
 
 function WelcomeModal({ isModalOpen }) {
   const { toggleModal, modalState } = useAppContext();

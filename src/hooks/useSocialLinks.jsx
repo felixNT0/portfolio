@@ -19,7 +19,7 @@ function useSocialLinks() {
           />
         </>
       ),
-      href: "https://www.linkedin.com/in/felixnt001/",
+      href: "https://www.linkedin.com/in/felixnt0/",
       style: "rounded-tr-md",
     },
     {
@@ -108,7 +108,7 @@ function useSocialLinks() {
           />
         </>
       ),
-      href: "https://www.linkedin.com/in/felixnt001/",
+      href: "https://www.linkedin.com/in/felixnt0/",
       style: "rounded-tr-md",
     },
     {
