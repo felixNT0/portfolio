@@ -1,4 +1,3 @@
-import React from "react";
 import OtherContactDetails from "./OtherContactDetails";
 import SendMailForm from "./SendMailForm";
 

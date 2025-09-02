@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function SendMailForm() {
   const [values, setValues] = useState({
@@ -6,6 +6,9 @@ function SendMailForm() {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const handleChange = (event) => {
     setValues((prev) => ({
@@ -14,13 +17,47 @@ function SendMailForm() {
     }));
   };
 
-  function handleSubmit(e) {
-    if (values.name && values.email && values.message) {
-      setTimeout(() => {
-        e.target.reset();
-      }, 500);
-    } else {
-      alert("value can't be empty");
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!values.name || !values.email || !values.message) {
+      setIsError(true);
+      setStatusMessage("Please fill out all fields.");
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      setIsError(false);
+      setStatusMessage("");
+
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setStatusMessage("Thanks! Your message has been sent.");
+        setIsError(false);
+        setValues({ name: "", email: "", message: "" });
+        form.reset();
+      } else {
+        setIsError(true);
+        setStatusMessage("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      setIsError(true);
+      setStatusMessage(
+        "Network error. Please check your connection and try again."
+      );
+    } finally {
+      setIsSubmitting(false);
     }
   }
   return (
@@ -63,13 +100,24 @@ function SendMailForm() {
           className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
         ></textarea>
 
+        {statusMessage ? (
+          <p
+            className={`${
+              isError ? "text-red-400" : "text-green-400"
+            } text-sm mt-2`}
+          >
+            {statusMessage}
+          </p>
+        ) : null}
+
         <button
           data-aos="slide-down"
           data-aos-delay="60"
           type="submit"
-          className="text-white bg-[#fca61f] dark:bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300"
+          disabled={isSubmitting}
+          className="text-white bg-[#fca61f] dark:bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          Send Message
+          {isSubmitting ? "Sending..." : "Send Message"}
         </button>
       </form>
     </div>

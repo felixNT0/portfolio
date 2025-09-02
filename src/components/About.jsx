@@ -23,41 +23,12 @@ const About = () => {
             data-aos-duration="700"
             className="text-lg mt-5 dark:text-white text-black"
           >
-            Hi there, I'm{" "}
-            <span style={{ color: "tomato" }}>Felix Kolo Tsowa</span> - a
-            Front-End Engineer. I develop beautiful and user-friendly websites.
-            I like what I’m currently doing (Web Development! and App
-            Development!…).
+            I'm <span style={{ color: "tomato" }}>Felix Kolo Tsowa</span>, a{" "}
+            <span style={{ color: "tomato" }}>Frontend Developer</span> with
+            over 4 years of experience crafting exceptional digital solutions
+            that drive business growth and user engagement.
           </p>
 
-          <br />
-          <p
-            data-aos="zoom-out"
-            data-aos-delay="30"
-            data-aos-duration="500"
-            className="text-lg dark:text-white text-black"
-          >
-            3+ years experienced in Front-End Developing with hands-on
-            experience in identifying web-based user interactions along with
-            designing & implementing highly-responsive user interface components
-            by deploying React concepts. also experienced with graphic design
-            applications (e.g., Adobe Illustrator, Photoshop and Figma).
-            Proficient in translating designs & wireframes into high-quality
-            code, and writing application interface code via Javascript and
-            React workflows. Also good at monitoring & maintaining frontend
-            performance and troubleshooting & debugging the same time for better
-            overall performance. As a highly skilled front-end developer with 4+
-            years of experience, I am adept in creating and implementing
-            user-friendly interfaces, developing and maintaining responsive
-            websites, and collaborating with cross-functional teams to deliver
-            high-quality digital experiences. With a keen eye for design and a
-            passion for clean, efficient code, I am committed to staying
-            up-to-date with the latest front-end technologies and best
-            practices. Through my strong problem-solving skills and attention to
-            detail, I have successfully delivered projects for clients ranging
-            from small startups to large enterprises. I am excited to leverage
-            my skills and experience to contribute to the success of your team.
-          </p>
           <br />
 
           <p
@@ -66,17 +37,101 @@ const About = () => {
             data-aos-duration="500"
             className="text-lg dark:text-white text-black"
           >
-            Talking about my personality, I describe myself as a{" "}
-            <span style={{ color: "teal" }}>result-oriented </span> person,
-            great <span style={{ color: "teal" }}> team player </span> yet
-            competent solo worker and an{" "}
-            <span style={{ color: "teal" }}>efficient </span> individual. You
-            can image me as a <span style={{ color: "teal" }}>diligent</span>{" "}
-            and <span style={{ color: "teal" }}>easygoing</span> person with a
-            good sense of humour.
-            <br /> <br />I enjoy designing new stuff and learning new
-            Technologies. If I'm not on my computer, am travelling, capturing
-            moments or playing musical instruments.
+            <span style={{ color: "tomato", fontWeight: "bold" }}>
+              What I Deliver:
+            </span>{" "}
+            I specialize in building scalable, high-performance applications
+            that transform ideas into profitable digital products. My expertise
+            spans across{" "}
+            <span style={{ color: "teal" }}>E-commerce platforms</span>,{" "}
+            <span style={{ color: "teal" }}>FinTech solutions</span>,{" "}
+            <span style={{ color: "teal" }}>Real Estate platforms</span>,{" "}
+            <span style={{ color: "teal" }}>Educational systems</span>, and{" "}
+            <span style={{ color: "teal" }}>Enterprise SaaS applications</span>.
+          </p>
+
+          <br />
+
+          <p
+            data-aos="zoom-out"
+            data-aos-delay="30"
+            data-aos-duration="500"
+            className="text-lg dark:text-white text-black"
+          >
+            <span style={{ color: "tomato", fontWeight: "bold" }}>
+              Technical Excellence:
+            </span>{" "}
+            I leverage cutting-edge technologies including{" "}
+            <span style={{ color: "teal" }}>React.js</span>,{" "}
+            <span style={{ color: "teal" }}>Next.js</span>,{" "}
+            <span style={{ color: "teal" }}>React Native</span>, and{" "}
+            <span style={{ color: "teal" }}>Node.js</span> to create seamless
+            user experiences. My development process focuses on{" "}
+            <span style={{ color: "teal" }}>performance optimization</span>,{" "}
+            <span style={{ color: "teal" }}>responsive design</span>, and{" "}
+            <span style={{ color: "teal" }}>scalable architecture</span> that
+            grows with your business.
+          </p>
+
+          <br />
+
+          <p
+            data-aos="zoom-out"
+            data-aos-delay="30"
+            data-aos-duration="500"
+            className="text-lg dark:text-white text-black"
+          >
+            <span style={{ color: "tomato", fontWeight: "bold" }}>
+              Proven Track Record:
+            </span>{" "}
+            I've successfully delivered{" "}
+            <span style={{ color: "teal" }}>44+ projects</span> for clients
+            ranging from <span style={{ color: "teal" }}>startups</span> to{" "}
+            <span style={{ color: "teal" }}>enterprise companies</span> across{" "}
+            <span style={{ color: "teal" }}>7 countries</span>. My work has
+            helped businesses increase user engagement, streamline operations,
+            and achieve measurable ROI improvements.
+          </p>
+
+          <br />
+
+          <p
+            data-aos="zoom-out"
+            data-aos-delay="30"
+            data-aos-duration="500"
+            className="text-lg dark:text-white text-black"
+          >
+            <span style={{ color: "tomato", fontWeight: "bold" }}>
+              Why Choose Me:
+            </span>{" "}
+            I combine <span style={{ color: "teal" }}>technical expertise</span>{" "}
+            with <span style={{ color: "teal" }}>business acumen</span> to
+            deliver solutions that not only look great but also drive results.
+            I'm committed to{" "}
+            <span style={{ color: "teal" }}>transparent communication</span>,{" "}
+            <span style={{ color: "teal" }}>on-time delivery</span>, and{" "}
+            <span style={{ color: "teal" }}>ongoing support</span> to ensure
+            your project's success.
+          </p>
+
+          <br />
+
+          <p
+            data-aos="zoom-out"
+            data-aos-delay="30"
+            data-aos-duration="500"
+            className="text-lg dark:text-white text-black"
+          >
+            <span style={{ color: "tomato", fontWeight: "bold" }}>
+              Let's Build Something Amazing:
+            </span>{" "}
+            Whether you need a{" "}
+            <span style={{ color: "teal" }}>custom web application</span>,{" "}
+            <span style={{ color: "teal" }}>mobile app</span>, or{" "}
+            <span style={{ color: "teal" }}>digital transformation</span> of
+            your existing systems, I'm here to turn your vision into reality.
+            Let's discuss how I can help your business thrive in the digital
+            age.
           </p>
         </div>
       </div>
