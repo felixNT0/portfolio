@@ -34,12 +34,12 @@ import vuejs from "../assets/vuejs.svg";
 import WEBSOCKET from "../assets/websocket.png";
 import zustand from "../assets/zustand.jpg";
 
-// import express from "../assets/express.svg";
-// import postgresql from "../assets/postgresql.svg";
-// import firebase from "../assets/firebase.svg";
-// import graphql from "../assets/graphql.svg";
-// import chakra from "../assets/chakra.svg";
-// import mantine from "../assets/mantine.svg";
+import chakra from "../assets/chakra-ui.webp";
+import express from "../assets/expressjs.png";
+import firebase from "../assets/firebase.png";
+import graphql from "../assets/graphql.webp";
+import mantine from "../assets/mantine.png";
+import postgresql from "../assets/postgres.png";
 
 export const allSkills = [
   {
@@ -255,85 +255,85 @@ export const allSkills = [
   },
   {
     id: 36,
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    src: express,
     title: "EXPRESS.JS",
     style: "shadow-gray-400",
   },
   {
     id: 37,
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    src: postgresql,
     title: "POSTGRESQL",
     style: "shadow-blue-500",
   },
   {
     id: 38,
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    src: firebase,
     title: "FIREBASE",
     style: "shadow-orange-500",
   },
   {
     id: 39,
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+    src: graphql,
     title: "GRAPHQL",
     style: "shadow-pink-500",
   },
   {
     id: 40,
-    src: "https://cdn.worldvectorlogo.com/logos/chakra-ui-1.svg",
+    src: chakra,
     title: "CHAKRA UI",
     style: "shadow-teal-500",
   },
   {
     id: 41,
-    src: "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/static/mantine-logo-full.svg",
+    src: mantine,
     title: "MANTINE",
     style: "shadow-blue-500",
   },
   {
     id: 42,
-    src: "https://cdn.worldvectorlogo.com/logos/threejs-1.svg",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR68pt-44K6Zu1nDhCqnAvcW_e05xHQZkvshoyWIhHejg_iis7xPmfIZb43Wu6OWjs1958&usqp=CAU",
     title: "THREE.JS",
     style: "shadow-gray-600",
   },
   {
     id: 43,
-    src: "https://cdn.worldvectorlogo.com/logos/jest-1.svg",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3OficebiLHdOd2zhh88fzqtZaOUHrsx2UDqo-8SLPQMTQKTjRle9J4z2TsHvKnRkjJ-Q&usqp=CAU",
     title: "JEST",
     style: "shadow-red-600",
   },
   {
     id: 44,
-    src: "https://www.cypress.io/images/logo/cypress-io-logo-social-share.png",
+    src: "https://www.cypress.io/cypress_logo_social.png",
     title: "CYPRESS",
     style: "shadow-green-600",
   },
   {
     id: 45,
-    src: "https://cdn.worldvectorlogo.com/logos/mixpanel-1.svg",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE48dHnqpwAJngcqznoFWOlUBV2AXaPHt5mg&s",
     title: "MIXPANEL",
     style: "shadow-purple-500",
   },
   {
     id: 46,
-    src: "https://cdn.worldvectorlogo.com/logos/sentry-1.svg",
+    src: "https://devio2023-media.developers.io/wp-content/uploads/2023/05/eyecatch_sentry_1200x630.png",
     title: "SENTRY",
     style: "shadow-orange-600",
   },
   {
     id: 47,
-    src: "https://cdn.worldvectorlogo.com/logos/datadog-1.svg",
+    src: "https://imgix.datadoghq.com/img/about/presskit/logo-v/dd_vertical_white.png?auto=format&fit=max&w=847&dpr=2",
     title: "DATADOG",
     style: "shadow-red-500",
   },
   {
     id: 48,
-    src: "https://cdn.worldvectorlogo.com/logos/trello-1.svg",
+    src: "https://gotrialpro.net/wp-content/uploads/edd/2024/07/Trello-Free-Trial.png",
     title: "TRELLO",
     style: "shadow-blue-500",
   },
   {
     id: 49,
-    src: "https://cdn.worldvectorlogo.com/logos/bitbucket-1.svg",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbsuQQUD-CKSk5-Pw6zmAPPO7_4CtaarQ7_g&s",
     title: "BITBUCKET",
     style: "shadow-blue-600",
   },
@@ -351,121 +351,121 @@ export const allSkills = [
   },
   {
     id: 52,
-    src: "https://cdn.worldvectorlogo.com/logos/twilio-1.svg",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxHgR7XfRdmxVoZq6awbq57zVK6-8shpCCBg&s",
     title: "TWILIO",
     style: "shadow-red-500",
   },
   {
     id: 53,
-    src: "https://cdn.worldvectorlogo.com/logos/swiper-1.svg",
+    src: "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2FbLklMI%2FbtsFAjkijvi%2FAAAAAAAAAAAAAAAAAAAAAH7DlspIpzgGURD90gsVmK61ZoRhJ2mn66HPk-x3mrBr%2Fimg.png%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1756652399%26allow_ip%3D%26allow_referer%3D%26signature%3DLKXBTHPm%252F1keWW%252BqT0NhbkaK8Co%253D",
     title: "SWIPER JS",
     style: "shadow-blue-500",
   },
   {
     id: 54,
-    src: "https://cdn.worldvectorlogo.com/logos/chart-js-1.svg",
+    src: "https://images.seeklogo.com/logo-png/49/1/chart-js-logo-png_seeklogo-496478.png",
     title: "CHART.JS",
     style: "shadow-red-500",
   },
   {
     id: 55,
-    src: "https://formik.org/img/formik-logo.svg",
+    src: "https://formik.org/images/formik-og.png",
     title: "FORMIK",
     style: "shadow-blue-500",
   },
   {
     id: 56,
-    src: "https://github.com/jquense/yup/raw/master/logo.png",
+    src: "https://miro.medium.com/1*8pLiWUrglmnzfBYf1XJ4TA.jpeg",
     title: "YUP VALIDATION",
     style: "shadow-purple-500",
   },
   {
     id: 57,
-    src: "https://cdn.worldvectorlogo.com/logos/vercel-1.svg",
+    src: "https://images.ctfassets.net/crb83veve8xb/2YfNwMlyl1U0DLVXRgL8TB/9e8474e083f2ba01a296343d84f2282d/vercel_thumbnail.webp",
     title: "VERCEL",
     style: "shadow-black",
   },
   {
     id: 58,
-    src: "https://cdn.worldvectorlogo.com/logos/netlify-1.svg",
+    src: "https://www.magnolia-cms.com/dam/jcr:6da2ba1b-7388-4d94-a76f-a8a166f6bb80/Netlify.jpg",
     title: "NETLIFY",
     style: "shadow-teal-500",
   },
   {
     id: 59,
-    src: "https://cdn.worldvectorlogo.com/logos/wix-1.svg",
+    src: "https://sm.pcmag.com/t/pcmag_au/review/w/wix-websit/wix-website-builder_tfca.1920.jpg",
     title: "WIX",
     style: "shadow-orange-500",
   },
   {
     id: 60,
-    src: "https://cdn.worldvectorlogo.com/logos/wordpress-1.svg",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmaE6ImPs_x2tF41b4sLXzfMJ4G9sUmsZCHKTPIPKNm0xXwREK8VJbnAY7sk2R9khi7hU&usqp=CAU",
     title: "WORDPRESS",
     style: "shadow-blue-500",
   },
   {
     id: 61,
-    src: "https://cdn.worldvectorlogo.com/logos/webflow-1.svg",
+    src: "https://sm.pcmag.com/t/pcmag_me/review/w/webflow-we/webflow-website-builder_hec8.1920.jpg",
     title: "WEBFLOW",
     style: "shadow-blue-600",
   },
   {
     id: 62,
-    src: "https://cdn.worldvectorlogo.com/logos/framer-1.svg",
+    src: "https://cdn.prod.website-files.com/63c6a35ee97bea3e121bf3f4/65ba74ce20f7c87960a872ce_64631e51d10baae4dab60132_2.webp",
     title: "FRAMER",
     style: "shadow-purple-500",
   },
   {
     id: 63,
-    src: "https://cdn.worldvectorlogo.com/logos/adobe-xd-2.svg",
+    src: "https://vectordiary.com/wp-content/uploads/2023/03/How-to-Download-Adobe-XD-Free.jpg",
     title: "ADOBE XD",
     style: "shadow-pink-500",
   },
   {
     id: 64,
-    src: "https://turbo.build/images/favicon-dark/apple-touch-icon.png",
+    src: "https://www.raulcarini.dev/_next/image?url=%2Fassets%2Fturbopack%2Fturbopack.png&w=1920&q=100CCCC",
     title: "TURBO",
     style: "shadow-blue-500",
   },
   {
     id: 65,
-    src: "https://payloadcms.com/static/logo.svg",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoBmD8m8zj1f9HtDKFOEFTyr-CsGlKAijUKcDt-mpOxz8wyOuBDnmXYwIxVpJV632nPIo&usqp=CAU",
     title: "PAYLOAD CMS",
     style: "shadow-green-500",
   },
   {
     id: 66,
-    src: "https://cdn.worldvectorlogo.com/logos/pipedrive-1.svg",
+    src: "https://cdn.prod.website-files.com/66c75dcbd30bceb099fe2269/6834909ef008abc19b856fe3_pipedrive-logo.png",
     title: "PIPEDRIVE",
     style: "shadow-blue-500",
   },
   {
     id: 67,
-    src: "https://cdn.worldvectorlogo.com/logos/zoho-1.svg",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtpO52givBofwhZZyRhhJLRZbzo1JqKnbA6Q&s",
     title: "ZOHO",
     style: "shadow-blue-600",
   },
   {
     id: 68,
-    src: "https://github.com/Tencent/MMKV/raw/master/assets/logo.png",
+    src: "https://miro.medium.com/v2/resize:fit:1200/1*2IxFOAlmFfcFDegN6UVP2w.png",
     title: "MMKV",
     style: "shadow-purple-500",
   },
   {
     id: 69,
-    src: "https://testing-library.com/img/logo/logo.png",
+    src: "https://www.zealousys.com/wp-content/uploads/2024/02/React-Testing-Libraries.webp",
     title: "REACT TESTING LIBRARY",
     style: "shadow-red-500",
   },
   {
     id: 70,
-    src: "https://enzymejs.github.io/enzyme/img/enzyme-logo.png",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjhZSk0aVmTUbojgHAi4CrJfPL6Ls5DNkDgw&s",
     title: "ENZYME",
     style: "shadow-blue-500",
   },
   {
     id: 71,
-    src: "https://cdn.worldvectorlogo.com/logos/mocha-1.svg",
+    src: "https://raw.githubusercontent.com/mochajs/mocha/HEAD/assets/mocha-logo.svg",
     title: "MOCHA",
     style: "shadow-amber-600",
   },

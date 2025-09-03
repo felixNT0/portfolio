@@ -39,7 +39,7 @@ const AppContextProvider = ({ children }) => {
     if (!modalState) {
       setInterval(() => setModalState(false), 3000);
     }
-  }, []);
+  }, [modalState]);
 
   useEffect(() => {
     if (loading) {

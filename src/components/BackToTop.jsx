@@ -1,13 +1,12 @@
-import React from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { Link } from "react-scroll";
 import "../styles/styles.css";
 
 function BackToTop() {
-  function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
+  // function topFunction() {
+  //   document.body.scrollTop = 0; // For Safari
+  //   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  // }
   return (
     <Link to={"_navbar_"} smooth duration={1000}>
       <div
