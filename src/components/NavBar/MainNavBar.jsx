@@ -1,4 +1,3 @@
-import React from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 import HeroImage from "../../assets/image.jpg";
@@ -17,7 +16,7 @@ function MainNavBar({ setNav, nav }) {
         <img
           src={HeroImage}
           alt="Avatar"
-          className="navbar_avatar cursor-pointer"
+          className="navbar_avatar cursor-pointer object-top"
         />
         <h1
           className="text-5xl ml-2 cursor-pointer"

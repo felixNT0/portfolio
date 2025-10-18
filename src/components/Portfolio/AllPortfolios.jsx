@@ -144,7 +144,17 @@ function AllPortfolios() {
               </h2>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
                 {projects.map(
-                  ({ id, src, link, name, disc, appLink, company }) => (
+                  ({
+                    id,
+                    src,
+                    link,
+                    name,
+                    disc,
+                    appLink,
+                    company,
+                    className,
+                    webAppLink,
+                  }) => (
                     <div
                       key={id}
                       data-aos="zoom-in-down"
@@ -155,7 +165,7 @@ function AllPortfolios() {
                       <img
                         src={imageErrors[id] ? getFallbackImage(company) : src}
                         alt={name}
-                        className="w-full h-48 object-fit object-center duration-200 hover:scale-105"
+                        className={`w-full h-48 object-fit object-center duration-200 hover:scale-105 ${className}`}
                         onError={() => handleImageError(id)}
                       />
                       <div className="p-4">
@@ -166,18 +176,28 @@ function AllPortfolios() {
                           {disc}
                         </p>
                         <div className="flex flex-col space-y-2">
-                          <button
-                            className="w-full px-4 py-2 duration-200 hover:scale-105 rounded bg-[#fca61f] dark:bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer dark:text-white text-black font-medium hover:bg-[#f39c12] dark:hover:from-cyan-600 dark:hover:to-blue-600 transition-colors"
-                            onClick={() => window.open(link, "_blank")}
-                          >
-                            View Project
-                          </button>
+                          {link && (
+                            <button
+                              className="w-full px-4 py-2 duration-200 hover:scale-105 rounded bg-[#fca61f] dark:bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer dark:text-white text-black font-medium hover:bg-[#f39c12] dark:hover:from-cyan-600 dark:hover:to-blue-600 transition-colors"
+                              onClick={() => window.open(link, "_blank")}
+                            >
+                              View Project
+                            </button>
+                          )}
                           {appLink && (
                             <button
                               className="w-full px-4 py-2 duration-200 hover:scale-105 rounded bg-green-600 hover:bg-green-700 cursor-pointer text-white font-medium transition-colors"
                               onClick={() => window.open(appLink, "_blank")}
                             >
                               Download App
+                            </button>
+                          )}
+                          {webAppLink && (
+                            <button
+                              className="w-full px-4 py-2 duration-200 hover:scale-105 rounded bg-green-600 hover:bg-green-700 cursor-pointer text-white font-medium transition-colors"
+                              onClick={() => window.open(webAppLink, "_blank")}
+                            >
+                              Open Web App
                             </button>
                           )}
                         </div>

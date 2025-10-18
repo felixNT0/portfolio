@@ -40,15 +40,16 @@ function WelcomeModal({ isModalOpen }) {
             transition={{ ease: "easeInOut" }}
             className={`relative bg-white rounded-lg p-4 z-80 max-sm:p-1 max-sm:m-5 max-sm:py-0 md:m-4 `}
           >
-            <span
+            <button
               onClick={closeModal}
-              className="flex justify-end items-end cursor-pointer mr-[10px] mt-[-20px] text-[#000] text-[35px] hover:text-red-500"
+              aria-label="Close modal"
+              className="absolute top-2 right-2 w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 text-black hover:bg-red-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-red-400"
               title="Close Modal"
             >
               &times;
-            </span>
-            <div className="p-3 mt-[-20px]">
-              <h1 className="text-center text-[#fca61f] dark:text-[#4db5ff] text-3xl font-bold">
+            </button>
+            <div className="p-3 sm:mt-[-20px]">
+              <h1 className="text-center text-[#fca61f] dark:text-[#4db5ff] text-3xl max-sm:text-xl font-bold">
                 Welcome to my Portfolio
               </h1>
               <p className="text-center text-gray-700 dark:text-black text-1xl font-bold mt-3">

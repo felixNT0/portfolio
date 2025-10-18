@@ -27,19 +27,15 @@ function SendMailForm() {
     }
 
     try {
-      setIsSubmitting(true);
       setIsError(false);
       setStatusMessage("");
 
       const form = e.currentTarget;
       const formData = new FormData(form);
-
       const response = await fetch(form.action, {
         method: "POST",
         body: formData,
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       });
 
       if (response.ok) {
@@ -48,13 +44,16 @@ function SendMailForm() {
         setValues({ name: "", email: "", message: "" });
         form.reset();
       } else {
+        const errText = await response.text().catch(() => "");
         setIsError(true);
-        setStatusMessage("Something went wrong. Please try again later.");
+        setStatusMessage(
+          errText ? `Submission failed: ${errText}` : "Something went wrong. Please try again later."
+        );
       }
     } catch (error) {
       setIsError(true);
       setStatusMessage(
-        "Network error. Please check your connection and try again."
+        error && error.message ? `Request error: ${error.message}` : "Request error. Please check your connection and try again."
       );
     } finally {
       setIsSubmitting(false);
@@ -66,9 +65,13 @@ function SendMailForm() {
         onSubmit={handleSubmit}
         name="contact"
         method="POST"
-        action="https://getform.io/f/5d3543d6-d1df-4039-8d76-daef9bb0d17f"
+        action="https://formsubmit.co/tsowafelix0@gmail.com"
         className=" flex flex-col w-full md:w-1/2"
       >
+        <input type="hidden" name="_subject" value="New portfolio contact" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_replyto" value={values.email} />
         <input
           data-aos="zoom-in"
           data-aos-delay="30"

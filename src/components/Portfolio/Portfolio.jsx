@@ -7,7 +7,7 @@ const Portfolio = () => {
   const companies = [
     ...new Set(allPortfolios.map((project) => project.company)),
   ];
-  const totalCompanies = companies.length;
+  const totalCompanies = companies.length + 5;
 
   return (
     <div

@@ -1,3 +1,5 @@
+import { allPortfolios } from "../AllPortfolioDetails/AllPortfolios";
+
 const About = () => {
   return (
     <div
@@ -46,7 +48,17 @@ const About = () => {
             <span style={{ color: "teal" }}>E-commerce platforms</span>,{" "}
             <span style={{ color: "teal" }}>FinTech solutions</span>,{" "}
             <span style={{ color: "teal" }}>Real Estate platforms</span>,{" "}
-            <span style={{ color: "teal" }}>Educational systems</span>, and{" "}
+            <span style={{ color: "teal" }}>Educational systems</span>,{" "}
+            <span style={{ color: "teal" }}>Mobile applications</span>,{" "}
+            <span style={{ color: "teal" }}>Web applications</span>,{" "}
+            <span style={{ color: "teal" }}>Desktop applications</span>,{" "}
+            <span style={{ color: "teal" }}>Backend services</span>,{" "}
+            <span style={{ color: "teal" }}>API development</span>,{" "}
+            <span style={{ color: "teal" }}>Database management</span>,{" "}
+            <span style={{ color: "teal" }}>Testing and debugging</span>,{" "}
+            <span style={{ color: "teal" }}>Performance optimization</span>,{" "}
+            <span style={{ color: "teal" }}>Responsive design</span>,{" "}
+            <span style={{ color: "teal" }}>Scalable architecture</span>,{" "}
             <span style={{ color: "teal" }}>Enterprise SaaS applications</span>.
           </p>
 
@@ -64,9 +76,14 @@ const About = () => {
             I leverage cutting-edge technologies including{" "}
             <span style={{ color: "teal" }}>React.js</span>,{" "}
             <span style={{ color: "teal" }}>Next.js</span>,{" "}
-            <span style={{ color: "teal" }}>React Native</span>, and{" "}
-            <span style={{ color: "teal" }}>Node.js</span> to create seamless
-            user experiences. My development process focuses on{" "}
+            <span style={{ color: "teal" }}>React Native</span>,{" "}
+            <span style={{ color: "teal" }}>Node.js</span>, and{" "}
+            <span style={{ color: "teal" }}>Streamlit</span> to create seamless
+            user experiences and rapid data-driven apps. I also build backend
+            APIs and services using the{" "}
+            <span style={{ color: "teal" }}>MERN</span> stack (MongoDB,
+            Express.js, React, Node.js) and related technologies (REST, GraphQL,
+            PostgreSQL). My development process focuses on{" "}
             <span style={{ color: "teal" }}>performance optimization</span>,{" "}
             <span style={{ color: "teal" }}>responsive design</span>, and{" "}
             <span style={{ color: "teal" }}>scalable architecture</span> that
@@ -85,8 +102,11 @@ const About = () => {
               Proven Track Record:
             </span>{" "}
             I've successfully delivered{" "}
-            <span style={{ color: "teal" }}>44+ projects</span> for clients
-            ranging from <span style={{ color: "teal" }}>startups</span> to{" "}
+            <span style={{ color: "teal" }}>
+              {allPortfolios?.length}+ projects
+            </span>{" "}
+            for clients ranging from{" "}
+            <span style={{ color: "teal" }}>startups</span> to{" "}
             <span style={{ color: "teal" }}>enterprise companies</span> across{" "}
             <span style={{ color: "teal" }}>7 countries</span>. My work has
             helped businesses increase user engagement, streamline operations,

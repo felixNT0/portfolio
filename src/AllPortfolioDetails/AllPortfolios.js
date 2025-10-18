@@ -20,10 +20,13 @@ import risevest from "../assets/portfolio/risevest.png";
 import sugarcosmetic from "../assets/portfolio/sugarcosmetic.png";
 // New portfolio images
 import studio187 from "../assets/portfolio/187studio.png";
+import starnetacademy from "../assets/portfolio/academy.png";
 import ariesGlobal from "../assets/portfolio/ariesglobal.png";
 import billias from "../assets/portfolio/billias.png";
 import damacPromotion from "../assets/portfolio/damacpromotions.png";
+import danubeOffers from "../assets/portfolio/danube-offers.png";
 import danube from "../assets/portfolio/danube.png";
+import domainHunt from "../assets/portfolio/domainhunt.png";
 import dxbFinance from "../assets/portfolio/dxbfinance.png";
 import dxbStart from "../assets/portfolio/dxbstart.png";
 import ellington from "../assets/portfolio/ellington.png";
@@ -31,9 +34,18 @@ import emaar from "../assets/portfolio/emaar.png";
 import extensionAfrica from "../assets/portfolio/extensionafrica.png";
 import farmexAgent from "../assets/portfolio/farmexagent.png";
 import farmexVendor from "../assets/portfolio/farmexvendor.png";
+import liqfinity from "../assets/portfolio/liqfinity.png";
+import mbcLogix from "../assets/portfolio/mbclogix.png";
+import mixr from "../assets/portfolio/mixr.png";
 import newOfferDubai from "../assets/portfolio/newofferdubai.png";
+import reportage from "../assets/portfolio/reportage.png";
+import rezy from "../assets/portfolio/rezy.png";
 import schoolSql from "../assets/portfolio/schoolsql.png";
 import sobhaPromotion from "../assets/portfolio/sobhapromotion.png";
+import starnettechrise from "../assets/portfolio/starnettechrise.png";
+import telegrambot from "../assets/portfolio/telegrambot.png";
+import townhouse from "../assets/portfolio/townhouse.png";
+import whalevault from "../assets/portfolio/whalevault.png";
 
 export const allPortfolios = [
   // Webloom Projects (Bangalore, India)
@@ -103,7 +115,7 @@ export const allPortfolios = [
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+    src: domainHunt,
     link: "http://domain-hunt.vercel.app",
     name: "Domain Hunt",
     disc: "Domain discovery and management platform helping users find and secure the perfect domain names.",
@@ -119,7 +131,7 @@ export const allPortfolios = [
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+    src: danubeOffers,
     link: "http://danubeoffers.com/",
     name: "Danube Offers",
     disc: "Special offers and promotions platform for Danube Properties with exclusive deals and incentives.",
@@ -127,7 +139,7 @@ export const allPortfolios = [
   },
   {
     id: 12,
-    src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+    src: townhouse,
     link: "https://www.dubai-townhouse.com/",
     name: "Dubai Townhouse",
     disc: "Specialized platform for townhouse properties in Dubai with detailed listings and virtual tours.",
@@ -143,7 +155,7 @@ export const allPortfolios = [
   },
   {
     id: 14,
-    src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+    src: reportage,
     link: "https://www.reportagegroup.com/dubai-offer/",
     name: "Reportage Group",
     disc: "Real estate investment platform showcasing Reportage Group's Dubai property opportunities and market insights.",
@@ -151,7 +163,7 @@ export const allPortfolios = [
   },
   {
     id: 15,
-    src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+    src: rezy,
     link: "https://rezy.vercel.app/",
     name: "Rezy",
     disc: "Modern real estate platform built with Next.js and Vercel, offering seamless property search and discovery.",
@@ -170,7 +182,7 @@ export const allPortfolios = [
   {
     id: 17,
     src: farmexAgent,
-    link: "https://play.google.com/store/apps/details?id=com.afrifarmex.agent&hl=en&pli=1",
+    // link: "https://play.google.com/store/apps/details?id=com.afrifarmex.agent&hl=en&pli=1",
     appLink:
       "https://play.google.com/store/apps/details?id=com.afrifarmex.agent&hl=en&pli=1",
     name: "FarmEx Agent App",
@@ -180,7 +192,7 @@ export const allPortfolios = [
   {
     id: 18,
     src: farmexVendor,
-    link: "https://play.google.com/store/apps/details?id=com.farmex.vendor",
+    // link: "https://play.google.com/store/apps/details?id=com.farmex.vendor",
     appLink: "https://play.google.com/store/apps/details?id=com.farmex.vendor",
     name: "FarmEx Vendor App",
     disc: "Vendor management application for FarmEx platform enabling seamless vendor operations and supply chain management.",
@@ -190,7 +202,7 @@ export const allPortfolios = [
   // Starnet Tech Projects (Nigeria)
   {
     id: 19,
-    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+    src: starnetacademy,
     link: "https://starnetacademy.com/",
     name: "Starnet Academy",
     disc: "E-learning platform for Starnet Academy with responsive design, real-time data synchronization using React Query and Firestore.",
@@ -198,10 +210,37 @@ export const allPortfolios = [
   },
   {
     id: 20,
-    src: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
-    link: "#",
-    name: "Telegram Bot",
-    disc: "Custom Telegram bot with integrated admin dashboard for streamlined client engagement and communication management.",
+    src: telegrambot,
+    link: "https://t.me/whalesvaultbot",
+    name: "WhaleVault (Telegram Mini App)",
+    disc: "Telegram Mini App for WhaleVault providing on-chain utilities and user engagement directly inside Telegram.",
+    company: "Starnet Tech",
+    className: "object-contain",
+  },
+
+  // Additional Starnet Tech Projects
+  {
+    id: 45,
+    src: mbcLogix,
+    link: "https://www.mbclogix.com/",
+    name: "MBC Logistics",
+    disc: "Logistics and supply-chain platform website for MBC Logistics, showcasing services and contact channels.",
+    company: "Starnet Tech",
+  },
+  {
+    id: 46,
+    src: whalevault,
+    link: "https://whalevault.xyz/whitepaper",
+    name: "WhaleVault Web",
+    disc: "WhaleVault Web whitepaper outlining the platform vision, tokenomics, and roadmap.",
+    company: "Starnet Tech",
+  },
+  {
+    id: 47,
+    src: starnettechrise,
+    link: "https://www.starnettechrise.com/",
+    name: "Starnet Tech Rise",
+    disc: "Introducing TechRise 2.0 — a 6-week hackathon and 1-day summit designed for creators, innovators, and change makers defining the future of tech in Africa.",
     company: "Starnet Tech",
   },
 
@@ -310,7 +349,7 @@ export const allPortfolios = [
   },
   {
     id: 33,
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    src: mixr,
     link: "https://mixr360-software.vercel.app/",
     name: "Mixr360 Software",
     disc: "Software solutions platform offering innovative tools and applications for various business needs.",
@@ -318,8 +357,9 @@ export const allPortfolios = [
   },
   {
     id: 34,
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+    src: liqfinity,
     link: "https://liqfinity.kiloapps.com/",
+    webAppLink: "https://app.liqfinity.com",
     name: "Liqfinity",
     disc: "Liquidity management platform providing comprehensive solutions for financial institutions and investors.",
     company: "Contract",

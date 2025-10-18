@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 import HeroImage from "../../assets/image.jpg";
@@ -17,7 +18,7 @@ function OtherNavBar({ setNavBarState, navBarState }) {
         <img
           src={HeroImage}
           alt="Avatar"
-          className="navbar_avatar cursor-pointer"
+          className="navbar_avatar cursor-pointer object-top"
         />
 
         <h1
@@ -59,26 +60,45 @@ function OtherNavBar({ setNavBarState, navBarState }) {
         {navBarState ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
 
-      {navBarState && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen mt-20 bg-black z-10 text-gray-500 ">
-          {componentLinks.map(({ id, link }) => (
-            <li
-              onClick={() => changeActiveTab(link)}
-              key={id}
-              className="px-4 cursor-pointer capitalize py-6 text-4xl"
+      <AnimatePresence>
+        {navBarState && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40"
+          >
+            <div
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              onClick={() => setNavBarState(false)}
+            />
+            <motion.ul
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", stiffness: 260, damping: 25 }}
+              className="absolute top-0 right-0 h-full w-4/5 max-w-sm bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 shadow-2xl pt-24 pb-10 flex flex-col items-center gap-4"
             >
-              <Link
-                onClick={() => setNavBarState(!navBarState)}
-                to={link}
-                smooth
-                duration={500}
-              >
-                {link}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+              {componentLinks.map(({ id, link }) => (
+                <li
+                  onClick={() => changeActiveTab(link)}
+                  key={id}
+                  className="px-4 cursor-pointer capitalize py-4 text-2xl w-full text-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded"
+                >
+                  <Link
+                    onClick={() => setNavBarState(false)}
+                    to={link}
+                    smooth
+                    duration={500}
+                  >
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
