@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
-import HeroImage from "../../assets/image.jpg";
+import HeroImage from "../../assets/heroImage.png";
 import { useAppContext } from "../../contexts/useAppContext";
 import { componentLinks } from "../../routers/componentRoutes";
 

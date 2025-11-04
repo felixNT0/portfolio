@@ -1,6 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
 
 # Point search engines to your sitemap
-Sitemap: /sitemap.xml
+Sitemap: http://fkt-portfolio.vercel.app/sitemap.xml

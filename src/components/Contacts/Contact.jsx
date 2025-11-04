@@ -5,7 +5,7 @@ import SendMailForm from "./SendMailForm";
 
 const Contact = () => {
   return (
-    <div name="contact" className="contact w-full h-screen  p-4 text-white">
+    <div name="contact" className="contact w-full min-h-screen p-4 pb-24 text-white">
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
         <OtherContactDetails />
         <div className="flex flex-wrap items-center justify-center gap-5 my-4 text-black dark:text-white">
