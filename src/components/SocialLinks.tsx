@@ -4,13 +4,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import cover_letter from "../assets/cover_letter.pdf";
 import resumePdf from "../assets/resume.pdf";
-import { useAppContext } from "../contexts/useAppContext";
+// import { useAppContext } from "../contexts/useAppContext";
 import useSocialLinks from "../hooks/useSocialLinks";
 
 const SocialLinks = () => {
   const { allSocialLinks } = useSocialLinks();
 
-  const { showOtherSideBar } = useAppContext();
+  // const { showOtherSideBar } = useAppContext();
 
   const [toggleModal, setToggleModal] = useState(false);
   const [modalType, setModalType] = useState("");
