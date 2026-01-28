@@ -31,30 +31,39 @@ function SendMailForm() {
       setIsError(false);
       setStatusMessage("");
 
-      const form = e.currentTarget;
-      const formData = new FormData(form);
-      const response = await fetch(form.action, {
+      const response = await fetch("https://formsubmit.co/ajax/tsowafelix0@gmail.com", {
         method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          message: values.message,
+          _subject: "New portfolio contact",
+          _template: "table",
+          _captcha: "false",
+          _replyto: values.email
+        }),
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         setStatusMessage("Thanks! Your message has been sent successfully.");
         setIsError(false);
         setValues({ name: "", email: "", message: "" });
-        form.reset();
       } else {
-        const errText = await response.text().catch(() => "");
         setIsError(true);
         setStatusMessage(
-          errText ? `Submission failed: ${errText}` : "Something went wrong. Please try again later."
+          data.message || "Something went wrong. Please try again later."
         );
       }
     } catch (error: any) {
       setIsError(true);
       setStatusMessage(
-        error && error.message ? `Request error: ${error.message}` : "Request error. Please check your connection and try again."
+        "Request error. Please check your connection and try again."
       );
     } finally {
       setIsSubmitting(false);
@@ -65,9 +74,6 @@ function SendMailForm() {
     <div className="w-full max-w-2xl mx-auto">
       <form
         onSubmit={handleSubmit}
-        name="contact"
-        method="POST"
-        action="https://formsubmit.co/tsowafelix0@gmail.com"
         className="space-y-6"
       >
         <div className="flex items-center gap-4">
@@ -76,11 +82,6 @@ function SendMailForm() {
           </h3>
           <div className="h-px flex-1 bg-slate-100 dark:bg-white/5"></div>
         </div>
-
-        <input type="hidden" name="_subject" value="New portfolio contact" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_replyto" value={values.email} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
