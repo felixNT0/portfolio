@@ -34,6 +34,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") return;
+  if (!request.url.startsWith("http")) return;
 
   // HTML: network first (fresh content), fallback to cache
   if (request.headers.get("accept")?.includes("text/html")) {
