@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import ErrorBoundary from "./components/ErrorBoundary";
 import AppContextProvider from "./contexts/useAppContext";
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <ErrorBoundary>
     <AppContextProvider>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </AppContextProvider>
   </ErrorBoundary>
 );
