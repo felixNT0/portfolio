@@ -1,0 +1,96 @@
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+import resumePdf from "../assets/resume.pdf";
+// import { useAppContext } from "../contexts/useAppContext";
+import useSocialLinks from "../hooks/useSocialLinks";
+
+function BottomNavBar() {
+  const { allSocialLinks } = useSocialLinks();
+
+  // const { showOtherSideBar } = useAppContext();
+
+  const [toggleModal, setToggleModal] = useState(false);
+
+  const closeModal = () => {
+    setToggleModal(false);
+  };
+
+  const openModal = () => {
+    setToggleModal(true);
+  };
+  return (
+    <>
+      <motion.div
+        initial={{ y: 100, opacity: 0, x: "-50%" }}
+        animate={{ y: 0, opacity: 1, x: "-50%" }}
+        transition={{ duration: 0.5 }}
+        className=" bg-white/80 dark:bg-dark-bg/80 backdrop-blur-md rounded-xl py-2 px-3 left-1/2 sm:hidden bottom-[3%] fixed duration-300"
+      >
+        <ul className="flex flex-row gap-2">
+          {allSocialLinks.map(({ id, child, href, download }) => (
+            <li
+              key={id}
+              className={
+                "flex flex-row justify-between items-center icon_spacing w-[100%] duration-300 bg-gray-700 bg-black/30 backdrop-blur-sm side_bar_style"
+              }
+            >
+              {download ? (
+                <div
+                  className="flex justify-between items-center w-full text-white cursor-pointer"
+                  onClick={() => openModal()}
+                >
+                  {child}
+                </div>
+              ) : (
+                <a
+                  href={href}
+                  className="flex justify-between items-center w-full text-white"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {child}
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+      <div>
+        {toggleModal ? (
+          <div id="showConfimationModal" className="modal">
+            <div className="modal-content animate">
+              <span onClick={closeModal} className="close" title="Close Modal">
+                &times;
+              </span>
+              <div className="container ">
+                <h1 className="text-center text-amber-500 dark:text-cyan-500 text-3xl font-bold welcome_text">
+                  Did you want to Preview or Download the resume?
+                </h1>
+                <a
+                  href={resumePdf}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-md bg-amber-500 dark:bg-gradient-to-r from-primary-500 to-cyan-500 cursor-pointer"
+                >
+                  Preview
+                </a>
+                <a
+                  href={resumePdf}
+                  download
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-md bg-amber-500 dark:bg-gradient-to-r from-cyan-500 to-primary-500 cursor-pointer"
+                >
+                  Download
+                </a>
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </div>
+    </>
+  );
+}
+
+export default BottomNavBar;
