@@ -15,7 +15,6 @@ const Home = () => {
       <div className="absolute top-[20%] right-[-5%] w-72 h-72 bg-cyan-500/20 rounded-full blur-[100px] animate-pulse delay-1000"></div>
       <div className="absolute bottom-[-10%] left-[20%] w-80 h-80 bg-indigo-500/20 rounded-full blur-[100px] animate-pulse delay-700"></div>
 
-
       <div className="max-w-screen-lg mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center space-y-8">
           <motion.div
@@ -38,7 +37,10 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-base md:text-lg font-medium text-slate-600 dark:text-slate-400 tracking-wide"
             >
-              Hi, I'm <span className="text-slate-900 dark:text-white">Tsowa Kolo Felix</span>
+              Hi, I'm{" "}
+              <span className="text-slate-900 dark:text-white">
+                Tsowa Kolo Felix
+              </span>
             </motion.h2>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -54,16 +56,11 @@ const Home = () => {
             </motion.h1>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-2xl text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed"
-          >
-            A seasoned Frontend Engineer specialized in building exceptional digital
-            products, from high-performance Web Apps to cross-platform Mobile
-            solutions.
-          </motion.p>
+          <p className="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            A Frontend Engineer & Full-Stack Developer specialized in building
+            exceptional digital products, from high-performance Web Apps to
+            cross-platform Mobile solutions.
+          </p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -71,10 +68,10 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center gap-4 pt-4"
           >
-            <ScrollLink to="portfolio" smooth duration={500}>
+            <ScrollLink to="projects" smooth duration={500}>
               <button className="group relative px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-bold flex items-center justify-center gap-2 overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl shadow-slate-200 dark:shadow-none">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <span className="relative">View Portfolio</span>
+                <span className="relative">View Projects</span>
                 <MdOutlineKeyboardArrowRight
                   size={24}
                   className="relative group-hover:translate-x-1 transition-transform"

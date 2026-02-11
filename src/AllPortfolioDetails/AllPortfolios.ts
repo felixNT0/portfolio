@@ -31,9 +31,12 @@ import dxbFinance from "../assets/portfolio/dxbfinance.png";
 import dxbStart from "../assets/portfolio/dxbstart.png";
 import ellington from "../assets/portfolio/ellington.png";
 import emaar from "../assets/portfolio/emaar.png";
+import eriatswaSoko from "../assets/portfolio/eriatswa-soko.png";
 import extensionAfrica from "../assets/portfolio/extensionafrica.png";
 import farmexAgent from "../assets/portfolio/farmexagent.png";
 import farmexVendor from "../assets/portfolio/farmexvendor.png";
+import favour from "../assets/portfolio/favour.png";
+import fktECommerce from "../assets/portfolio/fkt-e-commerce.png";
 import liqfinity from "../assets/portfolio/liqfinity.png";
 import mbcLogix from "../assets/portfolio/mbclogix.png";
 import mfc from "../assets/portfolio/mfc.png";
@@ -46,6 +49,7 @@ import schoolSql from "../assets/portfolio/schoolsql.png";
 import sobhaPromotion from "../assets/portfolio/sobhapromotion.png";
 import starnettechrise from "../assets/portfolio/starnettechrise.png";
 import syncteams from "../assets/portfolio/syncteams.png";
+import teamAvailability from "../assets/portfolio/team-availablity.png";
 import telegrambot from "../assets/portfolio/telegrambot.png";
 import townhouse from "../assets/portfolio/townhouse.png";
 import whalevault from "../assets/portfolio/whalevault.png";
@@ -69,7 +73,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: dxbFinance,
     link: "https://www.dxbfi.com/",
     name: "DXB Finance",
-    disc: "Dubai's premier real estate investment platform, empowering investors with data-driven insights and comprehensive market analysis. Built with ReactJS, NextJS, and modern web technologies.",
+    disc: "Dubai's premier real estate investment platform. Empowers investors with data-driven insights and comprehensive market analysis for informed decision-making.",
     company: "Webloom",
   },
   {
@@ -77,7 +81,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: newOfferDubai,
     link: "https://www.newofferdubai.com/",
     name: "New Offer Dubai",
-    disc: "Real estate platform showcasing the latest property offers and deals in Dubai. Built with ReactJS and modern web technologies.",
+    disc: "A dynamic real estate platform showcasing the latest property offers and exclusive deals in Dubai. conecting buyers with prime opportunities.",
     company: "Webloom",
   },
   {
@@ -85,7 +89,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: ariesGlobal,
     link: "https://www.areisglobal.com/",
     name: "Areis Global",
-    disc: "Global real estate investment platform providing comprehensive property solutions and market insights.",
+    disc: "A global real estate investment platform providing comprehensive property solutions and strategic market insights for international investors.",
     company: "Webloom",
   },
   {
@@ -93,7 +97,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: dxbStart,
     link: "https://www.dxbstart.com/",
     name: "DXB Start",
-    disc: "Dubai startup ecosystem platform connecting entrepreneurs with resources and opportunities.",
+    disc: "An ecosystem platform for Dubai startups, connecting entrepreneurs with essential resources, mentorship, and investment opportunities.",
     company: "Webloom",
   },
   {
@@ -101,7 +105,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: studio187,
     link: "https://www.187.studio/",
     name: "187 Studio",
-    disc: "Elite engineering team building platform connecting startups with top-tier Bangalore talent at competitive costs.",
+    disc: "An elite engineering talent platform. Connects global startups with top-tier developers in Bangalore for high-quality, cost-effective product building.",
     company: "Webloom",
   },
   {
@@ -109,7 +113,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: sobhaPromotion,
     link: "https://www.sobhapromotions.com/",
     name: "Sobha Promotions",
-    disc: "Luxury real estate promotions and property showcase platform for premium developments.",
+    disc: "Exclusive promotional platform for Sobha Realty. Showcases luxury real estate developments and limited-time investment offers.",
     company: "Webloom",
   },
   {
@@ -117,7 +121,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: damacPromotion,
     link: "https://www.damacpromotions.com/",
     name: "Damac Promotions",
-    disc: "Real estate promotions platform showcasing Damac Properties' latest developments and offers.",
+    disc: "Digital showcase for Damac Properties, highlighting premium developments and latest real estate offers to prospective buyers.",
     company: "Webloom",
   },
   {
@@ -125,7 +129,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: danube,
     link: "https://danubeproperties.com/",
     name: "Danube Properties",
-    disc: "Comprehensive real estate platform for Danube Properties with project showcases and investment tools.",
+    disc: "A comprehensive real estate portal for Danube Properties. Features detailed project showcases, virtual tours, and investment tools.",
     company: "Webloom",
   },
   {
@@ -133,7 +137,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: domainHunt,
     link: "http://domain-hunt.vercel.app",
     name: "Domain Hunt",
-    disc: "Domain discovery and management platform helping users find and secure the perfect domain names.",
+    disc: "A streamlined domain discovery tool helping users search, analyze, and secure the perfect domain names for their brands.",
     company: "Webloom",
   },
   {
@@ -141,7 +145,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: emaar,
     link: "https://www.emaar.com/",
     name: "Emaar Properties",
-    disc: "Premium real estate platform showcasing Emaar's luxury properties and developments across Dubai.",
+    disc: "The digital face of Emaar Properties, showcasing their portfolio of iconic luxury developments and lifestyle communities across Dubai.",
     company: "Webloom",
   },
   {
@@ -149,7 +153,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: danubeOffers,
     link: "http://danubeoffers.com/",
     name: "Danube Offers",
-    disc: "Special offers and promotions platform for Danube Properties with exclusive deals and incentives.",
+    disc: "Dedicated platform for Danube Properties' special offers. aggregating exclusive deals and incentives for real estate investors.",
     company: "Webloom",
   },
   {
@@ -157,7 +161,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: townhouse,
     link: "https://www.dubai-townhouse.com/",
     name: "Dubai Townhouse",
-    disc: "Specialized platform for townhouse properties in Dubai with detailed listings and virtual tours.",
+    disc: "Niche real estate platform specializing in townhouse properties in Dubai. Provides detailed listings and community insights.",
     company: "Webloom",
   },
   {
@@ -165,7 +169,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: ellington,
     link: "https://ellingtonproperties.ae/en/property-for-sale/the-hillgate-dubai-silicon-oasis",
     name: "Ellington Properties",
-    disc: "Luxury property showcase for Ellington's premium developments including The Hillgate in Dubai Silicon Oasis.",
+    disc: "Luxury property showcase for Ellington's design-led developments. highlights premium living spaces like The Hillgate in Dubai Silicon Oasis.",
     company: "Webloom",
   },
   {
@@ -173,7 +177,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: reportage,
     link: "https://www.reportagegroup.com/dubai-offer/",
     name: "Reportage Group",
-    disc: "Real estate investment platform showcasing Reportage Group's Dubai property opportunities and market insights.",
+    disc: "Investment portal for Reportage Group. Displays current property opportunities and market data for potential investors.",
     company: "Webloom",
   },
   {
@@ -181,7 +185,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: rezy,
     link: "https://rezy.vercel.app/",
     name: "Rezy",
-    disc: "Modern real estate platform built with Next.js and Vercel, offering seamless property search and discovery.",
+    disc: "A modern, high-performance real estate discovery platform built with Next.js. Offers a seamless property search experience.",
     company: "Webloom",
   },
 
@@ -191,7 +195,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: extensionAfrica,
     link: "http://extensionafrica.com/",
     name: "Extension Africa",
-    disc: "Platform creating reliable channels to connect rural farmers to Global Supply Chains with comprehensive agricultural solutions.",
+    disc: "An agricultural technology platform connecting rural farmers to global supply chains. Provides comprehensive solutions to improve farm productivity and market access.",
     company: "Extension Africa",
   },
   {
@@ -201,7 +205,7 @@ export const allPortfolios: PortfolioItem[] = [
     appLink:
       "https://play.google.com/store/apps/details?id=com.afrifarmex.agent&hl=en&pli=1",
     name: "FarmEx Agent App",
-    disc: "Mobile application for FarmEx agents to manage farmer connections and supply chain operations. Built with React Native CLI and Firestore.",
+    disc: "Mobile tool for FarmEx agents to manage farmer relationships and supply chain logistics. Built with React Native for offline-first capability.",
     company: "Extension Africa",
   },
   {
@@ -210,8 +214,18 @@ export const allPortfolios: PortfolioItem[] = [
     // link: "https://play.google.com/store/apps/details?id=com.farmex.vendor",
     appLink: "https://play.google.com/store/apps/details?id=com.farmex.vendor",
     name: "FarmEx Vendor App",
-    disc: "Vendor management application for FarmEx platform enabling seamless vendor operations and supply chain management.",
+    disc: "Vendor-facing application for the FarmEx ecosystem. Facilitates seamless order management and supply chain coordination.",
     company: "Extension Africa",
+  },
+
+  // SyncTeams Projects
+  {
+    id: 52,
+    src: syncteams,
+    link: "https://www.syncteams.studio/",
+    name: "SyncTeams",
+    disc: "A no-code platform for assembling and deploying AI agent teams. Streamlines the transition from concept to production, eliminating DevOps overhead and boilerplate code for efficient AI scaling.",
+    company: "SyncTeams",
   },
 
   // Starnet Tech Projects (Nigeria)
@@ -220,7 +234,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: regis,
     link: "https://www.regisglobal.agency",
     name: "Regis",
-    disc: "Regis Hospitality supplies trained service staff, professional training, and operational system design in Abuja, Lagos, and nationwide. Book expert solutions today.",
+    disc: "Premier hospitality solutions provider. Offers professional staff training, operational system design, and service staff supply across Nigeria.",
     company: "Starnet Tech",
   },
   {
@@ -228,7 +242,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: mfc,
     link: "https://real-estate-taupe-one-69.vercel.app/",
     name: "MFC",
-    disc: "MFC is a real estate platform for buying and selling properties in Nigeria.",
+    disc: "Real estate marketplace facilitating the buying and selling of properties in Nigeria. Streamlines the property transaction process.",
     company: "Starnet Tech",
   },
   {
@@ -236,7 +250,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: starnetacademy,
     link: "https://starnetacademy.com/",
     name: "Starnet Academy",
-    disc: "E-learning platform for Starnet Academy with responsive design, real-time data synchronization using React Query and Firestore.",
+    disc: "Interactive e-learning platform. Features responsive design and real-time data synchronization to deliver a seamless educational experience.",
     company: "Starnet Tech",
   },
   {
@@ -244,7 +258,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: telegrambot,
     link: "https://t.me/whalesvaultbot",
     name: "WhaleVault (Telegram Mini App)",
-    disc: "Telegram Mini App for WhaleVault providing on-chain utilities and user engagement directly inside Telegram.",
+    disc: "Telegram Mini App bringing blockchain utilities to chat. enhancing user engagement with on-chain features directly within Telegram.",
     company: "Starnet Tech",
     className: "object-contain",
   },
@@ -255,7 +269,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: mbcLogix,
     link: "https://www.mbclogix.com/",
     name: "MBC Logistics",
-    disc: "Logistics and supply-chain platform website for MBC Logistics, showcasing services and contact channels.",
+    disc: "Corporate website for MBC Logistics. Showcases supply chain services and provides clear communication channels for clients.",
     company: "Starnet Tech",
   },
   {
@@ -263,7 +277,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: whalevault,
     link: "https://whalevault.xyz/whitepaper",
     name: "WhaleVault Web",
-    disc: "WhaleVault Web whitepaper outlining the platform vision, tokenomics, and roadmap.",
+    disc: "Official whitepaper website for WhaleVault. details the platform's vision, tokenomics, and development roadmap.",
     company: "Starnet Tech",
   },
   {
@@ -271,7 +285,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: starnettechrise,
     link: "https://www.starnettechrise.com/",
     name: "Starnet Tech Rise",
-    disc: "Introducing TechRise 2.0 — a 6-week hackathon and 1-day summit designed for creators, innovators, and change makers defining the future of tech in Africa.",
+    disc: "Event platform for TechRise 2.0. A major hackathon and summit for African innovators defining the future of technology.",
     company: "Starnet Tech",
   },
 
@@ -281,7 +295,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: paperdaz,
     link: "https://paperdaz.com/",
     name: "Paperdaz",
-    disc: "Digital form management platform eliminating paper forms for offices of all sizes. Built with ReactJS, Vite, and NextJS.",
+    disc: "Eco-friendly digital transformation platform. Replacing paper forms with digital solutions for efficient, paperless office management.",
     company: "Paperdaz",
   },
   {
@@ -289,7 +303,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: Junologix,
     link: "https://junologix-test.vercel.app/",
     name: "Junologix",
-    disc: "Tax professional platform providing latest technology solutions to save time and money. Built with ReactJS and modern web technologies.",
+    disc: "Platform for tax professionals. leverages modern technology to provide time-saving costs and efficient tax solutions.",
     company: "Paperdaz",
   },
   {
@@ -297,7 +311,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: paperdazLink,
     link: "https://paperlink.app/",
     name: "Paperlink",
-    disc: "Digital form completion platform providing PaperdazLink anytime, anywhere for clients to complete forms efficiently.",
+    disc: "Companion service to Paperdaz. Enables clients to complete and submit digital forms securely from anywhere, at any time.",
     company: "Paperdaz",
   },
 
@@ -307,7 +321,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: schoolSql,
     link: "https://schoolsql.com/school",
     name: "School SQL",
-    disc: "Educational management system with comprehensive school administration tools and student data management.",
+    disc: "Comprehensive educational management system. Integration school administration, student data, and academic records into one platform.",
     company: "STL",
   },
   {
@@ -315,7 +329,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: AutozardWebsite,
     link: "https://autozard.com/",
     name: "Autozard Website",
-    disc: "Comprehensive website describing everything about Autozard with modern design and responsive interface.",
+    disc: "Brand website for Autozard. promoting their AI-powered tools and services with a modern, responsive user interface.",
     company: "STL",
   },
   {
@@ -323,7 +337,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: Autozard,
     link: "https://app.autozard.com/",
     name: "Autozard Web App",
-    disc: "AI-powered application platform providing clients easy access to artificial intelligence tools and applications.",
+    disc: "AI services platform. provides clients with easy access to a suite of artificial intelligence tools and applications.",
     company: "STL",
   },
   {
@@ -331,7 +345,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: politicthread,
     link: "https://politicsthread.com/",
     name: "Politics Thread",
-    disc: "Social platform allowing users to express their political views and engage in political discussions.",
+    disc: "Political discourse platform. enables users to express views and engage in meaningful political discussions.",
     company: "STL",
   },
   {
@@ -339,7 +353,7 @@ export const allPortfolios: PortfolioItem[] = [
     src: houseacq,
     link: "https://houseacq.com/",
     name: "House Acq",
-    disc: "Property rental platform where users can sign up, post house vacancies, and book available properties.",
+    disc: "Property rental marketplace. connects landlords with tenants, allowing for listing vacancies and booking properties.",
     company: "STL",
   },
   {
@@ -347,26 +361,18 @@ export const allPortfolios: PortfolioItem[] = [
     src: politicsthreadadmin,
     link: "https://rpt.politicsthread.com/",
     name: "Politics Thread Admin Dashboard",
-    disc: "Administrative dashboard for content moderation and post approval before publication on the main platform.",
+    disc: "Content moderation dashboard. empowers admins to review, approve, and manage user-generated content for Politics Thread.",
     company: "STL",
   },
 
   // Contract Projects
-  {
-    id:52,
-    src: syncteams,
-    link: "https://www.syncteams.studio/",
-    name: "SyncTeams",
-    disc: "Assemble, deploy, and scale collaborative AI agent teams on a no-code canvas. Go from concept to production in minutes. No DevOps, no boilerplate code.",
-    company: "Contract",
-  },
   {
     id: 30,
     src: risevest,
     link: "https://risevest.com/",
     appLink: "https://play.google.com/store/apps/details?id=com.rise.mobile",
     name: "Risevest",
-    disc: "Investment platform connecting users to dollar-denominated investments in developed markets with smart algorithms and financial literacy tools.",
+    disc: "A secure investment platform providing access to dollar-denominated assets in developed markets. Features intelligent algorithms and financial literacy tools to help users build wealth globally.",
     company: "Contract",
   },
   {
@@ -375,7 +381,23 @@ export const allPortfolios: PortfolioItem[] = [
     link: "https://www.investyield.ng/",
     appLink: "https://play.google.com/store/apps/details?id=com.investyield",
     name: "Invest Yield",
-    disc: "Multi-currency investment platform supporting transactions in dollars, naira, and other currencies with both web and mobile applications.",
+    disc: "A multi-currency investment application facilitating seamless transactions in Dollars, Naira, and other currencies. Available on both web and mobile platforms for diverse investor needs.",
+    company: "Contract",
+  },
+  {
+    id: 54,
+    src: eriatswaSoko,
+    link: "https://eriatswa-soko-global.vercel.app/",
+    name: "Eriatswa Soko Global",
+    disc: "A comprehensive inventory and sales management web application. empowers users to track stock levels, manage sales, and monitor team availability in real-time.",
+    company: "Contract",
+  },
+  {
+    id: 56,
+    src: fktECommerce,
+    link: "https://fkt-e-commerce.vercel.app/",
+    name: "Fkt E-Commerce",
+    disc: "An e-commerce platform designed for efficient inventory and sales management. Features tools for stock tracking and team collaboration to optimize retail operations.",
     company: "Contract",
   },
   {
@@ -383,36 +405,52 @@ export const allPortfolios: PortfolioItem[] = [
     src: billias,
     link: "https://billia.vercel.app/",
     name: "Billia",
-    disc: "Modern billing and invoicing platform built with React and Next.js for efficient business financial management.",
-    company: "Contract",
-  },
-  {
-    id: 33,
-    src: mixr,
-    link: "https://mixr360-software.vercel.app/",
-    name: "Mixr360 Software",
-    disc: "Software solutions platform offering innovative tools and applications for various business needs.",
+    disc: "A modern billing and invoicing solution built with React and Next.js. Streamlines financial management for businesses with an intuitive and efficient interface.",
     company: "Contract",
   },
   {
     id: 34,
-    src: liqfinity,
-    link: "https://liqfinity.kiloapps.com/",
-    webAppLink: "https://app.liqfinity.com",
-    name: "Liqfinity",
-    disc: "Liquidity management platform providing comprehensive solutions for financial institutions and investors.",
+    src: mixr,
+    link: "https://mixr360-software.vercel.app/",
+    name: "Mixr360 Software",
+    disc: "A suite of innovative software solutions tailored for diverse business requirements. Provides robust tools to enhance operational efficiency and productivity.",
     company: "Contract",
   },
   {
     id: 35,
+    src: liqfinity,
+    link: "https://liqfinity.kiloapps.com/",
+    webAppLink: "https://app.liqfinity.com",
+    name: "Liqfinity",
+    disc: "A focused liquidity management platform for financial institutions and investors. Offers comprehensive solutions to optimize liquidity and financial performance.",
+    company: "Contract",
+  },
+  {
+    id: 33,
     src: InvoiceHub,
     link: "https://invoicehub.vercel.app/",
     name: "InvoiceHub",
-    disc: "Payment solution platform empowering business owners to create client profiles, track transactions, and receive real-time alerts for unpaid invoices.",
+    disc: "A payment and invoicing platform for business owners. Enables client profile management, transaction tracking, and real-time alerts for seamless financial control.",
+    company: "Contract",
+  },
+  {
+    id: 87,
+    src: favour,
+    link: "https://favour.vercel.app/",
+    name: "Favour VA Portfolio",
+    disc: "A professional portfolio for a Virtual Assistant. Highlights expertise in executive support, administrative management, and business operations to attract potential clients.",
     company: "Contract",
   },
 
   // Legacy Projects
+  {
+    id: 53,
+    src: teamAvailability,
+    link: "https://team-availability-dashboard.vercel.app/",
+    name: "Team Availability",
+    disc: "Team Availability is a web application that helps teams manage their availability and schedule meetings. It allows users to create and manage their availability, and view the availability of other team members.",
+    company: "Legacy",
+  },
   {
     id: 36,
     src: callingApp,
@@ -421,6 +459,7 @@ export const allPortfolios: PortfolioItem[] = [
     disc: "Remote video meeting platform enabling global communication and collaboration through high-quality video calls.",
     company: "Legacy",
   },
+
   {
     id: 37,
     src: contactlist,

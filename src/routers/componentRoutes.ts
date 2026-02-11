@@ -14,16 +14,16 @@ export const componentLinks: ComponentLink[] = [
     link: "about",
   },
   {
+    id: 5,
+    link: "experience",
+  },
+  {
     id: 3,
-    link: "portfolio",
+    link: "projects",
   },
   {
     id: 4,
     link: "skills",
-  },
-  {
-    id: 5,
-    link: "experience",
   },
   {
     id: 6,

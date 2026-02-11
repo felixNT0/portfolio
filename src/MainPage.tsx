@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import About from "./components/About";
 import BackToTop from "./components/BackToTop";
@@ -27,7 +26,8 @@ function MainPage() {
     console.log("MainPage mounted - v7 (AOS removed)");
 
     const scrollFunction = () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
 
       if (winScroll > 100) {
         setShowNavbar(true);
@@ -39,7 +39,7 @@ function MainPage() {
     };
 
     window.addEventListener("scroll", scrollFunction);
-    
+
     return () => {
       window.removeEventListener("scroll", scrollFunction);
     };
@@ -47,31 +47,35 @@ function MainPage() {
 
   return (
     <LoaderWrapper>
-      <div id="top-anchor" className="dark:bg-dark-bg w-full bg-white overflow-hidden">
+      <div
+        id="top-anchor"
+        className="dark:bg-dark-bg w-full bg-white overflow-hidden"
+      >
         <ScrollIndicator />
         <NavBar isVisible={showNavbar} />
-        
+
         {/* Home usually has its own hero animation, but we can wrap it or leave it. 
             User asked for transitions FROM one to other, so wrapping all provides consistency. 
             However, Home is top of page. Let's wrap others. */}
         <Home />
-        
+
         <SectionWrapper>
           <About />
         </SectionWrapper>
-        
-        {/* <SectionWrapper> */}
-          <Portfolio />
-        {/* </SectionWrapper> */}
-        
-        {/* <SectionWrapper> */}
-          <Skills />
-        {/* </SectionWrapper> */}
-        
+
         <SectionWrapper>
           <Experience />
         </SectionWrapper>
-        
+
+        {/* Projects Section */}
+        {/* <SectionWrapper> */}
+        <Portfolio />
+        {/* </SectionWrapper> */}
+
+        {/* <SectionWrapper> */}
+        <Skills />
+        {/* </SectionWrapper> */}
+
         <SectionWrapper>
           <Contact />
         </SectionWrapper>

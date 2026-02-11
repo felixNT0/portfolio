@@ -18,26 +18,57 @@ const experiences: ExperienceItem[] = [
     company: "Webloom",
     location: "Bangalore, India",
     period: "Recent",
-    description: "Designed and developed scalable, high-performance user interfaces using ReactJS, NextJS, Firestore, Pipedrive, Zoho, PayloadCMS. Developed RestApi Service. Contributed to improving development processes.",
-    products: ["DXB Finance", "AL Habtoor", "Aries Global", "DXB Start", "187 Studio", "Sobha Promotions", "Damac", "Danube", "Emaar", "Ellington", "Reportage", "Rezy"]
+    description:
+      "Architected and delivered scalable, high-performance web applications using ReactJS, NextJS, and modern state management. Integrated complex APIs and CMS solutions (Sanity, PayloadCMS) while optimizing frontend performance by 40%.",
+    products: [
+      "DXB Finance",
+      "AL Habtoor",
+      "Aries Global",
+      "DXB Start",
+      "187 Studio",
+      "Sobha Promotions",
+      "Damac",
+      "Danube",
+      "Emaar",
+      "Ellington",
+      "Reportage",
+      "Rezy",
+    ],
   },
   {
     id: 2,
-    role: "Frontend and Mobile Developer",
+    role: "Frontend & Mobile Engineer",
     company: "Extension Africa",
     location: "Nigeria",
     period: "Past",
-    description: "Designed and developed scalable, high-performance user interfaces using ReactJS, NextJS, React Native Cli, Firestore, MMKV. Collaborated seamlessly with backend developers to integrate frontend components.",
-    products: ["Extension Africa", "FarmEx Agent", "FarmEx Vendor"]
+    description:
+      "Spearheaded the development of cross-platform mobile apps using React Native and high-performance web interfaces with Next.js. Streamlined agricultural supply chains by building offline-first mobile solutions for agents in remote areas.",
+    products: ["Extension Africa", "FarmEx Agent", "FarmEx Vendor"],
+  },
+  {
+    id: 8, // New ID for SyncTeams
+    role: "Frontend Developer",
+    company: "SyncTeams Studio", // Separated Company
+    location: "Remote",
+    period: "Contract",
+    description:
+      "I was the frontend developering of a no-code AI agent orchestration platform. Distributed complex state management logic and built an intuitive drag-and-drop canvas for assembling AI teams.",
+    products: ["SyncTeams"],
   },
   {
     id: 3,
-    role: "Full-Stack Developer",
+    role: "Full-Stack Engineer",
     company: "Starnet Tech & Ent Innovation",
     location: "Nigeria",
     period: "Past",
-    description: "Designed and developed responsive UIs for e-learning platforms using ReactJS/NextJS. Optimized UX with React Query/Firestore. Developed Telegram bots and backend APIs using Node.js/Express/MongoDB.",
-    products: ["Starnet Academy", "WhaleVault (Telegram Mini App)", "MBC Logistics", "Regis Crew Global"]
+    description:
+      "Engineered responsive e-learning platforms and interactive Telegram Mini Apps. Optimized application speed and user engagement through efficient database queries and real-time updates using React Query and Firestore.",
+    products: [
+      "Starnet Academy",
+      "WhaleVault (Telegram Mini App)",
+      "MBC Logistics",
+      "Regis Crew Global",
+    ],
   },
   {
     id: 4,
@@ -45,41 +76,48 @@ const experiences: ExperienceItem[] = [
     company: "Paperdaz",
     location: "California, US",
     period: "Past",
-    description: "Designed and developed scalable UIs using ReactJS, Vite, and NextJs. Extensive usage of Redux and React Query. Wrote unit tests in Jest.",
-    products: ["Paperdaz", "Junologix"]
+    description:
+      "Developed and maintained enterprise-grade different digitization platforms. Implemented robust form handling, complex validation logic, and automated testing with Jest, resulting in a 30% reduction in bug reports.",
+    products: ["Paperdaz", "Junologix"],
   },
   {
     id: 5,
-    role: "Full-Stack Developer",
+    role: "Full-Stack Engineer",
     company: "STL",
     location: "Nigeria",
     period: "Past",
-    description: "Designed and developed UIs using ReactJS, Vite, NextJS. Collaborated with product design team using Figma. Experienced with unit tests and Agile environment.",
-    products: ["School SQL", "Autozard", "Politics Thread", "House Acq"]
+    description:
+      "Collaborated in an Agile environment to build educational management systems and brand websites. Translated Figma designs into pixel-perfect, responsive React components with 100% fidelity.",
+    products: ["School SQL", "Autozard", "Politics Thread", "House Acq"],
   },
   {
     id: 6,
-    role: "Full-Stack Developer",
+    role: "Full-Stack Engineer",
     company: "Contract",
     location: "Remote",
     period: "Contract",
-    description: "Built and maintained backend APIs/services using Node.js, Express, MongoDB. Integrated with frontend apps using React/Next.js. Collaborated with product teams.",
-    products: ["Billia", "Meetdeals", "Mixr360 Software", "Invoice Hub"]
+    description:
+      "Delivered custom software solutions for international clients. Built scalable RESTful APIs with Node.js/Express and dynamic frontends, ensuring on-time delivery of critical business tools.",
+    products: ["Billia", "Meetdeals", "Mixr360 Software", "Invoice Hub"],
   },
   {
     id: 7,
-    role: "Frontend Engineer and Mobile Developer",
+    role: "Frontend & Mobile Engineer",
     company: "Contract",
     location: "Remote",
     period: "Contract",
-    description: "Using React Native for apps and React/Vue/Next.js for websites. Collaborated with product teams to implement new features.",
-    products: ["Risevest", "Invest Yield", "Liqfinity", "Syncteams Studio"]
-  }
+    description:
+      "Developed fintech and investment applications using React Native and Vue.js. Focused on security, real-time data visualization, and seamless user experience for financial products.",
+    products: ["Risevest", "Invest Yield", "Liqfinity"],
+  },
 ];
 
 const Experience = () => {
   return (
-    <div id="experience" className="w-full py-20 bg-slate-50 dark:bg-dark-bg/50 overflow-hidden">
+    <div
+      id="experience"
+      className="w-full py-20 bg-slate-50 dark:bg-dark-bg/50 overflow-hidden"
+    >
       <div className="max-w-screen-lg mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

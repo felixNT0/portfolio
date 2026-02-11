@@ -1,6 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { allPortfolios, PortfolioItem } from "../../AllPortfolioDetails/AllPortfolios";
+import {
+  allPortfolios,
+  PortfolioItem,
+} from "../../AllPortfolioDetails/AllPortfolios";
 
 function AllPortfolios() {
   const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
@@ -8,39 +11,41 @@ function AllPortfolios() {
   const [searchTerm, setSearchTerm] = useState("");
 
   // Group projects by company
-  const groupedProjects = allPortfolios.reduce<Record<string, PortfolioItem[]>>((acc, project) => {
-    if (!acc[project.company]) {
-      acc[project.company] = [];
-    }
-    acc[project.company]!.push(project);
-    return acc;
-  }, {});
+  const groupedProjects = allPortfolios.reduce<Record<string, PortfolioItem[]>>(
+    (acc, project) => {
+      if (!acc[project.company]) {
+        acc[project.company] = [];
+      }
+      acc[project.company]!.push(project);
+      return acc;
+    },
+    {},
+  );
 
   // Get all unique companies
   const companies = ["All", ...Object.keys(groupedProjects)];
 
   // Filter projects based on selection and search
-  const filteredProjects = (Object.entries(groupedProjects) as [string, PortfolioItem[]][]).reduce<Record<string, PortfolioItem[]>>(
-    (acc, [company, projects]) => {
-      if (selectedCompany !== "All" && selectedCompany !== company) {
-        return acc;
-      }
-
-      const filteredCompanyProjects = projects.filter(
-        (project: PortfolioItem) =>
-          project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          project.disc.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          project.company.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-
-      if (filteredCompanyProjects.length > 0) {
-        acc[company] = filteredCompanyProjects;
-      }
-
+  const filteredProjects = (
+    Object.entries(groupedProjects) as [string, PortfolioItem[]][]
+  ).reduce<Record<string, PortfolioItem[]>>((acc, [company, projects]) => {
+    if (selectedCompany !== "All" && selectedCompany !== company) {
       return acc;
-    },
-    {}
-  );
+    }
+
+    const filteredCompanyProjects = projects.filter(
+      (project: PortfolioItem) =>
+        project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.disc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.company.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
+
+    if (filteredCompanyProjects.length > 0) {
+      acc[company] = filteredCompanyProjects;
+    }
+
+    return acc;
+  }, {});
 
   const handleImageError = (projectId: number) => {
     setImageErrors((prev) => ({ ...prev, [projectId]: true }));
@@ -57,6 +62,8 @@ function AllPortfolios() {
       Paperdaz:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
       STL: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+      SyncTeams:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
       Contract:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
       Legacy:
@@ -139,7 +146,9 @@ function AllPortfolios() {
       {Object.keys(filteredProjects).length > 0 ? (
         <motion.div layout className="space-y-20">
           <AnimatePresence>
-            {(Object.entries(filteredProjects) as [string, PortfolioItem[]][]).map(([company, projects]) => (
+            {(
+              Object.entries(filteredProjects) as [string, PortfolioItem[]][]
+            ).map(([company, projects]) => (
               <motion.div
                 key={company}
                 layout
@@ -154,7 +163,10 @@ function AllPortfolios() {
                   </h2>
                   <div className="h-px flex-1 bg-gradient-to-r from-slate-200 dark:from-white/10 to-transparent"></div>
                 </div>
-                <motion.div layout className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <motion.div
+                  layout
+                  className="grid sm:grid-cols-2 md:grid-cols-3 gap-8"
+                >
                   {projects.map(
                     ({
                       id,
@@ -178,7 +190,9 @@ function AllPortfolios() {
                       >
                         <div className="relative h-40 overflow-hidden">
                           <img
-                            src={imageErrors[id] ? getFallbackImage(company) : src}
+                            src={
+                              imageErrors[id] ? getFallbackImage(company) : src
+                            }
                             alt={name}
                             loading="lazy"
                             decoding="async"
@@ -208,7 +222,9 @@ function AllPortfolios() {
                             {(appLink || webAppLink) && (
                               <button
                                 className="w-full px-5 py-3 rounded-lg border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold text-sm hover:bg-slate-50 dark:hover:bg-white/5 transition-all"
-                                onClick={() => window.open(appLink || webAppLink, "_blank")}
+                                onClick={() =>
+                                  window.open(appLink || webAppLink, "_blank")
+                                }
                               >
                                 {appLink ? "Download App" : "Open Web App"}
                               </button>
@@ -216,7 +232,7 @@ function AllPortfolios() {
                           </div>
                         </div>
                       </motion.div>
-                    )
+                    ),
                   )}
                 </motion.div>
               </motion.div>
