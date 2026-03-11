@@ -9,6 +9,7 @@ import { useAppContext } from "../contexts/useAppContext";
 interface SocialLink {
   id: number;
   child: ReactNode;
+  label: string;
   href: string;
   style?: string;
   type?: string;
@@ -28,6 +29,7 @@ function useSocialLinks() {
         </>
       ),
       href: "https://www.linkedin.com/in/felixnt0/",
+      label: "LinkedIn",
       style: "rounded-tr-md",
     },
     {
@@ -39,6 +41,7 @@ function useSocialLinks() {
         </>
       ),
       href: "https://github.com/felixnt0",
+      label: "GitHub",
     },
     {
       id: 3,
@@ -49,6 +52,7 @@ function useSocialLinks() {
         </>
       ),
       href: "mailto:tsowafelix0@gmail.com",
+      label: "Email",
     },
     {
       id: 4,
@@ -59,6 +63,7 @@ function useSocialLinks() {
         </>
       ),
       href: resume,
+      label: "Resume",
       type: "resume",
       download: true,
     },
@@ -73,6 +78,7 @@ function useSocialLinks() {
         </>
       ),
       href: "https://www.linkedin.com/in/felixnt0/",
+      label: "LinkedIn",
       style: "rounded-tr-md",
     },
     {
@@ -83,6 +89,7 @@ function useSocialLinks() {
         </>
       ),
       href: "https://github.com/felixnt0",
+      label: "GitHub",
     },
     {
       id: 3,
@@ -92,6 +99,7 @@ function useSocialLinks() {
         </>
       ),
       href: "mailto:tsowafelix0@gmail.com",
+      label: "Email",
     },
     {
       id: 4,
@@ -101,6 +109,7 @@ function useSocialLinks() {
         </>
       ),
       href: resume,
+      label: "Resume",
       download: true,
     },
     //       />

@@ -12,25 +12,47 @@
   }
 }
 
+:root {
+  --primary: 99, 102, 241; /* Indigo 500 */
+  --accent: 20, 184, 166; /* Teal 500 */
+  --bg-light: 255, 255, 255;
+  --bg-dark: 11, 17, 33;
+}
+
 body {
-  @apply bg-white dark:bg-dark-bg text-slate-900 dark:text-slate-100;
+  @apply bg-slate-50 dark:bg-dark-bg text-slate-900 dark:text-slate-100;
   overflow-x: hidden !important;
   margin: 0 !important;
   padding: 0 !important;
+  min-height: 100vh;
+}
+
+/* Premium Light Mode Background */
+body {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(var(--primary), 0.05), transparent 50%),
+    radial-gradient(circle at 100% 0%, rgba(var(--accent), 0.05), transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(var(--primary), 0.03), transparent 40%);
+  background-attachment: fixed;
 }
 
 .dark body {
   background-image: 
-    radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15), transparent 45%), /* Indigo glow */
-    radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.15), transparent 40%), /* Teal/Cyan glow */
-    radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.1), transparent 35%); /* Indigo glow left */
-  background-color: #0B1121;
+    radial-gradient(circle at 50% 0%, rgba(var(--primary), 0.15), transparent 45%),
+    radial-gradient(circle at 100% 0%, rgba(var(--accent), 0.15), transparent 40%),
+    radial-gradient(circle at 0% 0%, rgba(var(--primary), 0.1), transparent 35%);
+  background-color: var(--bg-dark);
   background-attachment: fixed;
 }
 
 
 .glass {
-  @apply backdrop-blur-md bg-white/70 dark:bg-slate-900/70 border border-white/20 dark:border-white/10 shadow-lg;
+  @apply backdrop-blur-xl bg-white/40 dark:bg-slate-900/40 border border-white/20 dark:border-white/10 shadow-2xl;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.dark .glass {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .link-underline {

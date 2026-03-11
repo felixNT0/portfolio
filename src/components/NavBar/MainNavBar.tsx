@@ -17,19 +17,11 @@ function MainNavBar({ setNav, nav }: MainNavBarProps) {
 
   return (
     <div
-      className="flex justify-between items-center w-full h-20 px-8 text-slate-900 dark:text-white bg-white/80 dark:bg-dark-bg/80 backdrop-blur-md"
+      className="flex justify-between items-center w-full h-20 px-8 text-slate-900 dark:text-white glass sticky top-0 z-[100] transition-all duration-300"
     >
-      <div className="flex items-center gap-3 mr-4 pr-6 border-r border-slate-200 dark:border-white/10">
-        {/* <div className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
-          <img
-            src={HeroImage}
-            alt="Avatar"
-            className="relative navbar_avatar cursor-pointer object-top border-2 border-white dark:border-slate-800"
-          />
-        </div> */}
+      <div className="flex items-center gap-3 mr-4 pr-6 border-r border-slate-200/50 dark:border-white/10">
         <h1
-          className="text-2xl font-bold tracking-tighter cursor-pointer hover:text-primary-500 transition-colors"
+          className="text-2xl font-black tracking-tighter cursor-pointer bg-gradient-to-r from-primary-600 to-accent dark:from-primary-400 dark:to-accent bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           onClick={toggleShowOtherSideBar}
         >
           FKT
@@ -68,10 +60,10 @@ function MainNavBar({ setNav, nav }: MainNavBarProps) {
         })}
         
         {/* Desktop Theme Toggle */}
-        <li className="ml-4 pl-6 border-l border-slate-200 dark:border-white/10">
+        <li className="ml-4 pl-6 border-l border-slate-200/50 dark:border-white/10">
           <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-full bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="p-2.5 rounded-xl bg-slate-100/50 dark:bg-white/5 text-slate-600 dark:text-yellow-400 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 border border-slate-200/50 dark:border-white/5"
             aria-label="Toggle Dark Mode"
           >
             {darkMode ? <FaSun size={18} /> : <FaMoon size={18} />}

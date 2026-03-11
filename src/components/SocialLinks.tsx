@@ -34,20 +34,22 @@ const SocialLinks = () => {
         className="max-md:bottom_navbar max-sm:hidden flex flex-col max-md:bottom-5 max-md:right-[50%] max-md:left-[50%] max-md:justify-center max-md:items-center max-md:flex-row lg:top-[35%]  lg:left-0 fixed "
       >
         <ul>
-          {allSocialLinks.map(({ id, child, href, style, download, type }) => {
+          {allSocialLinks.map(({ id, child, href, style, download, type, label }) => {
             return (
               <li
                 key={id}
                 className={
-                  "flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-300 bg-[#0000004d] side_bar_style" +
+                  "flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-r-xl duration-300 glass border-l-0" +
                   " " +
                   style
                 }
+                title={label}
               >
                 {download ? (
                   <div
                     className="flex justify-between items-center w-full text-white cursor-pointer"
                     onClick={() => type && openModal(type)}
+                    aria-label={`Open ${label} modal`}
                   >
                     {child}
                   </div>
@@ -57,6 +59,7 @@ const SocialLinks = () => {
                     className="flex justify-between items-center w-full text-white"
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`Visit ${label} profile`}
                   >
                     {child}
                   </a>

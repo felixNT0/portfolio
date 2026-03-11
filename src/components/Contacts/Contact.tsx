@@ -30,22 +30,26 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="w-full py-20 bg-white dark:bg-dark-bg">
-      <div className="max-w-screen-lg px-6 mx-auto flex flex-col justify-center h-full space-y-16">
+    <div id="contact" className="w-full py-24 bg-white dark:bg-dark-bg relative overflow-hidden">
+      {/* Background accents */}
+      <div className="absolute top-[40%] right-[-10%] w-96 h-96 bg-primary-500/5 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-[10%] left-[-10%] w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px]"></div>
+
+      <div className="max-w-screen-lg px-6 mx-auto flex flex-col justify-center h-full space-y-24 relative z-10">
         <OtherContactDetails />
         
-        <div className="space-y-8">
+        <div className="space-y-10">
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-4"
+            className="flex items-center gap-6"
           >
-            <h3 className="text-sm font-black text-slate-400 uppercase tracking-[0.3em]">
-              Social Connect
+            <h3 className="text-sm font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.3em] whitespace-nowrap">
+              Ecosystem Connect
             </h3>
-            <div className="h-px flex-1 bg-slate-100 dark:bg-white/5"></div>
+            <div className="h-0.5 flex-1 bg-gradient-to-r from-primary-500/20 via-slate-100 dark:via-white/5 to-transparent"></div>
           </motion.div>
           
           <motion.div 
@@ -53,7 +57,7 @@ const Contact = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-wrap items-center justify-center gap-4"
+            className="flex flex-wrap items-center justify-center gap-6"
           >
             {socialLinks.map((social, idx) => (
               <motion.a
@@ -63,7 +67,8 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={social.label}
-                className="w-14 h-14 flex items-center justify-center rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-400 hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 dark:hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm"
+                title={social.label}
+                className="w-16 h-16 flex items-center justify-center rounded-2xl glass border-white/20 dark:border-white/5 text-slate-500 dark:text-slate-400 hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 dark:hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 shadow-xl"
               >
                 {social.icon}
               </motion.a>

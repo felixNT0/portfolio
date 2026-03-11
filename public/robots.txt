@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
 
+# Sitemap location
 Sitemap: https://fkt-portfolio.vercel.app/sitemap.xml
+
+# Slow down aggressive crawlers
+Crawl-delay: 10

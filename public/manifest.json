@@ -1,6 +1,6 @@
 {
   "short_name": "Felix Tsowa",
-  "name": "Felix Kolo Tsowa – Frontend Developer",
+  "name": "Felix Kolo Tsowa | Senior Frontend Engineer & Full-Stack Developer",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,8 +21,8 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "description": "Portfolio of Felix Kolo Tsowa, Frontend Developer (React, Next.js, Node.js).",
-  "theme_color": "#000000",
+  "description": "Felix Kolo Tsowa — Senior Frontend Engineer specialized in React, Next.js, and Mobile development. Explore high-performance web and mobile solutions.",
+  "theme_color": "#0f172a",
   "background_color": "#ffffff",
   "prefer_related_applications": false
 }

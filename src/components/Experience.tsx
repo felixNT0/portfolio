@@ -49,10 +49,10 @@ const experiences: ExperienceItem[] = [
     id: 8, // New ID for SyncTeams
     role: "Frontend Developer",
     company: "SyncTeams Studio", // Separated Company
-    location: "Remote",
+    location: "Chicago, US",
     period: "Contract",
     description:
-      "I was the frontend developering of a no-code AI agent orchestration platform. Distributed complex state management logic and built an intuitive drag-and-drop canvas for assembling AI teams.",
+      "I was the frontend developer of a no-code AI agent orchestration platform. Distributed complex state management logic and built an intuitive drag-and-drop canvas for assembling AI teams.",
     products: ["SyncTeams"],
   },
   {
@@ -116,28 +116,33 @@ const Experience = () => {
   return (
     <div
       id="experience"
-      className="w-full py-20 bg-slate-50 dark:bg-dark-bg/50 overflow-hidden"
+      className="w-full py-24 bg-white dark:bg-dark-bg relative overflow-hidden"
     >
-      <div className="max-w-screen-lg mx-auto px-6">
+      {/* Background accents */}
+      <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-primary-500/5 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-[20%] right-[-10%] w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px]"></div>
+
+      <div className="max-w-screen-lg mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-24"
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">
-            Work{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-cyan-500">
-              Experience
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 uppercase tracking-tight">
+            Professional{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-indigo-500 to-cyan-500">
+              Trajectory
             </span>
           </h2>
-          <p className="max-w-2xl mx-auto text-slate-600 dark:text-slate-400">
-            My professional journey across different companies and projects.
+          <p className="max-w-2xl mx-auto text-xl font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
+            Architecting high-stakes digital ecosystems across global boundaries.
           </p>
+          <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mt-8 mx-auto"></div>
         </motion.div>
 
-        <div className="relative border-l-2 border-slate-200 dark:border-white/10 ml-3 md:ml-6 space-y-12">
+        <div className="relative border-l-2 border-slate-200 dark:border-white/10 ml-4 md:ml-8 space-y-16">
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.id}
@@ -145,37 +150,37 @@ const Experience = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative pl-8 md:pl-12"
+              className="relative pl-10 md:pl-16"
             >
               {/* Timeline Dot */}
-              <span className="absolute -left-[9px] top-0 h-5 w-5 rounded-full border-4 border-white dark:border-dark-bg bg-primary-500"></span>
+              <span className="absolute -left-[11px] top-0 h-5 w-5 rounded-full border-4 border-white dark:border-dark-bg bg-primary-500 shadow-lg shadow-primary-500/50"></span>
 
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 group">
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white group-hover:text-primary-500 transition-colors">
                   {exp.role}
                 </h3>
-                <div className="flex items-center gap-4 text-sm font-medium text-slate-500 dark:text-slate-400 mt-1 sm:mt-0">
-                  <span className="flex items-center gap-1">
-                    <FaBriefcase className="text-primary-500" />
+                <div className="flex flex-wrap items-center gap-4 text-xs font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 mt-2 sm:mt-0">
+                  <span className="flex items-center gap-2 glass px-3 py-1.5 rounded-lg">
+                    <FaBriefcase className="text-primary-500 text-sm" />
                     {exp.company}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <FaMapMarkerAlt className="text-primary-500" />
+                  <span className="flex items-center gap-2 glass px-3 py-1.5 rounded-lg">
+                    <FaMapMarkerAlt className="text-primary-500 text-sm" />
                     {exp.location}
                   </span>
                 </div>
               </div>
 
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+              <p className="text-lg font-semibold text-slate-500 dark:text-slate-400 leading-relaxed mb-6 max-w-3xl">
                 {exp.description}
               </p>
 
               {exp.products && (
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {exp.products.map((prod, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 text-xs font-semibold rounded-full bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/5"
+                      className="px-4 py-2 text-xs font-black uppercase tracking-widest rounded-xl glass border-white/20 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:scale-105 transition-all cursor-default"
                     >
                       {prod}
                     </span>

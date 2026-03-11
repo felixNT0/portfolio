@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function SendMailForm() {
   const [values, setValues] = useState({
@@ -71,71 +72,75 @@ function SendMailForm() {
   }
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
+    <div className="w-full max-w-2xl mx-auto pt-10">
       <form
         onSubmit={handleSubmit}
-        className="space-y-6"
+        className="space-y-10"
       >
-        <div className="flex items-center gap-4">
-          <h3 className="text-sm font-black text-slate-400 uppercase tracking-[0.3em]">
+        <div className="flex items-center gap-6">
+          <h3 className="text-sm font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.3em] whitespace-nowrap">
             Send a message
           </h3>
-          <div className="h-px flex-1 bg-slate-100 dark:bg-white/5"></div>
+          <div className="h-0.5 flex-1 bg-gradient-to-r from-primary-500/20 via-slate-100 dark:via-white/5 to-transparent"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-500 dark:text-slate-400 ml-1">Your Name</label>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-3">
+            <label className="text-xs font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest ml-1">Your Name</label>
             <input
               type="text"
               name="name"
-              placeholder="John Doe"
+              placeholder="Full Name"
               required
               value={values.name}
               onChange={handleChange}
-              className="w-full px-6 py-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all shadow-sm"
+              className="w-full px-8 py-5 rounded-[1.5rem] glass bg-white/50 dark:bg-dark-bg/50 border-white/20 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all shadow-sm font-semibold"
             />
           </div>
-          <div className="space-y-2">
-            <label className="text-xs font-bold text-slate-500 dark:text-slate-400 ml-1">Your Email</label>
+          <div className="space-y-3">
+            <label className="text-xs font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest ml-1">Your Email</label>
             <input
               type="email"
               name="email"
-              placeholder="john@example.com"
+              placeholder="email@example.com"
               required
               value={values.email}
               onChange={handleChange}
-              className="w-full px-6 py-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all shadow-sm"
+              className="w-full px-8 py-5 rounded-[1.5rem] glass bg-white/50 dark:bg-dark-bg/50 border-white/20 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all shadow-sm font-semibold"
             />
           </div>
         </div>
 
-        <div className="space-y-2">
-          <label className="text-xs font-bold text-slate-500 dark:text-slate-400 ml-1">Message</label>
+        <div className="space-y-3">
+          <label className="text-xs font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest ml-1">Message</label>
           <textarea
             name="message"
-            placeholder="Tell me about your project..."
+            placeholder="How can I help you today?"
             rows={6}
             required
             value={values.message}
             onChange={handleChange}
-            className="w-full px-6 py-4 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all shadow-sm resize-none"
+            className="w-full px-8 py-5 rounded-[1.5rem] glass bg-white/50 dark:bg-dark-bg/50 border-white/20 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all shadow-sm resize-none font-semibold leading-relaxed"
           ></textarea>
         </div>
 
         {statusMessage && (
-          <div className={`p-4 rounded-2xl text-sm font-medium ${isError ? "bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400" : "bg-green-50 text-green-600 dark:bg-green-500/10 dark:text-green-400"}`}>
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`p-6 rounded-2xl text-sm font-black uppercase tracking-widest ${isError ? "bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400 border border-red-100 dark:border-red-500/20" : "bg-green-50 text-green-600 dark:bg-green-500/10 dark:text-green-400 border border-green-100 dark:border-green-500/20"}`}
+          >
             {statusMessage}
-          </div>
+          </motion.div>
         )}
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full group relative px-8 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-bold overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-slate-200 dark:shadow-none disabled:opacity-60 disabled:cursor-not-allowed"
+          className="w-full group relative px-10 py-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-[2rem] font-black uppercase tracking-[0.2em] text-sm overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-2xl hover:shadow-primary-500/20 disabled:opacity-60 disabled:cursor-not-allowed"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <span className="relative">{isSubmitting ? "Sending..." : "Send Message"}</span>
+          <span className="relative">{isSubmitting ? "Architecting..." : "Forge Connection"}</span>
         </button>
       </form>
     </div>

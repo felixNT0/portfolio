@@ -25,14 +25,14 @@ function BottomNavBar() {
         initial={{ y: 100, opacity: 0, x: "-50%" }}
         animate={{ y: 0, opacity: 1, x: "-50%" }}
         transition={{ duration: 0.5 }}
-        className=" bg-white/80 dark:bg-dark-bg/80 backdrop-blur-md rounded-xl py-2 px-3 left-1/2 sm:hidden bottom-[3%] fixed duration-300"
+        className="glass rounded-2xl py-3 px-6 left-1/2 sm:hidden bottom-6 fixed duration-300 z-[100] w-[90%] max-w-[400px]"
       >
-        <ul className="flex flex-row gap-2">
+        <ul className="flex flex-row justify-around items-center gap-4">
           {allSocialLinks.map(({ id, child, href, download }) => (
             <li
               key={id}
               className={
-                "flex flex-row justify-between items-center icon_spacing w-[100%] duration-300 bg-gray-700 bg-black/30 backdrop-blur-sm side_bar_style"
+                "flex justify-center items-center w-12 h-12 rounded-xl transition-all duration-300 hover:scale-110 active:scale-95 bg-slate-100/50 dark:bg-white/10 text-slate-700 dark:text-white border border-slate-200/50 dark:border-white/10"
               }
             >
               {download ? (
@@ -45,7 +45,7 @@ function BottomNavBar() {
               ) : (
                 <a
                   href={href}
-                  className="flex justify-between items-center w-full text-white"
+                  className="flex justify-center items-center w-full h-full"
                   target="_blank"
                   rel="noreferrer"
                 >
