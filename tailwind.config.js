@@ -28,6 +28,10 @@ module.exports = {
           800: "#115e59",
           900: "#134e4a",
         },
+        accent: {
+          500: "#14b8a6",
+          600: "#0d9488",
+        },
         dark: {
           bg: "#0B1121", // Deep Rich Navy/Black
           card: "#151E32", // Slightly lighter for contrast

@@ -17,7 +17,7 @@ function OtherNavBar({ setNavBarState, navBarState }: OtherNavBarProps) {
 
   return (
     <div
-      className="flex justify-between items-center w-[95%] h-20 px-4 text-white navbar_bg"
+      className="flex justify-between items-center w-[95%] h-20 px-4 text-slate-900 dark:text-white navbar_bg"
     >
       <div className="flex justify-between items-center">
         {/* <img
@@ -27,7 +27,7 @@ function OtherNavBar({ setNavBarState, navBarState }: OtherNavBarProps) {
         /> */}
 
         <h1
-          className="text-3xl ml-2 cursor-pointer text-white"
+          className="text-3xl ml-2 cursor-pointer text-slate-900 dark:text-white font-black"
           onClick={toggleShowOtherSideBar}
         >
           FKT
@@ -41,8 +41,8 @@ function OtherNavBar({ setNavBarState, navBarState }: OtherNavBarProps) {
               key={id}
               className={
                 link === currentTab
-                  ? "nav-links px-4 cursor-pointer capitalize font-medium text-white scale-105 duration-200 link-underline"
-                  : "nav-links px-4 cursor-pointer capitalize font-medium text-white hover:scale-105 duration-200 link-underline"
+                  ? "nav-links px-4 cursor-pointer capitalize font-medium text-slate-900 dark:text-white scale-105 duration-200 link-underline"
+                  : "nav-links px-4 cursor-pointer capitalize font-medium text-slate-900 dark:text-white hover:scale-105 duration-200 link-underline"
               }
             >
               <ScrollLink

@@ -63,7 +63,7 @@ function MainNavBar({ setNav, nav }: MainNavBarProps) {
         <li className="ml-4 pl-6 border-l border-slate-200/50 dark:border-white/10">
           <button
             onClick={toggleDarkMode}
-            className="p-2.5 rounded-xl bg-slate-100/50 dark:bg-white/5 text-slate-600 dark:text-yellow-400 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 border border-slate-200/50 dark:border-white/5"
+            className="p-2.5 rounded-xl bg-slate-100/50 dark:bg-white/5 text-slate-600 dark:text-accent-400 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 border border-slate-200/50 dark:border-white/5"
             aria-label="Toggle Dark Mode"
           >
             {darkMode ? <FaSun size={18} /> : <FaMoon size={18} />}
@@ -75,7 +75,7 @@ function MainNavBar({ setNav, nav }: MainNavBarProps) {
         {/* Mobile Theme Toggle (Visible on bar) */}
          <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-full bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-yellow-400 hover:bg-slate-200 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none"
+            className="p-2 rounded-xl bg-slate-100/50 dark:bg-white/5 text-slate-600 dark:text-accent-400 hover:bg-slate-200/50 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none"
             aria-label="Toggle Dark Mode"
           >
             {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}

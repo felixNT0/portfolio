@@ -120,7 +120,7 @@ const Experience = () => {
     >
       {/* Background accents */}
       <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-primary-500/5 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-[20%] right-[-10%] w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-[20%] right-[-10%] w-[500px] h-[500px] bg-accent-500/5 rounded-full blur-[120px]"></div>
 
       <div className="max-w-screen-lg mx-auto px-6 relative z-10">
         <motion.div
@@ -132,14 +132,14 @@ const Experience = () => {
         >
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 uppercase tracking-tight">
             Professional{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-indigo-500 to-cyan-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500">
               Trajectory
             </span>
           </h2>
           <p className="max-w-2xl mx-auto text-xl font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
             Architecting high-stakes digital ecosystems across global boundaries.
           </p>
-          <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mt-8 mx-auto"></div>
+          <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mt-8 mx-auto"></div>
         </motion.div>
 
         <div className="relative border-l-2 border-slate-200 dark:border-white/10 ml-4 md:ml-8 space-y-16">

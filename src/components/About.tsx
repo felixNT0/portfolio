@@ -23,21 +23,21 @@ const About = () => {
       title: "Mobile App Development",
       description:
         "Building cross-platform mobile applications for iOS and Android using React Native with native performance.",
-      icon: <FaMobileAlt className="text-3xl text-cyan-500" />,
+      icon: <FaMobileAlt className="text-3xl text-accent-500" />,
     },
     {
       id: 3,
       title: "Backend Services",
       description:
         "Developing robust APIs, handling database integrations, and managing server-side logic with Node.js and Express.",
-      icon: <FaServer className="text-3xl text-indigo-500" />,
+      icon: <FaServer className="text-3xl text-primary-600" />,
     },
     {
       id: 4,
       title: "Full-Stack Solutions",
       description:
         "End-to-end product development, from database architecture to the final user interface deployment.",
-      icon: <FaRocket className="text-3xl text-purple-500" />,
+      icon: <FaRocket className="text-3xl text-accent-600" />,
     },
   ];
 
@@ -76,11 +76,11 @@ const About = () => {
         >
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight">
             Elevating Brands <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-indigo-500 to-cyan-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500">
               Through Code & Design
             </span>
           </h2>
-          <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mt-6 mx-auto md:mx-0"></div>
+          <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mt-6 mx-auto md:mx-0"></div>
         </motion.div>
 
         <div className="flex flex-col md:flex-row gap-16 items-start">
@@ -96,14 +96,14 @@ const About = () => {
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/10 rounded-full blur-3xl group-hover:bg-primary-500/20 transition-all duration-700"></div>
 
               <div className="relative z-10">
-                <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-primary-600 to-indigo-600 dark:from-primary-400 dark:to-indigo-400 mb-2">
+                <div className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-primary-700 to-primary-600 dark:from-primary-400 dark:to-primary-300 mb-2">
                   50+
                 </div>
                 <div className="text-xl font-black text-slate-900 dark:text-white mb-3">
                   Projects Delivered
                 </div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 leading-relaxed">
-                  Architecting high-impact digital products for global clients in <span className="text-primary-500">FinTech</span>, <span className="text-cyan-500">SaaS</span>, and <span className="text-indigo-500">E-commerce</span>.
+                  Architecting high-impact digital products for global clients in <span className="text-primary-600 dark:text-primary-400">FinTech</span>, <span className="text-accent-600 dark:text-accent-400">SaaS</span>, and <span className="text-primary-500 dark:text-primary-300">E-commerce</span>.
                 </p>
               </div>
             </div>
@@ -168,7 +168,7 @@ const About = () => {
               <div className="p-8 rounded-3xl glass border-white/20 dark:border-white/5 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
                   <svg
-                    className="w-24 h-24 text-indigo-500"
+                    className="w-24 h-24 text-primary-500"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -179,7 +179,7 @@ const About = () => {
                   <span className="text-2xl">🎵</span> Music & Creativity
                 </h3>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 leading-relaxed relative z-10">
-                  Beyond architecting complex systems, I find balance in music. As a multi-instrumentalist playing both <span className="text-indigo-500 font-bold">Keyboard</span> and <span className="text-purple-500 font-bold">Guitar</span>, I bring the same rhythm and precision to my code that I do to a melody.
+                  Beyond architecting complex systems, I find balance in music. As a multi-instrumentalist playing both <span className="text-primary-600 dark:text-primary-400 font-bold">Keyboard</span> and <span className="text-accent-600 dark:text-accent-400 font-bold">Guitar</span>, I bring the same rhythm and precision to my code that I do to a melody.
                 </p>
               </div>
 

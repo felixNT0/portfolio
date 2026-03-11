@@ -139,7 +139,7 @@ function SendMailForm() {
           disabled={isSubmitting}
           className="w-full group relative px-10 py-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-[2rem] font-black uppercase tracking-[0.2em] text-sm overflow-hidden transition-all hover:scale-[1.02] active:scale-[0.98] shadow-2xl hover:shadow-primary-500/20 disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-accent-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           <span className="relative">{isSubmitting ? "Architecting..." : "Forge Connection"}</span>
         </button>
       </form>

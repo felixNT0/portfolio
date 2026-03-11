@@ -12,11 +12,11 @@ function OtherContactDetails() {
         >
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight">
             Let's Build <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-indigo-500 to-cyan-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500">
               Something Amazing
             </span>
           </h2>
-          <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mt-6"></div>
+          <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mt-6"></div>
         </motion.div>
         
         <motion.p

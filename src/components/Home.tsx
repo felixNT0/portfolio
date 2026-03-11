@@ -13,7 +13,7 @@ const Home = () => {
       {/* Premium Background Orbs/Glows are contextually handled in body, 
           but adding micro-accents here for depth */}
       <div className="absolute top-[20%] left-[10%] w-64 h-64 bg-primary-500/10 rounded-full blur-[120px] animate-pulse"></div>
-      <div className="absolute bottom-[20%] right-[10%] w-64 h-64 bg-cyan-500/10 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+      <div className="absolute bottom-[20%] right-[10%] w-64 h-64 bg-accent-500/10 rounded-full blur-[120px] animate-pulse delay-1000"></div>
 
       <div className="max-w-screen-lg mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center space-y-10">
@@ -49,7 +49,7 @@ const Home = () => {
               className="text-5xl md:text-7xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1]"
             >
               Architecting <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-indigo-500 to-cyan-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500">
                 Scalable Solutions
               </span>{" "}
             </motion.h2>
@@ -72,7 +72,7 @@ const Home = () => {
           >
             <ScrollLink to="projects" smooth duration={500}>
               <button className="group relative px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-2xl font-black flex items-center justify-center gap-3 overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-2xl hover:shadow-primary-500/20">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-accent-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <span className="relative">Explore Work</span>
                 <MdOutlineKeyboardArrowRight
                   size={26}

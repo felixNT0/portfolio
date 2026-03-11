@@ -18,9 +18,9 @@ const Portfolio = () => {
     {
       label: "Companies Served",
       value: totalCompanies,
-      color: "text-cyan-500",
+      color: "text-accent-500",
     },
-    { label: "Years Experience", value: "4+", color: "text-indigo-500" },
+    { label: "Years Experience", value: "4+", color: "text-primary-600" },
   ];
 
   const containerVariants = {
@@ -55,7 +55,7 @@ const Portfolio = () => {
               className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white"
             >
               Curated{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-indigo-500 to-cyan-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500">
                 Portfolio
               </span>
             </motion.h2>

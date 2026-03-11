@@ -64,14 +64,14 @@ function BottomNavBar() {
                 &times;
               </span>
               <div className="container ">
-                <h1 className="text-center text-amber-500 dark:text-cyan-500 text-3xl font-bold welcome_text">
+                <h1 className="text-center text-primary-600 dark:text-accent-500 text-3xl font-bold welcome_text">
                   Did you want to Preview or Download the resume?
                 </h1>
                 <a
                   href={resumePdf}
                   target="_blank"
                   rel="noreferrer"
-                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-md bg-amber-500 dark:bg-gradient-to-r from-primary-500 to-cyan-500 cursor-pointer"
+                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-xl bg-primary-600 dark:bg-gradient-to-r from-primary-500 to-accent-500 hover:scale-105 transition-all shadow-xl shadow-primary-500/20 cursor-pointer border border-primary-700/50 dark:border-white/10"
                 >
                   Preview
                 </a>
@@ -80,7 +80,7 @@ function BottomNavBar() {
                   download
                   target="_blank"
                   rel="noreferrer"
-                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-md bg-amber-500 dark:bg-gradient-to-r from-cyan-500 to-primary-500 cursor-pointer"
+                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-xl bg-accent-600 dark:bg-gradient-to-r from-accent-500 to-primary-500 hover:scale-105 transition-all shadow-xl shadow-accent-500/20 cursor-pointer border border-accent-700/50 dark:border-white/10"
                 >
                   Download
                 </a>

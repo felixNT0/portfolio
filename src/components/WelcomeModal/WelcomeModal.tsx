@@ -53,7 +53,7 @@ function WelcomeModal({ isModalOpen }: WelcomeModalProps) {
               &times;
             </button>
             <div className="p-3 sm:mt-[-20px]">
-              <h1 className="text-center text-amber-500 dark:text-cyan-500 text-3xl max-sm:text-xl font-bold">
+              <h1 className="text-center text-primary-600 dark:text-accent-500 text-3xl max-sm:text-xl font-bold">
                 Welcome to my Portfolio
               </h1>
               <p className="text-center text-gray-700 dark:text-black text-1xl font-bold mt-3">

@@ -27,7 +27,7 @@ const NotFound = () => {
           repeat: Infinity,
           ease: "linear",
         }}
-        className="absolute -bottom-20 -right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl dark:bg-cyan-500/5"
+        className="absolute -bottom-20 -right-20 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl dark:bg-accent-500/5"
       />
 
       <div className="relative z-10 text-center px-6">
@@ -35,7 +35,7 @@ const NotFound = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-cyan-500 mb-4"
+          className="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-500 mb-4"
         >
           404
         </motion.h1>

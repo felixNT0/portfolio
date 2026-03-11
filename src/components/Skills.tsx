@@ -24,7 +24,7 @@ const Skills = () => {
     <div id="skills" className="w-full py-24 bg-white dark:bg-dark-bg relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-[10%] left-[-10%] w-96 h-96 bg-primary-500/5 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-[10%] right-[-10%] w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px]"></div>
+      <div className="absolute bottom-[10%] right-[-10%] w-96 h-96 bg-accent-500/5 rounded-full blur-[120px]"></div>
 
       <div className="max-w-screen-lg mx-auto px-6 flex flex-col justify-center w-full h-full relative z-10">
         <div className="space-y-16">
@@ -37,14 +37,14 @@ const Skills = () => {
           >
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tight">
               Technical{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-indigo-500 to-cyan-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500">
                 Ecosystem
               </span>
             </h2>
             <p className="max-w-2xl mx-auto text-xl font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
               A meticulously curated toolkit for architecting high-performance digital solutions at scale.
             </p>
-            <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mt-8 mx-auto"></div>
+            <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mt-8 mx-auto"></div>
           </motion.div>
 
           <motion.div
@@ -60,7 +60,7 @@ const Skills = () => {
                 variants={itemVariants}
                 className="group relative h-48 rounded-[2rem] glass border-white/20 dark:border-white/5 flex flex-col items-center justify-center p-8 transition-all duration-500 hover:scale-[1.05] cursor-default shadow-xl"
               >
-                <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary-500/0 to-primary-500/0 group-hover:from-primary-500/10 group-hover:to-cyan-500/10 transition-all duration-700"></div>
+                <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary-500/0 to-primary-500/0 group-hover:from-primary-500/10 group-hover:to-accent-500/10 transition-all duration-700"></div>
                 
                 <div className="relative mb-6 transition-all duration-700 group-hover:scale-125 group-hover:rotate-6">
                   <img 

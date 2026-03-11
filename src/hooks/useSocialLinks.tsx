@@ -25,7 +25,7 @@ function useSocialLinks() {
       child: (
         <>
           <p className="max-md:hidden">LinkedIn</p>
-          <FaLinkedin size={30} style={{ color: darkMode ? "#4db5ff" : "#fca61f" }} />
+          <FaLinkedin size={30} style={{ color: darkMode ? "#9db4fb" : "#4f46e5" }} />
         </>
       ),
       href: "https://www.linkedin.com/in/felixnt0/",
@@ -37,7 +37,7 @@ function useSocialLinks() {
       child: (
         <>
           <p className="max-md:hidden">GitHub</p>
-          <FaGithub size={30} style={{ color: darkMode ? "#4db5ff" : "#fca61f" }} />
+          <FaGithub size={30} style={{ color: darkMode ? "#9db4fb" : "#4f46e5" }} />
         </>
       ),
       href: "https://github.com/felixnt0",
@@ -48,7 +48,7 @@ function useSocialLinks() {
       child: (
         <>
           <p className="max-md:hidden">Email</p>
-          <HiOutlineMail size={30} style={{ color: darkMode ? "#4db5ff" : "#fca61f" }} />
+          <HiOutlineMail size={30} style={{ color: darkMode ? "#9db4fb" : "#4f46e5" }} />
         </>
       ),
       href: "mailto:tsowafelix0@gmail.com",
@@ -59,7 +59,7 @@ function useSocialLinks() {
       child: (
         <>
           <p className="max-md:hidden">Resume</p>
-          <BsFillPersonLinesFill size={30} style={{ color: darkMode ? "#4db5ff" : "#fca61f" }} />
+          <BsFillPersonLinesFill size={30} style={{ color: darkMode ? "#9db4fb" : "#4f46e5" }} />
         </>
       ),
       href: resume,
@@ -74,7 +74,7 @@ function useSocialLinks() {
       id: 1,
       child: (
         <>
-          <FaLinkedin size={30} style={{ color: darkMode ? "#4db5ff" : "#fca61f" }} />
+          <FaLinkedin size={30} style={{ color: darkMode ? "#9db4fb" : "#4f46e5" }} />
         </>
       ),
       href: "https://www.linkedin.com/in/felixnt0/",
@@ -85,7 +85,7 @@ function useSocialLinks() {
       id: 2,
       child: (
         <>
-          <FaGithub size={30} style={{ color: darkMode ? "#4db5ff" : "#fca61f" }} />
+          <FaGithub size={30} style={{ color: darkMode ? "#9db4fb" : "#4f46e5" }} />
         </>
       ),
       href: "https://github.com/felixnt0",
@@ -95,7 +95,7 @@ function useSocialLinks() {
       id: 3,
       child: (
         <>
-          <HiOutlineMail size={30} style={{ color: darkMode ? "#4db5ff" : "#fca61f" }} />
+          <HiOutlineMail size={30} style={{ color: darkMode ? "#9db4fb" : "#4f46e5" }} />
         </>
       ),
       href: "mailto:tsowafelix0@gmail.com",
@@ -105,7 +105,7 @@ function useSocialLinks() {
       id: 4,
       child: (
         <>
-          <BsFillPersonLinesFill size={30} style={{ color: darkMode ? "#4db5ff" : "#fca61f" }} />
+          <BsFillPersonLinesFill size={30} style={{ color: darkMode ? "#9db4fb" : "#4f46e5" }} />
         </>
       ),
       href: resume,

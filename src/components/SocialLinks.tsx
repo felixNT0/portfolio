@@ -47,7 +47,7 @@ const SocialLinks = () => {
               >
                 {download ? (
                   <div
-                    className="flex justify-between items-center w-full text-white cursor-pointer"
+                    className="flex justify-between items-center w-full text-slate-900 dark:text-white cursor-pointer"
                     onClick={() => type && openModal(type)}
                     aria-label={`Open ${label} modal`}
                   >
@@ -56,7 +56,7 @@ const SocialLinks = () => {
                 ) : (
                   <a
                     href={href}
-                    className="flex justify-between items-center w-full text-white"
+                    className="flex justify-between items-center w-full text-slate-900 dark:text-white"
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`Visit ${label} profile`}
@@ -163,7 +163,7 @@ function Modal({ isModalOpen, toggleModal, modalType }: ModalProps) {
                   href={modalType === "resume" ? resumePdf : cover_letter}
                   target="_blank"
                   rel="noreferrer"
-                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-md bg-[#fca61f] dark:bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-xl bg-primary-600 dark:bg-gradient-to-r from-primary-500 to-accent-500 hover:scale-105 transition-all shadow-xl shadow-primary-500/20 cursor-pointer border border-primary-700/50 dark:border-white/10"
                 >
                   Preview
                 </a>
@@ -172,7 +172,7 @@ function Modal({ isModalOpen, toggleModal, modalType }: ModalProps) {
                   download
                   target="_blank"
                   rel="noreferrer"
-                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-md bg-[#fca61f] dark:bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-xl bg-accent-600 dark:bg-gradient-to-r from-accent-500 to-primary-500 hover:scale-105 transition-all shadow-xl shadow-accent-500/20 cursor-pointer border border-accent-700/50 dark:border-white/10"
                 >
                   Download
                 </a>
