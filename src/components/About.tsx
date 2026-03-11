@@ -1,16 +1,6 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
-import { 
-  FaCode, 
-  FaMobileAlt, 
-  FaRocket, 
-  FaServer, 
-  FaChartLine, 
-  FaTree, 
-  FaGraduationCap, 
-  FaBuilding, 
-  FaBrain 
-} from "react-icons/fa";
+import { FaCode, FaMobileAlt, FaRocket, FaServer } from "react-icons/fa";
 
 interface Service {
   id: number;
@@ -113,7 +103,22 @@ const About = () => {
                   Projects Delivered
                 </div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 leading-relaxed">
-                  Architecting high-impact digital products for global clients in <span className="text-primary-600 dark:text-primary-400">FinTech</span>, <span className="text-accent-600 dark:text-accent-400">SaaS</span>, <span className="text-primary-500 dark:text-primary-300">E-commerce</span>, <span className="text-accent-500">AgriTech</span>, and <span className="text-primary-400">AI Orchestration</span>.
+                  Architecting high-impact digital products for global clients
+                  in{" "}
+                  <span className="text-primary-600 dark:text-primary-400">
+                    FinTech
+                  </span>
+                  , <span className="text-accent-500">AgriTech</span>,{" "}
+                  <span className="text-primary-400">EduTech</span>,
+                  <span className="text-accent-600 dark:text-accent-400">
+                    SaaS
+                  </span>
+                  , <span className="text-primary-400">HealthTech</span>
+                  ,and{" "}
+                  <span className="text-primary-500 dark:text-primary-300">
+                    E-commerce
+                  </span>
+                  .
                 </p>
               </div>
             </div>
@@ -137,7 +142,17 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl md:text-2xl text-slate-800 dark:text-slate-200 leading-[1.6] font-medium"
             >
-              As a <span className="text-primary-600 dark:text-primary-400 font-bold">Solutions Architect</span> with 4+ years of specialized experience, I transform complex business challenges into sleek, high-performance software. My expertise spans across <span className="text-slate-900 dark:text-white font-bold underline decoration-primary-500 decoration-4 underline-offset-4">React, Next.js, and React Native</span>, delivering scalable solutions that drive real business value.
+              As a{" "}
+              <span className="text-primary-600 dark:text-primary-400 font-bold">
+                Solutions Architect
+              </span>{" "}
+              with 4+ years of specialized experience, I transform complex
+              business challenges into sleek, high-performance software. My
+              expertise spans across{" "}
+              <span className="text-slate-900 dark:text-white font-bold underline decoration-primary-500 decoration-4 underline-offset-4">
+                React, Next.js, and React Native
+              </span>
+              , delivering scalable solutions that drive real business value.
             </motion.p>
 
             {/* Services Grid */}
@@ -189,7 +204,17 @@ const About = () => {
                   <span className="text-2xl">🎵</span> Music & Creativity
                 </h3>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 leading-relaxed relative z-10">
-                  Beyond architecting complex systems, I find balance in music. As a multi-instrumentalist playing both <span className="text-primary-600 dark:text-primary-400 font-bold">Keyboard</span> and <span className="text-accent-600 dark:text-accent-400 font-bold">Guitar</span>, I bring the same rhythm and precision to my code that I do to a melody.
+                  Beyond architecting complex systems, I find balance in music.
+                  As a multi-instrumentalist playing both{" "}
+                  <span className="text-primary-600 dark:text-primary-400 font-bold">
+                    Keyboard
+                  </span>{" "}
+                  and{" "}
+                  <span className="text-accent-600 dark:text-accent-400 font-bold">
+                    Guitar
+                  </span>
+                  , I bring the same rhythm and precision to my code that I do
+                  to a melody.
                 </p>
               </div>
 
@@ -207,7 +232,13 @@ const About = () => {
                   <span className="text-2xl">💡</span> Global Impact
                 </h3>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 leading-relaxed relative z-10">
-                  Whether debugging critical production issues in high-pressure environments or collaborating across time zones, I believe that <span className="text-primary-500 font-bold">Resilient Problem Solving</span> is the foundation of every successful project.
+                  Whether debugging critical production issues in high-pressure
+                  environments or collaborating across time zones, I believe
+                  that{" "}
+                  <span className="text-primary-500 font-bold">
+                    Resilient Problem Solving
+                  </span>{" "}
+                  is the foundation of every successful project.
                 </p>
               </div>
             </motion.div>
@@ -230,7 +261,7 @@ const About = () => {
               <span className="w-8 h-1 bg-primary-500 rounded-full"></span>
               Industry Focus
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {/* <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               {[
                 { label: "FinTech", icon: <FaChartLine />, color: "from-blue-500/10 to-primary-500/10" },
                 { label: "AgriTech", icon: <FaTree />, color: "from-green-500/10 to-accent-500/10" },
@@ -247,7 +278,7 @@ const About = () => {
                   </span>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
