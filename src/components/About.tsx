@@ -1,6 +1,16 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
-import { FaCode, FaMobileAlt, FaRocket, FaServer } from "react-icons/fa";
+import { 
+  FaCode, 
+  FaMobileAlt, 
+  FaRocket, 
+  FaServer, 
+  FaChartLine, 
+  FaTree, 
+  FaGraduationCap, 
+  FaBuilding, 
+  FaBrain 
+} from "react-icons/fa";
 
 interface Service {
   id: number;
@@ -103,7 +113,7 @@ const About = () => {
                   Projects Delivered
                 </div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 leading-relaxed">
-                  Architecting high-impact digital products for global clients in <span className="text-primary-600 dark:text-primary-400">FinTech</span>, <span className="text-accent-600 dark:text-accent-400">SaaS</span>, and <span className="text-primary-500 dark:text-primary-300">E-commerce</span>.
+                  Architecting high-impact digital products for global clients in <span className="text-primary-600 dark:text-primary-400">FinTech</span>, <span className="text-accent-600 dark:text-accent-400">SaaS</span>, <span className="text-primary-500 dark:text-primary-300">E-commerce</span>, <span className="text-accent-500">AgriTech</span>, and <span className="text-primary-400">AI Orchestration</span>.
                 </p>
               </div>
             </div>
@@ -213,6 +223,31 @@ const About = () => {
               secure backend system, I have the full-stack expertise to allow
               your business to scale."
             </motion.p>
+          </div>
+          {/* Industry Focus - NEW SECTION */}
+          <div className="mt-16 space-y-8">
+            <h3 className="text-2xl font-black text-slate-900 dark:text-white flex items-center gap-3">
+              <span className="w-8 h-1 bg-primary-500 rounded-full"></span>
+              Industry Focus
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              {[
+                { label: "FinTech", icon: <FaChartLine />, color: "from-blue-500/10 to-primary-500/10" },
+                { label: "AgriTech", icon: <FaTree />, color: "from-green-500/10 to-accent-500/10" },
+                { label: "EdTech", icon: <FaGraduationCap />, color: "from-purple-500/10 to-primary-500/10" },
+                { label: "Real Estate", icon: <FaBuilding />, color: "from-orange-500/10 to-accent-500/10" },
+                { label: "AI & SaaS", icon: <FaBrain />, color: "from-primary-500/10 to-accent-500/10" },
+              ].map((industry, i) => (
+                <div key={i} className={`p-6 rounded-2xl bg-gradient-to-br ${industry.color} border border-white/20 dark:border-white/5 flex flex-col items-center gap-3 group hover:scale-105 transition-all duration-300`}>
+                  <div className="text-2xl text-primary-600 dark:text-primary-400 group-hover:scale-110 transition-transform">
+                    {industry.icon}
+                  </div>
+                  <span className="text-xs font-black uppercase tracking-widest text-slate-600 dark:text-slate-300">
+                    {industry.label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

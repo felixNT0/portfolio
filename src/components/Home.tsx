@@ -27,7 +27,7 @@ const Home = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
             </span>
-            Available for Senior Roles
+            Available for new Roles
           </motion.div>
 
           <div className="space-y-6">
@@ -55,13 +55,18 @@ const Home = () => {
             </motion.h2>
           </div>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
             className="mt-6 text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            A <span className="text-slate-900 dark:text-white font-bold">Senior Frontend Engineer</span> & Full-Stack Developer specializing in high-performance Web Apps and cross-platform Mobile solutions for FinTech and SaaS.
+            A{" "}
+            <span className="text-slate-900 dark:text-white font-bold">
+              Frontend Engineer
+            </span>{" "}
+            & Full-Stack Developer specializing in high-performance Web Apps and
+            cross-platform Mobile solutions for FinTech and SaaS.
           </motion.p>
 
           <motion.div

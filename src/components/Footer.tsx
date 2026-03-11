@@ -13,8 +13,8 @@ function Footer() {
         </h2>
 
         <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
-          Senior Software Engineer architecting high-performance digital
-          ecosystems for global impact.
+          Software Engineer architecting high-performance digital ecosystems for
+          global impact.
         </p>
 
         <div className="flex flex-col items-center space-y-2 pt-4">
