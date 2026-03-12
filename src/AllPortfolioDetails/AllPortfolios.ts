@@ -463,7 +463,7 @@ export const allPortfolios: PortfolioItem[] = [
   {
     id: 37,
     src: contactlist,
-    link: "https://taiyo-interview.netlify.app/",
+    link: "https://fkt-connectsphere.vercel.app/",
     name: "Contact List, Graph and Map App",
     disc: "Comprehensive contact management application with COVID-19 data visualization through graphs and interactive maps.",
     company: "Legacy",

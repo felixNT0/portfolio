@@ -66,7 +66,7 @@ const Home = () => {
               Frontend Engineer
             </span>{" "}
             & Full-Stack Developer specializing in high-performance Web Apps and
-            cross-platform Mobile solutions for FinTech and SaaS.
+            cross-platform Mobile solutions.
           </motion.p>
 
           <motion.div

@@ -107,7 +107,7 @@ const experiences: ExperienceItem[] = [
     location: "Remote",
     period: "Contract",
     description:
-      "Developed fintech and investment applications using React Native and Vue.js. Focused on security, real-time data visualization, and seamless user experience for financial products.",
+      "Developed fintech and investment applications using React Native and Expo. Focused on security, real-time data visualization, and seamless user experience for financial products.",
     products: ["Risevest", "Invest Yield", "Liqfinity"],
   },
 ];
@@ -137,7 +137,8 @@ const Experience = () => {
             </span>
           </h2>
           <p className="max-w-2xl mx-auto text-xl font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
-            Architecting high-stakes digital ecosystems across global boundaries.
+            Architecting high-stakes digital ecosystems across global
+            boundaries.
           </p>
           <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mt-8 mx-auto"></div>
         </motion.div>

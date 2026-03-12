@@ -8,9 +8,9 @@ function Footer() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"></div>
 
       <div className="max-w-screen-lg px-6 mx-auto flex flex-col items-center text-center space-y-6">
-        <h2 className="text-2xl font-black text-slate-900 dark:text-white tracking-widest uppercase italic">
+        {/* <h2 className="text-2xl font-black text-slate-900 dark:text-white tracking-widest uppercase italic">
           Kolo<span className="text-primary-500">.</span>
-        </h2>
+        </h2> */}
 
         <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
           Software Engineer architecting high-performance digital ecosystems for

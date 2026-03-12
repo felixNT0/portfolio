@@ -109,18 +109,18 @@ const About = () => {
                     FinTech
                   </span>
                   , <span className="text-accent-500">AgriTech</span>,{" "}
-                  <span className="text-primary-400">EduTech</span>,
+                  <span className="text-primary-400">EduTech</span>,{" "}
+                  <span className="text-primary-400">HealthTech</span>,{" "}
                   <span className="text-accent-600 dark:text-accent-400">
                     SaaS
                   </span>
+                  ,{" "}
                   <span className="text-accent-600 dark:text-accent-400">
                     Real Estate
                   </span>
-                  ,{" "}
                   <span className="text-accent-600 dark:text-accent-400">
                     Logistics
                   </span>
-                  , <span className="text-primary-400">HealthTech</span>
                   ,and{" "}
                   <span className="text-primary-500 dark:text-primary-300">
                     E-commerce

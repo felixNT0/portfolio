@@ -66,7 +66,12 @@ const Portfolio = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-3xl mx-auto text-lg md:text-xl font-medium text-slate-500 dark:text-slate-400 leading-relaxed"
             >
-              A showcase of <span className="text-slate-900 dark:text-white font-bold">50+ Enterprise-Grade Solutions</span> across FinTech, E-commerce, and SaaS. Each project is architected for maximum scale, performance, and user impact.
+              A showcase of{" "}
+              <span className="text-slate-900 dark:text-white font-bold">
+                50+ Enterprise-Grade Solutions
+              </span>{" "}
+              across different industries. Each project is architected for
+              maximum scale, performance, and user impact.
             </motion.p>
           </div>
 
