@@ -18,6 +18,8 @@ import politicsthreadadmin from "../assets/portfolio/politicsthreaadmin.png";
 import politicthread from "../assets/portfolio/politicsthread.png";
 import risevest from "../assets/portfolio/risevest.png";
 import sugarcosmetic from "../assets/portfolio/sugarcosmetic.png";
+import fktCryptoPulse from "../assets/portfolio/fkt-cryto-pulse.png";
+import fktCallsNew from "../assets/portfolio/fkt-calls.png";
 // New portfolio images
 import studio187 from "../assets/portfolio/187studio.png";
 import starnetacademy from "../assets/portfolio/academy.png";
@@ -443,6 +445,22 @@ export const allPortfolios: PortfolioItem[] = [
   },
 
   // Legacy Projects
+  {
+    id: 90,
+    src: fktCryptoPulse,
+    link: "https://fkt-crypto-pulse.vercel.app/market",
+    name: "FKT CryptoPulse",
+    disc: "Professional-grade crypto tracking and global currency exchange. Real-time data, glassmorphic design, and the best-in-class market insights.",
+    company: "Legacy",
+  },
+  {
+    id: 91,
+    src: fktCallsNew,
+    link: "https://fkt-calling-webapp.vercel.app/",
+    name: "FKT Calls",
+    disc: "Seamless, crystal-clear video and audio for your professional and personal meetings.",
+    company: "Legacy",
+  },
   {
     id: 53,
     src: teamAvailability,

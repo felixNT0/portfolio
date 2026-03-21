@@ -18,7 +18,7 @@ function BackToTop({ isVisible = false }: { isVisible?: boolean }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.5 }}
-          className="fixed bottom-4 right-6 z-50"
+          className="fixed bottom-6 right-6 z-50"
         >
           <ScrollLink to={"top-anchor"} smooth duration={1000}>
             <div

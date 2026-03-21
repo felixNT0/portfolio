@@ -228,7 +228,11 @@ function AllPortfolios() {
                                 onClick={() =>
                                   window.open(appLink || webAppLink, "_blank")
                                 }
-                                aria-label={appLink ? `Download ${name} app` : `Open ${name} web app`}
+                                aria-label={
+                                  appLink
+                                    ? `Download ${name} app`
+                                    : `Open ${name} web app`
+                                }
                               >
                                 {appLink ? "Download App" : "Open Web App"}
                               </button>

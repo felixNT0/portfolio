@@ -18,6 +18,10 @@ export const componentLinks: ComponentLink[] = [
     link: "experience",
   },
   {
+    id: 7,
+    link: "services",
+  },
+  {
     id: 3,
     link: "projects",
   },

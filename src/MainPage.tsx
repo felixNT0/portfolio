@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import About from "./components/About";
+import AIAssistant from "./components/AIAssistant";
 import BackToTop from "./components/BackToTop";
 import BottomNavBar from "./components/BottomNavBar";
 import Contact from "./components/Contacts/Contact";
@@ -11,6 +12,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Portfolio from "./components/Portfolio/Portfolio";
 import ScrollIndicator from "./components/ScrollIndicator/ScrollIndicator";
 import SectionWrapper from "./components/SectionWrapper";
+import Services from "./components/Services";
 import Skills from "./components/Skills";
 import SocialLinks from "./components/SocialLinks";
 import WelcomeModal from "./components/WelcomeModal/WelcomeModal";
@@ -23,7 +25,6 @@ function MainPage() {
 
   useEffect(() => {
     // Debug log to confirm new code version
-    console.log("MainPage mounted - v7 (AOS removed)");
 
     const scrollFunction = () => {
       const winScroll =
@@ -72,6 +73,10 @@ function MainPage() {
         <Portfolio />
         {/* </SectionWrapper> */}
 
+        <SectionWrapper>
+          <Services />
+        </SectionWrapper>
+
         {/* <SectionWrapper> */}
         <Skills />
         {/* </SectionWrapper> */}
@@ -88,6 +93,7 @@ function MainPage() {
           </>
         )}
         {modalState && <WelcomeModal isModalOpen={modalState} />}
+        <AIAssistant />
         <BackToTop isVisible={showBackToTop} />
       </div>
     </LoaderWrapper>
