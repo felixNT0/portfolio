@@ -14,12 +14,12 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     id: 1,
-    role: "Full-Stack Developer",
+    role: "Frontend Engineer",
     company: "Webloom",
     location: "Bangalore, India",
     period: "Recent",
     description:
-      "Architected and delivered scalable, high-performance web applications using ReactJS, NextJS, and modern state management. Integrated complex APIs and CMS solutions (Sanity, PayloadCMS) while optimizing frontend performance by 40%.",
+      "Architected and delivered scalable, high-performance frontend web applications using ReactJS, NextJS, and modern state management. Built seamless, pixel-perfect UI experiences and integrated complex APIs and CMS solutions (Sanity, PayloadCMS) while optimizing frontend performance by 40%.",
     products: [
       "DXB Finance",
       "AL Habtoor",

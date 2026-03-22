@@ -15,14 +15,14 @@ const About = () => {
       id: 1,
       title: "Frontend Development",
       description:
-        "Crafting responsive, pixel-perfect web interfaces using React, Next.js, and modern CSS frameworks like Tailwind.",
+        "Crafting responsive, pixel-perfect web interfaces using React, Next.js, Vue, and modern CSS frameworks like Tailwind.",
       icon: <FaCode className="text-3xl text-primary-500" />,
     },
     {
       id: 2,
       title: "Mobile App Development",
       description:
-        "Building cross-platform mobile applications for iOS and Android using React Native with native performance.",
+        "Building cross-platform mobile applications for iOS and Android using React Native, E with native performance.",
       icon: <FaMobileAlt className="text-3xl text-accent-500" />,
     },
     {
@@ -118,6 +118,7 @@ const About = () => {
                   <span className="text-accent-600 dark:text-accent-400">
                     Real Estate
                   </span>
+                  ,{" "}
                   <span className="text-accent-600 dark:text-accent-400">
                     Logistics
                   </span>
@@ -157,7 +158,7 @@ const About = () => {
               business challenges into sleek, high-performance software. My
               expertise spans across{" "}
               <span className="text-slate-900 dark:text-white font-bold underline decoration-primary-500 decoration-4 underline-offset-4">
-                React, Next.js, and React Native
+                React, Next.js, Vue, React Native/Expo, and Electron.js
               </span>
               , delivering scalable solutions that drive real business value.
             </motion.p>

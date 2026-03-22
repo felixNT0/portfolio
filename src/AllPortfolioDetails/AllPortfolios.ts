@@ -3,6 +3,8 @@ import Autozard from "../assets/portfolio/Autozard.png";
 import callingApp from "../assets/portfolio/calling-app.png";
 import contactlist from "../assets/portfolio/contactlist.png";
 import farmeasy from "../assets/portfolio/farmeasy.png";
+import fktCallsNew from "../assets/portfolio/fkt-calls.png";
+import fktCryptoPulse from "../assets/portfolio/fkt-cryto-pulse.png";
 import geek from "../assets/portfolio/geek.png";
 import houseacq from "../assets/portfolio/houseacq.png";
 import investyield from "../assets/portfolio/investyield.png";
@@ -18,8 +20,6 @@ import politicsthreadadmin from "../assets/portfolio/politicsthreaadmin.png";
 import politicthread from "../assets/portfolio/politicsthread.png";
 import risevest from "../assets/portfolio/risevest.png";
 import sugarcosmetic from "../assets/portfolio/sugarcosmetic.png";
-import fktCryptoPulse from "../assets/portfolio/fkt-cryto-pulse.png";
-import fktCallsNew from "../assets/portfolio/fkt-calls.png";
 // New portfolio images
 import studio187 from "../assets/portfolio/187studio.png";
 import starnetacademy from "../assets/portfolio/academy.png";
@@ -438,7 +438,7 @@ export const allPortfolios: PortfolioItem[] = [
   {
     id: 87,
     src: favour,
-    link: "https://favour.vercel.app/",
+    link: "http://favourolorunfemi-va-portfolio.vercel.app/",
     name: "Favour VA Portfolio",
     disc: "A professional portfolio for a Virtual Assistant. Highlights expertise in executive support, administrative management, and business operations to attract potential clients.",
     company: "Contract",

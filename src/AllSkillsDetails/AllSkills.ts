@@ -584,4 +584,10 @@ export const allSkills: SkillItem[] = [
     title: "MOCHA",
     style: "shadow-amber-600",
   },
+  {
+    id: 72,
+    src: "https://upload.wikimedia.org/wikipedia/commons/9/91/Electron_Software_Framework_Logo.svg",
+    title: "ELECTRON.JS",
+    style: "shadow-blue-500",
+  },
 ];
