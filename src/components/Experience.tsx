@@ -14,7 +14,7 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     id: 1,
-    role: "Frontend Engineer",
+    role: "Full Stack Engineer (Frontend Focus)",
     company: "Webloom",
     location: "Bangalore, India",
     period: "Recent",

@@ -49,6 +49,7 @@ import reportage from "../assets/portfolio/reportage.png";
 import rezy from "../assets/portfolio/rezy.png";
 import schoolSql from "../assets/portfolio/schoolsql.png";
 import sobhaPromotion from "../assets/portfolio/sobhapromotion.png";
+import starnetdms from "../assets/portfolio/starnetdms.png";
 import starnettechrise from "../assets/portfolio/starnettechrise.png";
 import syncteams from "../assets/portfolio/syncteams.png";
 import teamAvailability from "../assets/portfolio/team-availablity.png";
@@ -288,6 +289,14 @@ export const allPortfolios: PortfolioItem[] = [
     link: "https://www.starnettechrise.com/",
     name: "Starnet Tech Rise",
     disc: "Event platform for TechRise 2.0. A major hackathon and summit for African innovators defining the future of technology.",
+    company: "Starnet Tech",
+  },
+  {
+    id: 48,
+    src: starnetdms,
+    link: "https://www.starnetdms.com/",
+    name: "Starnet",
+    disc: "Expert Web Design, Digital Marketing Agency | Starnetdms.comA next-gen agency with Progressive ideas for modern businesses",
     company: "Starnet Tech",
   },
 

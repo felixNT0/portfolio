@@ -22,7 +22,7 @@ const About = () => {
       id: 2,
       title: "Mobile App Development",
       description:
-        "Building cross-platform mobile applications for iOS and Android using React Native, E with native performance.",
+        "Building cross-platform mobile applications for iOS and Android using React Native/Expo with native performance.",
       icon: <FaMobileAlt className="text-3xl text-accent-500" />,
     },
     {
