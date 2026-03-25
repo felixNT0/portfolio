@@ -1,4 +1,4 @@
-import { GoogleGenAI, HarmBlockThreshold, HarmCategory } from "@google/genai";
+import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -38,14 +38,13 @@ You are Felix's elite Architect AI. Your absolute goal is to represent Felix in 
 
 CONVERSATIONAL GUIDELINES:
 1. TONE & STYLE: Adopt an elite, highly professional, yet warm and conversational tone. Mirror the sophistication of ChatGPT. Use formatting (bolding, lists) to make responses readable and elegant.
-2. EXPERTISE & UNCERTAINTY: You possess massive context on Felix's career. If you are asked a question and you are not completely sure, provide a polite, educated guess but strictly encourage the user to get in touch with Felix.
+2. EXPERTISE & GENERAL KNOWLEDGE: You possess massive context on Felix's career, but you are also a highly capable general-purpose AI. You can answer general questions (e.g., politics, science, history, current events) with the same professional tone.
 3. PRICING & BUDGETS: If a user talks about price, rates, or budget for a project, ALWAYS give them a reasonable but realistic range. NEVER reject a budget or say it's too low. Tell them that reaching out to Felix directly is the best way to discuss pricing in detail.
 4. PROJECTS: You have knowledge of ALL Felix's projects (listed below). When asked about projects, list the most relevant ones. If they have a different project type, assure them Felix can build it and they should talk to him!
 5. CONTACTING FELIX: If asked how to contact Felix, tell them they can use the Contact section, email him at tsowafelix0@gmail.com, check his social platforms, OR say: "If you'd like, you can leave your name and contact details here, and I'll send it directly to Felix's email!" If the user provides info, say "Thanks! I have sent your details to Felix."
 6. BE EXTREMELY CONCISE: During voice calls, avoid lists and long paragraphs. Use short, punchy sentences.
 7. HUMAN-LIKE: Speak naturally. Use "I" when referring to yourself as Felix's AI and "Felix" when referring to him.
-8. EXPERTISE: Use context from the portfolio (Dubai Real Estate, AgriTech, FinTech, AI).
-9. INTERACTION: If a user interrupts, be graceful. Keep the flow moving.
+8. INTERACTION: If a user interrupts, be graceful. Keep the flow moving.
 
 Felix's Core Expertise: Frontend Engineer, Full Stack Engineer (React, Next.js, Node.js, AWS, TS).
 
@@ -55,6 +54,9 @@ ${sectors}
 FELIX COMPLETE PROJECT PORTFOLIO:
 ${allProjects}
 `;
+
+// ... (KNOWLEDGE_BASE and other constants) ...
+
 
 // --- Knowledge Base for Felix ---
 const KNOWLEDGE_BASE: Record<string, string> = {
@@ -340,7 +342,7 @@ const AIAssistant = () => {
   );
 
   // Initialize Gemini AI
-  const client = useMemo(() => new GoogleGenAI({ apiKey: GEMINI_API_KEY }), []);
+  const genAI = useMemo(() => new GoogleGenerativeAI(GEMINI_API_KEY), []);
 
   useEffect(() => {
     if (!chatSessionRef.current) {
@@ -476,29 +478,30 @@ const AIAssistant = () => {
           parts: [{ text: userMsg }],
         });
 
-        const responseStream = await client.models.generateContentStream({
-          model: "gemini-2.5-flash",
+        const model = genAI.getGenerativeModel({
+          model: "gemini-1.5-flash",
+          safetySettings: [
+            {
+              category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+              threshold: HarmBlockThreshold.BLOCK_NONE,
+            },
+            {
+              category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+              threshold: HarmBlockThreshold.BLOCK_NONE,
+            },
+            {
+              category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+              threshold: HarmBlockThreshold.BLOCK_NONE,
+            },
+            {
+              category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+              threshold: HarmBlockThreshold.BLOCK_NONE,
+            },
+          ],
+        });
+
+        const result = await model.generateContentStream({
           contents: chatSessionRef.current.history,
-          config: {
-            safetySettings: [
-              {
-                category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-                threshold: HarmBlockThreshold.BLOCK_NONE,
-              },
-              {
-                category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-                threshold: HarmBlockThreshold.BLOCK_NONE,
-              },
-              {
-                category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-                threshold: HarmBlockThreshold.BLOCK_NONE,
-              },
-              {
-                category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-                threshold: HarmBlockThreshold.BLOCK_NONE,
-              },
-            ],
-          },
         });
 
         setMessages((prev) => [
@@ -511,10 +514,10 @@ const AIAssistant = () => {
         spokenSentencesRef.current.clear();
         isStreamFinishedRef.current = false;
 
-        for await (const chunk of responseStream) {
+        for await (const chunk of result.stream) {
           let chunkText = "";
           try {
-            chunkText = chunk.text || "";
+            chunkText = chunk.text() || "";
           } catch (e) {
             console.warn("Chunk blocked or empty:", e);
           }
@@ -602,7 +605,7 @@ const AIAssistant = () => {
       isVoiceMode,
       isTyping,
       logInteraction,
-      client,
+      genAI,
       speakResponse,
       messages,
       endCall,
@@ -619,6 +622,17 @@ const AIAssistant = () => {
   //     startRecording();
   //   }
   // }, [isRecording, startRecording, stopRecording]);
+
+  useEffect(() => {
+    if (isOpen && !isMinimized) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen, isMinimized]);
 
   useEffect(() => {
     scrollToBottom();
