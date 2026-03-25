@@ -402,7 +402,8 @@ const AIAssistant = () => {
   const handleSend = useCallback(
     async (text: string = input) => {
       if (!GEMINI_API_KEY || GEMINI_API_KEY === "[ENCRYPTION_KEY]") {
-        const errorMsg = "Gemini API Key is missing or invalid. Please check your environment variables.";
+        const errorMsg =
+          "Gemini API Key is missing or invalid. Please check your environment variables.";
         console.error(errorMsg);
         setMessages((prev) => [...prev, { text: errorMsg, isBot: true }]);
         setIsTyping(false);
@@ -484,7 +485,7 @@ const AIAssistant = () => {
         });
 
         const result = await genAI.models.generateContentStream({
-          model: "gemini-1.5-flash",
+          model: "gemini-2.5-flash",
           contents: chatSessionRef.current.history,
           config: {
             safetySettings: [
@@ -601,8 +602,7 @@ const AIAssistant = () => {
           console.error("Gemini Error Response:", error.response);
         }
         setIsTyping(false);
-        const fallback =
-          `I apologize, but I'm having trouble connecting to my brain right now. (Error: ${error.message || "Unknown Connection Error"})`;
+        const fallback = `I apologize, but I'm having trouble connecting to my brain right now. (Error: ${error.message || "Unknown Connection Error"})`;
         setMessages((prev) => [...prev, { text: fallback, isBot: true }]);
       }
     },
