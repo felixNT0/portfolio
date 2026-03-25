@@ -401,7 +401,13 @@ const AIAssistant = () => {
 
   const handleSend = useCallback(
     async (text: string = input) => {
-      if (!text.trim()) return;
+      if (!GEMINI_API_KEY || GEMINI_API_KEY === "[ENCRYPTION_KEY]") {
+        const errorMsg = "Gemini API Key is missing or invalid. Please check your environment variables.";
+        console.error(errorMsg);
+        setMessages((prev) => [...prev, { text: errorMsg, isBot: true }]);
+        setIsTyping(false);
+        return;
+      }
 
       // Voice-command Termination
       const lowerText = text.toLowerCase();
@@ -590,11 +596,13 @@ const AIAssistant = () => {
         setIsTyping(false);
         logInteraction(userMsg, fullResponse, isVoiceMode ? "voice" : "chat");
       } catch (error: any) {
-        console.error("Gemini Error:", error);
-        // console.error(error.message || "Unknown Connection Error");
+        console.error("Gemini Detailed Error:", error);
+        if (error.response) {
+          console.error("Gemini Error Response:", error.response);
+        }
         setIsTyping(false);
         const fallback =
-          "I apologize, but I'm having trouble connecting to my brain right now.";
+          `I apologize, but I'm having trouble connecting to my brain right now. (Error: ${error.message || "Unknown Connection Error"})`;
         setMessages((prev) => [...prev, { text: fallback, isBot: true }]);
       }
     },
