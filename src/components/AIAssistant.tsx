@@ -779,7 +779,7 @@ const AIAssistant = () => {
             setIsOpen(true);
             setIsMinimized(false);
           }}
-          className="fixed bottom-6 right-6 z-[2000] w-16 h-16 bg-primary-600 text-white rounded-full shadow-xl hover:scale-110 active:scale-90 transition-all duration-500 flex items-center justify-center relative"
+          className="fixed bottom-6 right-6 z-[2000] w-16 h-16 bg-primary-600 text-white rounded-full shadow-xl hover:scale-110 active:scale-90 transition-all duration-500 flex items-center justify-center"
         >
           <FaRobot size={32} />
         </button>
