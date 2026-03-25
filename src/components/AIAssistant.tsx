@@ -7,6 +7,7 @@ import {
   FaRobot,
   FaTimes,
   FaTrash,
+  FaUser,
 } from "react-icons/fa";
 import "regenerator-runtime/runtime";
 import { allPortfolios } from "../AllPortfolioDetails/AllPortfolios";
@@ -476,7 +477,7 @@ const AIAssistant = () => {
         });
 
         const responseStream = await client.models.generateContentStream({
-          model: "gemini-2.5-flash",
+          model: "gemini-1.5-flash",
           contents: chatSessionRef.current.history,
           config: {
             safetySettings: [
@@ -705,68 +706,77 @@ const AIAssistant = () => {
               </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-5 space-y-5 scrollbar-hide bg-gradient-to-b from-slate-900/50 to-transparent">
+            <div className="flex-1 overflow-y-auto p-6 space-y-8 scrollbar-hide bg-[#0b1120]/40 backdrop-blur-sm flex flex-col pt-8">
               {messages.map((msg, i) => (
                 <div
                   key={i}
-                  className={`max-w-[85%] p-4 rounded-2xl text-[13px] leading-relaxed \${
-                    msg.isBot
-                      ? "bg-white/5 text-gray-200 self-start rounded-tl-none border border-white/5"
-                      : "bg-primary-600 text-white self-end ml-auto rounded-tr-none shadow-lg shadow-primary-900/20"
-                  }`}
-                  dangerouslySetInnerHTML={{
-                    __html: msg.isBot ? formatMarkdown(msg.text) : msg.text,
-                  }}
-                />
+                  className={`flex w-full ${msg.isBot ? "justify-start" : "justify-end"} animate-in slide-in-from-bottom-3 fade-in duration-500`}
+                >
+                  {msg.isBot && (
+                    <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-primary-500/30 to-primary-700/10 border border-primary-500/30 flex items-center justify-center mr-4 mt-1 flex-shrink-0 shadow-lg shadow-primary-900/10">
+                      <FaRobot className="text-primary-400 text-[16px]" />
+                    </div>
+                  )}
+                  <div
+                    className={`max-w-[88%] md:max-w-[80%] p-5 rounded-[1.5rem] text-[14.5px] leading-relaxed shadow-xl transition-all duration-300 ${
+                      msg.isBot
+                        ? "bg-slate-800/40 backdrop-blur-md text-slate-100 rounded-tl-sm border border-white/10 ring-1 ring-white/5 [&>p]:mb-4 [&>p:last-child]:mb-0 [&>ul]:list-disc [&>ul]:ml-6 [&>ul]:mb-4 [&>ul:last-child]:mb-0 [&>ol]:list-decimal [&>ol]:ml-6 [&>ol]:mb-4 [&>ol:last-child]:mb-0 [&>li]:mb-2 [&>strong]:text-primary-300 [&>strong]:font-semibold [&>a]:text-primary-400 hover:[&>a]:underline [&>code]:bg-slate-900/80 [&>code]:px-1.5 [&>code]:py-0.5 [&>code]:rounded [&>code]:text-primary-300 [&>pre]:bg-slate-950/80 [&>pre]:p-4 [&>pre]:rounded-xl [&>pre]:my-4 [&>pre]:overflow-x-auto [&>pre]:border [&>pre]:border-white/5"
+                        : "bg-gradient-to-br from-primary-600 to-primary-700 text-white rounded-tr-sm shadow-primary-900/30 ring-1 ring-primary-500/50"
+                    }`}
+                    dangerouslySetInnerHTML={{
+                      __html: msg.isBot ? formatMarkdown(msg.text) : msg.text,
+                    }}
+                  />
+                  {!msg.isBot && (
+                    <div className="w-9 h-9 rounded-2xl bg-slate-800 border border-white/10 flex items-center justify-center ml-4 mt-1 flex-shrink-0 shadow-lg shadow-black/20">
+                      <FaUser className="text-slate-400 text-[14px]" />
+                    </div>
+                  )}
+                </div>
               ))}
               {isTyping && (
-                <div className="flex gap-2 items-center p-4 bg-white/5 rounded-2xl">
-                  <span className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-bounce"></span>
-                  <span className="text-[10px] text-gray-500 ml-2">
-                    Assistant is thinking...
-                  </span>
+                <div className="flex gap-4 items-center">
+                   <div className="w-9 h-9 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center flex-shrink-0">
+                      <FaRobot className="text-primary-500/50 text-[14px] animate-pulse" />
+                    </div>
+                  <div className="flex gap-1.5 items-center px-5 py-4 bg-slate-800/30 rounded-2xl border border-white/5 backdrop-blur-sm">
+                    <span className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                    <span className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                    <span className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-bounce"></span>
+                  </div>
                 </div>
               )}
               <div ref={messagesEndRef} />
             </div>
 
-            <div className="p-4 bg-slate-900/50 border-t border-white/5 flex gap-2 items-end">
-              <textarea
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    setIsVoiceMode(false);
-                    handleSend();
-                  }
-                }}
-                placeholder="Ask any question or about Felix..."
-                className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-[13px] text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all min-h-[50px] max-h-[120px] resize-y scrollbar-hide"
-                rows={1}
-              />
-              {/* <button
-                  onClick={toggleRecording}
-                  disabled={isWhisperLoading || isAISpeaking}
-                  className={`px-4 rounded-2xl transition-all shadow-lg flex items-center justify-center ${
-                    isRecording
-                      ? "bg-red-500 text-white animate-pulse shadow-red-500/40"
-                      : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
-                  }`}
-                  title={isRecording ? "Stop Recording" : "Voice Input"}
-                >
-                  <FaMicrophone size={14} />
-                </button> */}
+            <div className="p-6 bg-slate-900/80 border-t border-white/5 backdrop-blur-xl flex gap-3 items-end">
+              <div className="relative flex-1 group">
+                <textarea
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      setIsVoiceMode(false);
+                      handleSend();
+                    }
+                  }}
+                  placeholder="Ask anything about Felix or his projects..."
+                  className="w-full bg-slate-800/50 border border-white/10 rounded-2xl px-5 py-4 text-[14px] text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500/40 transition-all min-h-[56px] max-h-[150px] resize-none scrollbar-hide shadow-inner"
+                  rows={1}
+                />
+                <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-primary-500/20 to-transparent opacity-0 group-focus-within:opacity-100 transition-opacity"></div>
+              </div>
               <button
                 onClick={() => {
                   setIsVoiceMode(false);
                   handleSend();
                 }}
                 disabled={!input.trim() || isTyping}
-                className="bg-primary-600 text-white p-3 md:px-5 md:py-3 h-[50px] rounded-2xl transition-all shadow-lg shadow-primary-900/40 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-primary-600 hover:bg-primary-500 text-white w-[56px] h-[56px] rounded-2xl transition-all duration-300 shadow-lg shadow-primary-900/40 flex items-center justify-center disabled:opacity-30 disabled:grayscale disabled:cursor-not-allowed hover:scale-105 active:scale-95 border border-primary-400/20"
                 title="Send Message"
               >
-                <FaPaperPlane size={14} />
+                <FaPaperPlane size={16} />
               </button>
             </div>
           </div>
@@ -779,14 +789,14 @@ const AIAssistant = () => {
             setIsOpen(true);
             setIsMinimized(false);
           }}
-          className="fixed bottom-6 right-6 z-[2000] w-16 h-16 bg-primary-600 text-white rounded-full shadow-xl hover:scale-110 active:scale-90 transition-all duration-500 flex items-center justify-center"
+          className="fixed bottom-24 right-6 z-[2000] w-16 h-16 bg-primary-600 text-white rounded-full shadow-xl hover:scale-110 active:scale-90 transition-all duration-500 flex items-center justify-center"
         >
           <FaRobot size={32} />
         </button>
       )}
 
       {isMinimized && isOpen && (
-        <div className="fixed bottom-6 right-6 z-[2000] flex flex-col items-end gap-4">
+        <div className="fixed bottom-24 right-6 z-[2000] flex flex-col items-end gap-4">
           <button
             onClick={() => setIsMinimized(false)}
             className="bg-slate-900 text-white border border-white/10 px-8 py-4 rounded-full shadow-2xl flex items-center gap-4 hover:bg-slate-800 transition-colors"
