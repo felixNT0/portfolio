@@ -9,6 +9,7 @@ import {
   FaTrash,
 } from "react-icons/fa";
 import "regenerator-runtime/runtime";
+import { allPortfolios } from "../AllPortfolioDetails/AllPortfolios";
 import { db } from "../firebaseConfig";
 
 // --- Configuration ---
@@ -16,24 +17,48 @@ import { db } from "../firebaseConfig";
 const GEMINI_API_KEY =
   process.env.REACT_APP_GEMINI_API_KEY || "[ENCRYPTION_KEY]";
 
+// --- Dynamic Knowledge Integration ---
+const compilePortfolioKnowledge = () => {
+  const allProjects = allPortfolios
+    .map((p) => `- ${p.name} (${p.company}): ${p.disc}`)
+    .join("\n");
+
+  const formattedSectors =
+    "Dubai Real Estate (Sobha, Damac, Emaar, Danube, Ellington), AgriTech (Extension Africa, FarmEx), FinTech (Risevest, Invest Yield, Liqfinity), AI & Agent Orchestration (SyncTeams, Autozard), Logistics (MBC Logistics), PropTech (Rezy, House Acq), SaaS & Digital Transformation (Paperdaz, Junologix, Billia), EdTech (Starnet Academy, School SQL), Web3/Blockchain (WhaleVault), E-Commerce (Fkt E-Commerce, Geekbuying Clone, Sugarcosmetic Clone), and Hospitality (Regis).";
+
+  return { allProjects, sectors: formattedSectors };
+};
+
+const { allProjects, sectors } = compilePortfolioKnowledge();
+
 // --- System Prompt Construction ---
 const SYSTEM_PROMPT = `
-You are Felix's elite Architect AI. Your goal is to represent Felix in a professional, world-class manner.
+You are Felix's elite Architect AI. Your absolute goal is to represent Felix in a world-class, highly professional, and consultative manner.
 
 CONVERSATIONAL GUIDELINES:
-- BE EXTREMELY CONCISE: During voice calls, avoid lists and long paragraphs. Use short, punchy sentences.
-- HUMAN-LIKE: Speak naturally. Use "I" when referring to yourself as Felix's AI and "Felix" when referring to him.
-- EXPERTISE: Use context from the portfolio (Dubai Real Estate, AgriTech, FinTech, AI).
-- INTERACTION: If a user interrupts, be graceful. Keep the flow moving.
+1. TONE & STYLE: Adopt an elite, highly professional, yet warm and conversational tone. Mirror the sophistication of ChatGPT. Use formatting (bolding, lists) to make responses readable and elegant.
+2. EXPERTISE & UNCERTAINTY: You possess massive context on Felix's career. If you are asked a question and you are not completely sure, provide a polite, educated guess but strictly encourage the user to get in touch with Felix.
+3. PRICING & BUDGETS: If a user talks about price, rates, or budget for a project, ALWAYS give them a reasonable but realistic range. NEVER reject a budget or say it's too low. Tell them that reaching out to Felix directly is the best way to discuss pricing in detail.
+4. PROJECTS: You have knowledge of ALL Felix's projects (listed below). When asked about projects, list the most relevant ones. If they have a different project type, assure them Felix can build it and they should talk to him!
+5. CONTACTING FELIX: If asked how to contact Felix, tell them they can use the Contact section, email him at tsowafelix0@gmail.com, check his social platforms, OR say: "If you'd like, you can leave your name and contact details here, and I'll send it directly to Felix's email!" If the user provides info, say "Thanks! I have sent your details to Felix."
+6. BE EXTREMELY CONCISE: During voice calls, avoid lists and long paragraphs. Use short, punchy sentences.
+7. HUMAN-LIKE: Speak naturally. Use "I" when referring to yourself as Felix's AI and "Felix" when referring to him.
+8. EXPERTISE: Use context from the portfolio (Dubai Real Estate, AgriTech, FinTech, AI).
+9. INTERACTION: If a user interrupts, be graceful. Keep the flow moving.
 
-Felix's Core Expertise: Solutions Architect, Frontend/Full Stack Dev (React, Next.js, Node.js, AWS, TS).
-Sectors: Dubai Real Estate (Sobha, Damac, Emaar), AgriTech (Extension Africa), FinTech (Risevest), AI (SyncTeams).
+Felix's Core Expertise: Frontend Engineer, Full Stack Engineer (React, Next.js, Node.js, AWS, TS).
+
+FELIX SECTOR EXPERIENCE:
+${sectors}
+
+FELIX COMPLETE PROJECT PORTFOLIO:
+${allProjects}
 `;
 
 // --- Knowledge Base for Felix ---
 const KNOWLEDGE_BASE: Record<string, string> = {
   "who are you":
-    "I am Felix's Architect AI. I represent Felix, a senior Solutions Architect with expertise in building complex systems for Real Estate, AgriTech, FinTech, and AI industries globally.",
+    "I am Felix's Architect AI. I represent Felix, a Solutions Architect, Frontend/Full Stack Dev with expertise in building complex systems for Real Estate, AgriTech, FinTech, and AI industries globally.",
   "what do you do":
     "I assist users by providing deep insights into Felix's career, technical skills, and his portfolio of projects spaning 7+ countries and multiple high-growth sectors.",
   experience:
@@ -45,7 +70,7 @@ const KNOWLEDGE_BASE: Record<string, string> = {
   skills:
     "Felix is a master of the MERN/Next.js stack, AWS architecture, React Native mobile dev, and SEO optimization. He's also a multi-instrumentalist!",
   services:
-    "Felix offers Tier-1 services in Solution Architecture, Full-stack Web/Mobile Development, AI Integration, and Performance/SEO Optimization.",
+    "Felix offers Tier-1 services in Solution Architecture, Full-stack Web/Mobile Development, Desktop Development , AI Integration, and Performance/SEO Optimization.",
   dubai:
     "Felix has worked extensively in the Dubai real estate sector with Webloom, building platforms for Emaar, Damac, Sobha, and Danube Properties.",
   nigeria:
@@ -126,6 +151,44 @@ const AIAssistant = () => {
   const isStreamFinishedRef = useRef<boolean>(false);
   const lastInteractionTimeRef = useRef<number>(Date.now());
   const isWaitingForUserRef = useRef<boolean>(false);
+
+  const handleCloseChat = useCallback(async () => {
+    // Notify you by saving the session if there's any user conversation
+    if (messages.length > 1) {
+      const transcript = messages
+        .map((m) => `${m.isBot ? "AI" : "User"}: ${m.text}`)
+        .join("\n\n");
+
+      try {
+        await addDoc(collection(db, "chat_sessions"), {
+          messages: messages.map((m) => ({ text: m.text, isBot: m.isBot })),
+          timestamp: serverTimestamp(),
+          status: "closed",
+        });
+
+        // Send Email via FormSubmit Ajax integration
+        fetch("https://formsubmit.co/ajax/tsowafelix0@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: "New AI Chat Session on your Portfolio!",
+            message:
+              "A user concluded a chat session with your AI assistant. Here is the transcript:",
+            transcript: transcript,
+          }),
+        }).catch((err) => console.error("Email API Error:", err));
+      } catch (e) {
+        console.warn("Failed to notify/save chat session:", e);
+      }
+    }
+    setIsOpen(false);
+    setIsMinimized(false);
+    if (isVoiceMode) endCall();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [messages, isVoiceMode]);
 
   const stopRecording = useCallback(() => {
     if (mediaRecorderRef.current && isRecording) {
@@ -322,6 +385,18 @@ const AIAssistant = () => {
     if (window.speechSynthesis) window.speechSynthesis.cancel();
   }, [stopRecording]);
 
+  useEffect(() => {
+    // Check if the user said goodbye to notify/save session without closing interface
+    const lowerLastMsg =
+      messages[messages.length - 1]?.text.toLowerCase() || "";
+    if (
+      !messages[messages.length - 1]?.isBot &&
+      (lowerLastMsg.includes("goodbye") || lowerLastMsg === "bye")
+    ) {
+      handleCloseChat();
+    }
+  }, [messages, handleCloseChat]);
+
   const handleSend = useCallback(
     async (text: string = input) => {
       if (!text.trim()) return;
@@ -357,10 +432,9 @@ const AIAssistant = () => {
             { text: "", isBot: true, isStreaming: true },
           ]);
 
-          const words = kbAnswer.split(" ");
           let currentText = "";
-          for (let i = 0; i < words.length; i++) {
-            currentText += (i === 0 ? "" : " ") + words[i];
+          for (let i = 0; i < kbAnswer.length; i += 2) {
+            currentText += kbAnswer.slice(i, i + 2);
             const textToSet = currentText;
             setMessages((prev) => {
               const next = [...prev];
@@ -372,7 +446,7 @@ const AIAssistant = () => {
               }
               return next;
             });
-            await new Promise((resolve) => setTimeout(resolve, 30));
+            await new Promise((resolve) => setTimeout(resolve, 15));
           }
 
           setMessages((prev) => {
@@ -445,15 +519,32 @@ const AIAssistant = () => {
           }
 
           if (chunkText) {
-            fullResponse += chunkText;
-            speechBufferRef.current += chunkText;
+            for (let i = 0; i < chunkText.length; i += 2) {
+              const charChunk = chunkText.slice(i, i + 2);
+              fullResponse += charChunk;
+              speechBufferRef.current += charChunk;
+
+              const updatedText = fullResponse;
+              setMessages((prev) => {
+                const newMessages = [...prev];
+                if (newMessages.length > 0) {
+                  newMessages[newMessages.length - 1] = {
+                    ...newMessages[newMessages.length - 1],
+                    text: updatedText,
+                  };
+                }
+                return newMessages;
+              });
+
+              if (isTyping) setIsTyping(false);
+              await new Promise((resolve) => setTimeout(resolve, 15));
+            }
 
             // Incremental TTS: Speak when a sentence is complete
             if (isVoiceMode) {
-              let sentences = speechBufferRef.current.split(/(?<=[.!?])\s+/);
+              let sentences = speechBufferRef.current.split(/(?<=[.!?])\\s+/);
               while (sentences.length > 1) {
                 const completeSentence = sentences[0].trim();
-                // Avoid speaking partial/empty or duplicates
                 if (
                   completeSentence &&
                   !spokenSentencesRef.current.has(completeSentence)
@@ -462,23 +553,9 @@ const AIAssistant = () => {
                   spokenSentencesRef.current.add(completeSentence);
                 }
                 speechBufferRef.current = sentences.slice(1).join(" ");
-                sentences = speechBufferRef.current.split(/(?<=[.!?])\s+/);
+                sentences = speechBufferRef.current.split(/(?<=[.!?])\\s+/);
               }
             }
-
-            const updatedText = fullResponse;
-            setMessages((prev) => {
-              const newMessages = [...prev];
-              if (newMessages.length > 0) {
-                newMessages[newMessages.length - 1] = {
-                  ...newMessages[newMessages.length - 1],
-                  text: updatedText,
-                };
-              }
-              return newMessages;
-            });
-
-            if (isTyping) setIsTyping(false);
           }
         }
 
@@ -584,55 +661,55 @@ const AIAssistant = () => {
   // Proactive Silence Handling removed for voice record mode
 
   return (
-    <div className="fixed bottom-24 right-6 z-[2000] flex flex-col items-end font-sans">
+    <>
       {isOpen && !isMinimized && (
-        <div className="w-[calc(100vw-2rem)] sm:w-80 md:w-96 max-h-[calc(100dvh-140px)] h-[480px] bg-slate-900/95 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden mb-4 animate-in fade-in slide-in-from-bottom-6 duration-500">
-          <div className="p-5 bg-gradient-to-r from-primary-900/40 to-slate-900/10 border-b border-white/5 flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-primary-500/20 flex items-center justify-center relative">
-                <FaRobot className="text-primary-400 text-lg" />
-                <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-slate-900 rounded-full animate-pulse"></span>
+        <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300 font-sans">
+          <div className="w-full max-w-lg md:max-w-2xl h-[70vh] min-h-[500px] max-h-[800px] bg-slate-900/95 border border-white/10 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden">
+            <div className="p-5 bg-gradient-to-r from-primary-900/40 to-slate-900/10 border-b border-white/5 flex justify-between items-center">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-primary-500/20 flex items-center justify-center relative">
+                  <FaRobot className="text-primary-400 text-lg" />
+                  <span className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-slate-900 rounded-full animate-pulse"></span>
+                </div>
+                <div>
+                  <span className="font-bold text-white text-sm block">
+                    Felix's Architect AI
+                  </span>
+                  <span className="text-[9px] text-primary-400 font-black uppercase tracking-[0.2em]">
+                    Top Tier Mode
+                  </span>
+                </div>
               </div>
-              <div>
-                <span className="font-bold text-white text-sm block">
-                  Felix's Architect AI
-                </span>
-                <span className="text-[9px] text-primary-400 font-black uppercase tracking-[0.2em]">
-                  Top Tier Mode
-                </span>
+              <div className="flex gap-1">
+                <button
+                  onClick={() =>
+                    setMessages([{ text: "History cleared.", isBot: true }])
+                  }
+                  className="text-gray-400 hover:text-red-400 transition-all p-2 rounded-lg hover:bg-white/5"
+                  title="Clear Chat"
+                >
+                  <FaTrash size={14} />
+                </button>
+                <button
+                  onClick={() => setIsMinimized(true)}
+                  className="text-gray-400 hover:text-white transition-all p-2 rounded-lg hover:bg-white/5"
+                >
+                  <FaMinus size={14} />
+                </button>
+                <button
+                  onClick={handleCloseChat}
+                  className="text-gray-400 hover:text-white transition-all p-2 rounded-lg hover:bg-white/5"
+                >
+                  <FaTimes size={16} />
+                </button>
               </div>
             </div>
-            <div className="flex gap-1">
-              <button
-                onClick={() =>
-                  setMessages([{ text: "History cleared.", isBot: true }])
-                }
-                className="text-gray-400 hover:text-red-400 transition-all p-2 rounded-lg hover:bg-white/5"
-                title="Clear Chat"
-              >
-                <FaTrash size={14} />
-              </button>
-              <button
-                onClick={() => setIsMinimized(true)}
-                className="text-gray-400 hover:text-white transition-all p-2 rounded-lg hover:bg-white/5"
-              >
-                <FaMinus size={14} />
-              </button>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-gray-400 hover:text-white transition-all p-2 rounded-lg hover:bg-white/5"
-              >
-                <FaTimes size={16} />
-              </button>
-            </div>
-          </div>
 
-          <>
             <div className="flex-1 overflow-y-auto p-5 space-y-5 scrollbar-hide bg-gradient-to-b from-slate-900/50 to-transparent">
               {messages.map((msg, i) => (
                 <div
                   key={i}
-                  className={`max-w-[85%] p-4 rounded-2xl text-[13px] leading-relaxed ${
+                  className={`max-w-[85%] p-4 rounded-2xl text-[13px] leading-relaxed \${
                     msg.isBot
                       ? "bg-white/5 text-gray-200 self-start rounded-tl-none border border-white/5"
                       : "bg-primary-600 text-white self-end ml-auto rounded-tr-none shadow-lg shadow-primary-900/20"
@@ -653,19 +730,20 @@ const AIAssistant = () => {
               <div ref={messagesEndRef} />
             </div>
 
-            <div className="p-4 bg-slate-900/50 border-t border-white/5 flex gap-2">
-              <input
-                type="text"
+            <div className="p-4 bg-slate-900/50 border-t border-white/5 flex gap-2 items-end">
+              <textarea
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                onKeyPress={(e) => {
-                  if (e.key === "Enter") {
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !e.shiftKey) {
+                    e.preventDefault();
                     setIsVoiceMode(false);
                     handleSend();
                   }
                 }}
                 placeholder="Ask any question or about Felix..."
-                className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-[13px] text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all"
+                className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-[13px] text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30 transition-all min-h-[50px] max-h-[120px] resize-y scrollbar-hide"
+                rows={1}
               />
               {/* <button
                   onClick={toggleRecording}
@@ -684,39 +762,49 @@ const AIAssistant = () => {
                   setIsVoiceMode(false);
                   handleSend();
                 }}
-                className="bg-primary-600 text-white px-4 rounded-2xl transition-all shadow-lg shadow-primary-900/40 flex items-center justify-center"
+                disabled={!input.trim() || isTyping}
+                className="bg-primary-600 text-white p-3 md:px-5 md:py-3 h-[50px] rounded-2xl transition-all shadow-lg shadow-primary-900/40 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                 title="Send Message"
               >
                 <FaPaperPlane size={14} />
               </button>
             </div>
-          </>
+          </div>
         </div>
       )}
 
-      {isMinimized && isOpen && (
+      {!isOpen && (
         <button
-          onClick={() => setIsMinimized(false)}
-          className="bg-primary-600 text-white px-8 py-4 rounded-full shadow-2xl mb-4 flex items-center gap-4"
+          onClick={() => {
+            setIsOpen(true);
+            setIsMinimized(false);
+          }}
+          className="fixed bottom-6 right-6 z-[2000] w-16 h-16 bg-primary-600 text-white rounded-full shadow-xl hover:scale-110 active:scale-90 transition-all duration-500 flex items-center justify-center relative"
         >
-          <FaRobot size={14} />
-          <span className="text-xs font-black uppercase tracking-[0.2em]">
-            {isVoiceMode ? "VOICE ACTIVE" : "OPEN AI"}
-          </span>
+          <FaRobot size={32} />
         </button>
       )}
 
-      <button
-        onClick={() => {
-          setIsOpen(!isOpen);
-          setIsMinimized(false);
-          if (isOpen && isVoiceMode) endCall();
-        }}
-        className={`w-16 h-16 bg-primary-600 text-white rounded-full shadow-lg hover:scale-110 active:scale-90 transition-all duration-500 flex items-center justify-center relative ${isOpen ? "rotate-90" : ""}`}
-      >
-        {isOpen ? <FaTimes size={28} /> : <FaRobot size={32} />}
-      </button>
-    </div>
+      {isMinimized && isOpen && (
+        <div className="fixed bottom-6 right-6 z-[2000] flex flex-col items-end gap-4">
+          <button
+            onClick={() => setIsMinimized(false)}
+            className="bg-slate-900 text-white border border-white/10 px-8 py-4 rounded-full shadow-2xl flex items-center gap-4 hover:bg-slate-800 transition-colors"
+          >
+            <FaRobot size={14} className="text-primary-500" />
+            <span className="text-xs font-black uppercase tracking-[0.2em]">
+              {isVoiceMode ? "VOICE ACTIVE" : "OPEN AI CHAT"}
+            </span>
+          </button>
+          <button
+            onClick={handleCloseChat}
+            className="w-14 h-14 bg-red-600/90 hover:bg-red-600 text-white rounded-full shadow-lg hover:scale-110 active:scale-90 transition-all duration-300 flex items-center justify-center"
+          >
+            <FaTimes size={24} />
+          </button>
+        </div>
+      )}
+    </>
   );
 };
 
