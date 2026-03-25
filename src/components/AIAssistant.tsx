@@ -477,7 +477,7 @@ const AIAssistant = () => {
         });
 
         const responseStream = await client.models.generateContentStream({
-          model: "gemini-1.5-flash",
+          model: "gemini-2.5-flash",
           contents: chatSessionRef.current.history,
           config: {
             safetySettings: [
@@ -736,9 +736,9 @@ const AIAssistant = () => {
               ))}
               {isTyping && (
                 <div className="flex gap-4 items-center">
-                   <div className="w-9 h-9 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center flex-shrink-0">
-                      <FaRobot className="text-primary-500/50 text-[14px] animate-pulse" />
-                    </div>
+                  <div className="w-9 h-9 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center flex-shrink-0">
+                    <FaRobot className="text-primary-500/50 text-[14px] animate-pulse" />
+                  </div>
                   <div className="flex gap-1.5 items-center px-5 py-4 bg-slate-800/30 rounded-2xl border border-white/5 backdrop-blur-sm">
                     <span className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
                     <span className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
