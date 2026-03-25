@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
+import { GoogleGenAI, HarmBlockThreshold, HarmCategory } from "@google/genai";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -56,7 +56,6 @@ ${allProjects}
 `;
 
 // ... (KNOWLEDGE_BASE and other constants) ...
-
 
 // --- Knowledge Base for Felix ---
 const KNOWLEDGE_BASE: Record<string, string> = {
@@ -342,7 +341,7 @@ const AIAssistant = () => {
   );
 
   // Initialize Gemini AI
-  const genAI = useMemo(() => new GoogleGenerativeAI(GEMINI_API_KEY), []);
+  const genAI = useMemo(() => new GoogleGenAI({ apiKey: GEMINI_API_KEY }), []);
 
   useEffect(() => {
     if (!chatSessionRef.current) {
@@ -478,30 +477,29 @@ const AIAssistant = () => {
           parts: [{ text: userMsg }],
         });
 
-        const model = genAI.getGenerativeModel({
+        const result = await genAI.models.generateContentStream({
           model: "gemini-1.5-flash",
-          safetySettings: [
-            {
-              category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-              threshold: HarmBlockThreshold.BLOCK_NONE,
-            },
-            {
-              category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-              threshold: HarmBlockThreshold.BLOCK_NONE,
-            },
-            {
-              category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-              threshold: HarmBlockThreshold.BLOCK_NONE,
-            },
-            {
-              category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-              threshold: HarmBlockThreshold.BLOCK_NONE,
-            },
-          ],
-        });
-
-        const result = await model.generateContentStream({
           contents: chatSessionRef.current.history,
+          config: {
+            safetySettings: [
+              {
+                category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+                threshold: HarmBlockThreshold.BLOCK_NONE,
+              },
+              {
+                category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+                threshold: HarmBlockThreshold.BLOCK_NONE,
+              },
+              {
+                category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+                threshold: HarmBlockThreshold.BLOCK_NONE,
+              },
+              {
+                category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+                threshold: HarmBlockThreshold.BLOCK_NONE,
+              },
+            ],
+          },
         });
 
         setMessages((prev) => [
@@ -514,10 +512,10 @@ const AIAssistant = () => {
         spokenSentencesRef.current.clear();
         isStreamFinishedRef.current = false;
 
-        for await (const chunk of result.stream) {
+        for await (const chunk of result) {
           let chunkText = "";
           try {
-            chunkText = chunk.text() || "";
+            chunkText = chunk.text || "";
           } catch (e) {
             console.warn("Chunk blocked or empty:", e);
           }
