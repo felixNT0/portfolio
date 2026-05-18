@@ -14,12 +14,12 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     id: 1,
-    role: "Full Stack Engineer (Frontend Focus)",
+    role: "Senior Full-Stack & Frontend Systems Engineer",
     company: "Webloom",
-    location: "Bangalore, India",
+    location: "Bangalore, India (Remote)",
     period: "Recent",
     description:
-      "Architected and delivered scalable, high-performance frontend web applications using ReactJS, NextJS, and modern state management. Built seamless, pixel-perfect UI experiences and integrated complex APIs and CMS solutions (Sanity, PayloadCMS) while optimizing frontend performance by 40%.",
+      "Architected, developed, and optimized premium, enterprise-grade real estate platforms and SaaS applications utilizing Next.js, React, and advanced state-management solutions. Created reusable micro-frontends, integrated headless CMS layers (Sanity, PayloadCMS), and spearheaded core performance optimization initiatives, boosting Core Web Vitals and page speeds by 40%.",
     products: [
       "DXB Finance",
       "AL Habtoor",
@@ -36,33 +36,43 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
+    id: 9,
+    role: "Frontend Engineer",
+    company: "Rhenari",
+    location: "US (Remote)",
+    period: "Recent (2026)",
+    description:
+      "Engineered the customer-facing web application and interactive dashboard for Rhenari's AI-powered team workflow and roadmap monitor. Built high-fidelity real-time telemetry graphs compiling signal mapping (Slack, GitHub, Jira), and integrated robust conversational AI capabilities directly within Microsoft Teams, ensuring reliable roadmap alignment for engineering teams.",
+    products: ["Rhenari"],
+  },
+  {
     id: 2,
-    role: "Frontend & Mobile Engineer",
+    role: "Lead Frontend & Mobile Engineer",
     company: "Extension Africa",
-    location: "Nigeria",
+    location: "Nigeria (Remote)",
     period: "Past",
     description:
-      "Spearheaded the development of cross-platform mobile apps using React Native and high-performance web interfaces with Next.js. Streamlined agricultural supply chains by building offline-first mobile solutions for agents in remote areas.",
+      "Spearheaded agricultural supply-chain digitization and led a talented development team to build offline-first mobile applications in React Native and high-performance interfaces in Next.js. Engineered resilient local database syncing, robust geo-tracking, and highly accessible interfaces, enabling rural agents to transact securely across low-bandwidth environments.",
     products: ["Extension Africa", "FarmEx Agent", "FarmEx Vendor"],
   },
   {
-    id: 8, // New ID for SyncTeams
-    role: "Frontend Developer",
-    company: "SyncTeams Studio", // Separated Company
-    location: "Chicago, US",
+    id: 8,
+    role: "Frontend Engineer",
+    company: "SyncTeams Studio",
+    location: "Chicago, US (Remote)",
     period: "Contract",
     description:
-      "I was the frontend developer of a no-code AI agent orchestration platform. Distributed complex state management logic and built an intuitive drag-and-drop canvas for assembling AI teams.",
+      "Developed the core client-facing interfaces for this no-code AI agent orchestration platform. Designed the intuitive drag-and-drop canvas for assembling complex AI team workflows, distributed complex state-management architectures, and engineered critical performance and visual design improvements for the platform's primary landing page.",
     products: ["SyncTeams"],
   },
   {
     id: 3,
-    role: "Full-Stack Engineer",
+    role: "Senior Full-Stack Developer",
     company: "Starnet Tech & Ent Innovation",
-    location: "Nigeria",
+    location: "Nigeria (Hybrid)",
     period: "Past",
     description:
-      "Engineered responsive e-learning platforms and interactive Telegram Mini Apps. Optimized application speed and user engagement through efficient database queries and real-time updates using React Query and Firestore.",
+      "Engineered interactive e-learning systems, transactional Telegram Mini Apps, and blockchain-integrated utilities. Fused modern frontend architectures (React/Vite) with highly optimized real-time databases, reducing query latencies and boosting overall user retention.",
     products: [
       "Starnet Academy",
       "WhaleVault (Telegram Mini App)",
@@ -72,27 +82,27 @@ const experiences: ExperienceItem[] = [
   },
   {
     id: 4,
-    role: "Frontend Developer",
+    role: "Frontend Engineer",
     company: "Paperdaz",
-    location: "California, US",
+    location: "California, US (Remote)",
     period: "Past",
     description:
-      "Developed and maintained enterprise-grade different digitization platforms. Implemented robust form handling, complex validation logic, and automated testing with Jest, resulting in a 30% reduction in bug reports.",
+      "Designed and maintained high-security office digitization platforms. Developed comprehensive form builders, integrated secure document signing workflows, and established strict end-to-end automated testing protocols, ensuring robust cross-browser compatibility and zero regression issues.",
     products: ["Paperdaz", "Junologix"],
   },
   {
     id: 5,
-    role: "Full-Stack Engineer",
+    role: "Senior Full-Stack & Systems Engineer",
     company: "STL",
-    location: "Nigeria",
+    location: "Nigeria (Remote)",
     period: "Past",
     description:
-      "Collaborated in an Agile environment to build educational management systems and brand websites. Translated Figma designs into pixel-perfect, responsive React components with 100% fidelity.",
+      "Coordinated cross-functional teams to engineer comprehensive education management portals, real-time community boards, and real estate matching platforms. Translated high-fidelity designs into fluid, responsive interfaces while maintaining a robust full-stack API architecture.",
     products: ["School SQL", "Autozard", "Politics Thread", "House Acq"],
   },
   {
     id: 6,
-    role: "Full-Stack Engineer",
+    role: "Senior Software Developer",
     company: "Contract",
     location: "Remote",
     period: "Contract",
@@ -102,7 +112,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     id: 7,
-    role: "Frontend & Mobile Engineer",
+    role: "Senior Mobile & Systems Engineer",
     company: "Contract",
     location: "Remote",
     period: "Contract",
@@ -116,7 +126,7 @@ const Experience = () => {
   return (
     <div
       id="experience"
-      className="w-full py-24 bg-white dark:bg-dark-bg relative overflow-hidden"
+      className="w-full py-24 bg-transparent relative overflow-hidden"
     >
       {/* Background accents */}
       <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-primary-500/5 rounded-full blur-[120px]"></div>

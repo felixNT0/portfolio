@@ -29,7 +29,7 @@ const Skills = () => {
   };
 
   return (
-    <div id="skills" className="w-full py-24 bg-white dark:bg-dark-bg relative overflow-hidden">
+    <div id="skills" className="w-full py-24 bg-transparent relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-[10%] left-[-10%] w-96 h-96 bg-primary-500/5 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-[10%] right-[-10%] w-96 h-96 bg-accent-500/5 rounded-full blur-[120px]"></div>

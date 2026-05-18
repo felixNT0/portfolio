@@ -13,30 +13,30 @@ const About = () => {
   const services: Service[] = [
     {
       id: 1,
-      title: "Frontend Development",
+      title: "Frontend Systems Architecture",
       description:
-        "Crafting responsive, pixel-perfect web interfaces using React, Next.js, Vue, and modern CSS frameworks like Tailwind.",
+        "Architecting modular, highly reusable component systems with advanced state management, fluid premium animations, and Core Web Vitals optimization for sub-second page loads.",
       icon: <FaCode className="text-3xl text-primary-500" />,
     },
     {
       id: 2,
-      title: "Mobile App Development",
+      title: "Full-Stack Software Engineering",
       description:
-        "Building cross-platform mobile applications for iOS and Android using React Native/Expo with native performance.",
-      icon: <FaMobileAlt className="text-3xl text-accent-500" />,
-    },
-    {
-      id: 3,
-      title: "Backend Services",
-      description:
-        "Developing robust APIs, handling database integrations, and managing server-side logic with Node.js and Express.",
+        "Engineering scalable, secure RESTful and GraphQL APIs, optimizing relational/NoSQL databases, and building robust, high-availability server-side logic in Node.js.",
       icon: <FaServer className="text-3xl text-primary-600" />,
     },
     {
-      id: 4,
-      title: "Full-Stack Solutions",
+      id: 3,
+      title: "Cross-Platform Mobile Systems",
       description:
-        "End-to-end product development, from database architecture to the final user interface deployment.",
+        "Building native-performance iOS & Android applications in React Native/Expo, utilizing offline-first local state (MMKV), secure storage, and background sync engines.",
+      icon: <FaMobileAlt className="text-3xl text-accent-500" />,
+    },
+    {
+      id: 4,
+      title: "AI Systems & SaaS Integrations",
+      description:
+        "Integrating intelligent features powered by Large Language Models (LLMs), building conversational agents, and deploying seamless third-party adapters (Microsoft Teams, Slack).",
       icon: <FaRocket className="text-3xl text-accent-600" />,
     },
   ];
@@ -63,7 +63,7 @@ const About = () => {
   return (
     <div
       id="about"
-      className="w-full py-20 bg-slate-50 dark:bg-dark-bg/50 overflow-hidden"
+      className="w-full py-24 bg-transparent relative overflow-hidden"
     >
       <div className="max-w-screen-lg px-6 mx-auto flex flex-col justify-center w-full h-full">
         {/* Header Section */}
@@ -77,7 +77,7 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight">
             Elevating Brands <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500">
-              Through Code & Design
+              Through Code & Architecture
             </span>
           </h2>
           <div className="h-1.5 w-32 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mt-6 mx-auto md:mx-0"></div>
@@ -112,7 +112,7 @@ const About = () => {
                   <span className="text-primary-400">EduTech</span>,{" "}
                   <span className="text-primary-400">HealthTech</span>,{" "}
                   <span className="text-accent-600 dark:text-accent-400">
-                    SaaS
+                    SaaS & AI
                   </span>
                   ,{" "}
                   <span className="text-accent-600 dark:text-accent-400">
@@ -150,17 +150,19 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl md:text-2xl text-slate-800 dark:text-slate-200 leading-[1.6] font-medium"
             >
-              As a{" "}
+              I am a dedicated{" "}
               <span className="text-primary-600 dark:text-primary-400 font-bold">
-                Solutions Architect
+                Software Engineer & Frontend Specialist
               </span>{" "}
-              with 4+ years of specialized experience, I transform complex
-              business challenges into sleek, high-performance software. My
-              expertise spans across{" "}
+              with 4+ years of professional experience building, optimizing, and
+              scaling premium digital ecosystems. I bridge the gap between
+              robust system architecture and beautiful, pixel-perfect frontend
+              craftsmanship. My core expertise spans across{" "}
               <span className="text-slate-900 dark:text-white font-bold underline decoration-primary-500 decoration-4 underline-offset-4">
-                React, Next.js, Vue, React Native/Expo, and Electron.js
+                React, Next.js, React Native/Expo, Electron.js, and Node.js
               </span>
-              , delivering scalable solutions that drive real business value.
+              , enabling me to deliver highly resilient and user-centric
+              applications that solve complex real-world challenges.
             </motion.p>
 
             {/* Services Grid */}

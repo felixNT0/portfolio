@@ -20,37 +20,46 @@ import { useAppContext } from "./contexts/useAppContext";
 
 function MainPage() {
   const { showOtherSideBar, modalState } = useAppContext();
-  const [showNavbar, setShowNavbar] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
-    // Debug log to confirm new code version
-
     const scrollFunction = () => {
-      const winScroll =
-        document.body.scrollTop || document.documentElement.scrollTop;
-
-      if (winScroll > 100) {
-        setShowNavbar(true);
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      
+      // Show back to top button when scrolled past 300px
+      if (winScroll > 300) {
         setShowBackToTop(true);
       } else {
-        setShowNavbar(false);
         setShowBackToTop(false);
       }
+
+      // Smart Header: Always show at the very top, hide on scroll down, show on scroll up
+      if (winScroll < 50) {
+        setShowNavbar(true);
+      } else {
+        if (winScroll > lastScrollY) {
+          setShowNavbar(false); // scrolling down
+        } else {
+          setShowNavbar(true); // scrolling up
+        }
+      }
+      setLastScrollY(winScroll);
     };
 
-    window.addEventListener("scroll", scrollFunction);
+    window.addEventListener("scroll", scrollFunction, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", scrollFunction);
     };
-  }, []);
+  }, [lastScrollY]);
 
   return (
     <LoaderWrapper>
       <div
         id="top-anchor"
-        className="dark:bg-dark-bg w-full bg-white overflow-hidden"
+        className="dark:bg-dark-bg w-full bg-transparent overflow-hidden"
       >
         <ScrollIndicator />
         <NavBar isVisible={showNavbar} />

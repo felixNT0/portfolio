@@ -38,6 +38,7 @@ import extensionAfrica from "../assets/portfolio/extensionafrica.png";
 import farmexAgent from "../assets/portfolio/farmexagent.png";
 import farmexVendor from "../assets/portfolio/farmexvendor.png";
 import favour from "../assets/portfolio/favour.png";
+import fktDocs from "../assets/portfolio/fkt-docs.png";
 import fktECommerce from "../assets/portfolio/fkt-e-commerce.png";
 import liqfinity from "../assets/portfolio/liqfinity.png";
 import mbcLogix from "../assets/portfolio/mbclogix.png";
@@ -47,6 +48,7 @@ import newOfferDubai from "../assets/portfolio/newofferdubai.png";
 import regis from "../assets/portfolio/regis.png";
 import reportage from "../assets/portfolio/reportage.png";
 import rezy from "../assets/portfolio/rezy.png";
+import rhenari from "../assets/portfolio/rhenari.png";
 import schoolSql from "../assets/portfolio/schoolsql.png";
 import sobhaPromotion from "../assets/portfolio/sobhapromotion.png";
 import starnetdms from "../assets/portfolio/starnetdms.png";
@@ -227,8 +229,18 @@ export const allPortfolios: PortfolioItem[] = [
     src: syncteams,
     link: "https://www.syncteams.studio/",
     name: "SyncTeams",
-    disc: "A no-code platform for assembling and deploying AI agent teams. Streamlines the transition from concept to production, eliminating DevOps overhead and boilerplate code for efficient AI scaling.",
+    disc: "Frontend Engineer. Designed and engineered the interactive drag-and-drop canvas for assembling and orchestrating complex AI agent teams. Managed state synchronization, streamlined client-side performance, and successfully revamped the platform's primary landing page.",
     company: "SyncTeams",
+  },
+
+  // Rhenari Projects
+  {
+    id: 53,
+    src: rhenari,
+    link: "https://www.rhenari.com/",
+    name: "Rhenari",
+    disc: "Frontend Engineer. Engineered the customer-facing client platform and analytics dashboard for this AI-powered team workflow and roadmap monitor. Integrated telemetry graphs compiling active signals from Slack, Jira, and GitHub directly with Microsoft Teams.",
+    company: "Rhenari",
   },
 
   // Starnet Tech Projects (Nigeria)
@@ -395,6 +407,7 @@ export const allPortfolios: PortfolioItem[] = [
     disc: "A multi-currency investment application facilitating seamless transactions in Dollars, Naira, and other currencies. Available on both web and mobile platforms for diverse investor needs.",
     company: "Contract",
   },
+
   {
     id: 54,
     src: eriatswaSoko,
@@ -454,6 +467,14 @@ export const allPortfolios: PortfolioItem[] = [
   },
 
   // Legacy Projects
+  {
+    id: 32,
+    src: fktDocs,
+    link: "https://fkt-docs.vercel.app/",
+    name: "FKT Docs",
+    disc: "A comprehensive document management system for healthcare providers. Enables secure storage, organization, and sharing of patient records with role-based access control.",
+    company: "Legacy",
+  },
   {
     id: 90,
     src: fktCryptoPulse,

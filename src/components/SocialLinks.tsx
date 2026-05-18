@@ -125,56 +125,58 @@ function Modal({ isModalOpen, toggleModal, modalType }: ModalProps) {
     <AnimatePresence>
       {isModalOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           onClick={closeModal}
-          className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-900 bg-opacity-70 z-40 backdrop-blur-sm"
+          className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-slate-900/60 dark:bg-slate-950/70 z-[2000] backdrop-blur-md"
         >
           <motion.div
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.5, opacity: 0 }}
-            transition={{ ease: "easeInOut" }}
-            className={`relative bg-white rounded-lg p-4 z-80 max-sm:p-1 max-sm:m-5 max-sm:py-0 md:m-4 `}
+            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+            transition={{ type: "spring", duration: 0.5 }}
+            className="relative glass rounded-[2.5rem] p-10 max-w-md w-full mx-6 border-white/40 dark:border-white/5 shadow-2xl overflow-hidden text-center"
           >
-            <span
+            {/* Glowing accents */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent-500/10 rounded-full blur-3xl"></div>
+
+            <button
               onClick={toggleModal}
-              className="flex justify-end items-end cursor-pointer mr-[10px] mt-[-20px] text-[#000] text-[35px] hover:text-red-500"
+              aria-label="Close modal"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center bg-slate-100/50 hover:bg-slate-200/50 dark:bg-white/5 dark:hover:bg-white/10 text-slate-800 dark:text-white transition-all duration-300 font-bold focus:outline-none"
               title="Close Modal"
             >
               &times;
-            </span>
-            <div className="modal-content animate">
-              <div className="container ">
-                <h1 className="text-center text-black text-1xl font-bold welcome_text">
-                  Did you want to{" "}
-                  <span className="text-[#fca61f] dark:text-[#4db5ff]">
-                    Preview
-                  </span>{" "}
-                  or{" "}
-                  <span className="text-[#fca61f] dark:text-[#4db5ff]">
-                    Download
-                  </span>{" "}
-                  the {modalType === "resume" ? "resume" : "cover letter"}
-                </h1>
+            </button>
 
+            <div className="relative z-10 flex flex-col items-center">
+              <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-snug mb-6 mt-4">
+                Document <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500">Access</span>
+              </h2>
+              
+              <p className="text-base font-semibold text-slate-600 dark:text-slate-300 leading-relaxed max-w-xs mx-auto mb-8">
+                Would you like to preview or download Felix's <span className="text-primary-600 dark:text-primary-400 font-bold capitalize">{modalType === "resume" ? "Resume" : "Cover Letter"}</span>?
+              </p>
+
+              <div className="w-full flex flex-col gap-4 relative z-10">
                 <a
                   href={modalType === "resume" ? resumePdf : cover_letter}
                   target="_blank"
                   rel="noreferrer"
-                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-xl bg-primary-600 dark:bg-gradient-to-r from-primary-500 to-accent-500 hover:scale-105 transition-all shadow-xl shadow-primary-500/20 cursor-pointer border border-primary-700/50 dark:border-white/10"
+                  className="w-full py-4 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 rounded-2xl font-black transition-all hover:scale-[1.03] active:scale-95 shadow-xl shadow-slate-900/10 flex items-center justify-center uppercase tracking-wider text-xs border border-transparent dark:border-white/10"
                 >
-                  Preview
+                  Preview Document
                 </a>
                 <a
                   href={modalType === "resume" ? resumePdf : cover_letter}
                   download
                   target="_blank"
                   rel="noreferrer"
-                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-xl bg-accent-600 dark:bg-gradient-to-r from-accent-500 to-primary-500 hover:scale-105 transition-all shadow-xl shadow-accent-500/20 cursor-pointer border border-accent-700/50 dark:border-white/10"
+                  className="w-full py-4 glass text-slate-900 dark:text-white rounded-2xl font-black transition-all hover:scale-[1.03] active:scale-95 shadow-xl hover:bg-slate-50 dark:hover:bg-slate-800/80 flex items-center justify-center uppercase tracking-wider text-xs border border-slate-200/50 dark:border-white/10"
                 >
-                  Download
+                  Download Copy
                 </a>
               </div>
             </div>

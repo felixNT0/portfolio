@@ -48,9 +48,9 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl md:text-7xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.1]"
             >
-              Architecting <br />
+              Software Engineer & <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500">
-                Scalable Solutions
+                Frontend Specialist
               </span>{" "}
             </motion.h2>
           </div>
@@ -61,12 +61,16 @@ const Home = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="mt-6 text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            A{" "}
+            Fusing robust{" "}
             <span className="text-slate-900 dark:text-white font-bold">
-              Frontend Engineer
+              Software Engineering
             </span>{" "}
-            & Full-Stack Developer specializing in high-performance Web Apps and
-            cross-platform Mobile solutions.
+            with pixel-perfect{" "}
+            <span className="text-slate-900 dark:text-white font-bold">
+              Frontend Systems Architecture
+            </span>{" "}
+            to build, optimize, and scale highly resilient enterprise-grade
+            applications.
           </motion.p>
 
           <motion.div

@@ -17,7 +17,7 @@ function MainNavBar({ setNav, nav }: MainNavBarProps) {
 
   return (
     <div
-      className="flex justify-between items-center w-full h-20 px-8 text-slate-900 dark:text-white glass sticky top-0 z-[100] transition-all duration-300"
+      className="flex justify-between items-center w-full h-20 px-4 sm:px-8 text-slate-900 dark:text-white glass sticky top-0 z-[100] transition-all duration-300"
     >
       <div className="flex items-center gap-3 mr-4 pr-6 border-r border-slate-200/50 dark:border-white/10">
         <h1

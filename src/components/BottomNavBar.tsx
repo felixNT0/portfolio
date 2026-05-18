@@ -6,7 +6,7 @@ import resumePdf from "../assets/resume.pdf";
 import useSocialLinks from "../hooks/useSocialLinks";
 
 function BottomNavBar() {
-  const { allSocialLinks } = useSocialLinks();
+  const { allBottomSocialLinks } = useSocialLinks();
 
   // const { showOtherSideBar } = useAppContext();
 
@@ -28,7 +28,7 @@ function BottomNavBar() {
         className="glass rounded-2xl py-3 px-6 left-1/2 sm:hidden bottom-6 fixed duration-300 z-[100] w-[90%] max-w-[400px]"
       >
         <ul className="flex flex-row justify-around items-center gap-4">
-          {allSocialLinks.map(({ id, child, href, download }) => (
+          {allBottomSocialLinks.map(({ id, child, href, download }) => (
             <li
               key={id}
               className={
@@ -37,7 +37,7 @@ function BottomNavBar() {
             >
               {download ? (
                 <div
-                  className="flex justify-between items-center w-full text-white cursor-pointer"
+                  className="flex justify-center items-center w-full h-full cursor-pointer text-slate-700 dark:text-white"
                   onClick={() => openModal()}
                 >
                   {child}
@@ -58,32 +58,49 @@ function BottomNavBar() {
       </motion.div>
       <div>
         {toggleModal ? (
-          <div id="showConfimationModal" className="modal">
-            <div className="modal-content animate">
-              <span onClick={closeModal} className="close" title="Close Modal">
+          <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-slate-900/60 dark:bg-slate-950/70 z-[2000] backdrop-blur-md">
+            <div className="relative glass rounded-[2.5rem] p-10 max-w-md w-full mx-6 border-white/40 dark:border-white/5 shadow-2xl overflow-hidden text-center">
+              {/* Glowing accents */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary-500/10 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent-500/10 rounded-full blur-3xl"></div>
+
+              <button
+                onClick={closeModal}
+                aria-label="Close modal"
+                className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center bg-slate-100/50 hover:bg-slate-200/50 dark:bg-white/5 dark:hover:bg-white/10 text-slate-800 dark:text-white transition-all duration-300 font-bold focus:outline-none"
+                title="Close Modal"
+              >
                 &times;
-              </span>
-              <div className="container ">
-                <h1 className="text-center text-primary-600 dark:text-accent-500 text-3xl font-bold welcome_text">
-                  Did you want to Preview or Download the resume?
-                </h1>
-                <a
-                  href={resumePdf}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-xl bg-primary-600 dark:bg-gradient-to-r from-primary-500 to-accent-500 hover:scale-105 transition-all shadow-xl shadow-primary-500/20 cursor-pointer border border-primary-700/50 dark:border-white/10"
-                >
-                  Preview
-                </a>
-                <a
-                  href={resumePdf}
-                  download
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group text-white px-6 py-3 my-5 flex justify-center align-center items-center rounded-xl bg-accent-600 dark:bg-gradient-to-r from-accent-500 to-primary-500 hover:scale-105 transition-all shadow-xl shadow-accent-500/20 cursor-pointer border border-accent-700/50 dark:border-white/10"
-                >
-                  Download
-                </a>
+              </button>
+
+              <div className="relative z-10 flex flex-col items-center">
+                <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight leading-snug mb-6 mt-4">
+                  Resume <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500">Access</span>
+                </h2>
+                
+                <p className="text-base font-semibold text-slate-600 dark:text-slate-300 leading-relaxed max-w-xs mx-auto mb-8">
+                  Would you like to preview or download Felix's <span className="text-primary-600 dark:text-primary-400 font-bold capitalize">Resume</span>?
+                </p>
+
+                <div className="w-full flex flex-col gap-4 relative z-10">
+                  <a
+                    href={resumePdf}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full py-4 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 rounded-2xl font-black transition-all hover:scale-[1.03] active:scale-95 shadow-xl shadow-slate-900/10 flex items-center justify-center uppercase tracking-wider text-xs border border-transparent dark:border-white/10"
+                  >
+                    Preview Resume
+                  </a>
+                  <a
+                    href={resumePdf}
+                    download
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full py-4 glass text-slate-900 dark:text-white rounded-2xl font-black transition-all hover:scale-[1.03] active:scale-95 shadow-xl hover:bg-slate-50 dark:hover:bg-slate-800/80 flex items-center justify-center uppercase tracking-wider text-xs border border-slate-200/50 dark:border-white/10"
+                  >
+                    Download Resume
+                  </a>
+                </div>
               </div>
             </div>
           </div>

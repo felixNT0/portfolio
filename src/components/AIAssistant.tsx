@@ -57,31 +57,30 @@ ${allProjects}
 
 // ... (KNOWLEDGE_BASE and other constants) ...
 
-// --- Knowledge Base for Felix ---
 const KNOWLEDGE_BASE: Record<string, string> = {
   "who are you":
-    "I am Felix's Architect AI. I represent Felix, a Solutions Architect, Frontend/Full Stack Dev with expertise in building complex systems for Real Estate, AgriTech, FinTech, and AI industries globally.",
+    "I am Felix's Architect AI. I represent Felix, a Software Engineer & Frontend Specialist with expertise in building complex, high-performance systems for AI, FinTech, AgriTech, and Real Estate industries globally.",
   "what do you do":
-    "I assist users by providing deep insights into Felix's career, technical skills, and his portfolio of projects spaning 7+ countries and multiple high-growth sectors.",
+    "I assist users by providing deep insights into Felix's career, technical systems architecture, frontend craftsmanship, and his portfolio of enterprise-grade projects across 7+ countries.",
   experience:
-    "Felix has 4+ years of experience. He's held leadership roles at Webloom (India), Extension Africa (Nigeria), SyncTeams (USA), and Paperdaz (California), delivering projects for global giants like Emaar and Damac.",
+    "Felix has 4+ years of professional engineering experience. All of his roles have been fully Remote. He was the Lead Frontend & Mobile Engineer at Extension Africa, Frontend Engineer at Rhenari, Frontend Engineer at SyncTeams Studio, and Frontend Engineer at Paperdaz, delivering high-impact products globally.",
   sectors:
-    "Felix specializes in Real Estate (PropTech), AgriTech, FinTech, AI Agent Orchestration, and Logistics. He has significant experience in both the Dubai and African tech ecosystems.",
+    "Felix specializes in AI Systems, SaaS, FinTech, AgriTech, PropTech (Real Estate), and Logistics. He has significant experience in both the US, Dubai, and African tech ecosystems.",
   projects:
-    "Some highlight projects include DXB Finance (Dubai Real Estate), SyncTeams (AI No-Code), Extension Africa (AgriTech), and WhaleVault (Blockchain/Telegram).",
+    "Some highlight projects include Rhenari (AI Telemetry & Microsoft Teams Bot), SyncTeams (AI agent canvas), DXB Finance (Dubai Real Estate), and Risevest (FinTech/Mobile).",
   skills:
-    "Felix is a master of the MERN/Next.js stack, AWS architecture, React Native mobile dev, and SEO optimization. He's also a multi-instrumentalist!",
+    "Felix is a master of Frontend Systems (React, Next.js, TypeScript), Full-stack Architectures (Node.js, Express, databases, AWS), Mobile (React Native/Expo), and AI integrations (LLMs, telemetry signal processing). He's also a multi-instrumentalist!",
   services:
-    "Felix offers Tier-1 services in Solution Architecture, Full-stack Web/Mobile Development, Desktop Development , AI Integration, and Performance/SEO Optimization.",
+    "Felix offers elite engineering services in Frontend Systems Architecture, Full-Stack Software Engineering, Cross-Platform Mobile Systems, and AI & SaaS Integrations.",
   dubai:
-    "Felix has worked extensively in the Dubai real estate sector with Webloom, building platforms for Emaar, Damac, Sobha, and Danube Properties.",
+    "Felix has worked extensively in the Dubai real estate sector with Webloom, building premium platforms for Emaar, Damac, Sobha, and Danube Properties.",
   nigeria:
     "In Nigeria, Felix has spearheaded AgriTech with Extension Africa and built e-learning/logistics systems with Starnet Tech and STL.",
   agritech:
     "Felix's AgriTech impact includes building the FarmEx suite (Agent & Vendor apps) for Extension Africa, utilizing offline-first mobile tech to reach rural areas.",
   "real estate":
     "Felix is a PropTech expert, having architected DXB Finance, New Offer Dubai, and several luxury property portals for global developers.",
-  ai: "Felix is at the forefront of AI, having built SyncTeams (an AI orchestration platform) and Autozard (AI services suite).",
+  ai: "Felix is at the forefront of AI, having built Rhenari (an AI-powered workflow telemetry & Teams integration platform) and SyncTeams (a no-code AI agent orchestration canvas).",
 };
 
 const findInKnowledgeBase = (query: string): string | null => {

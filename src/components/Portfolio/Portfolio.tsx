@@ -43,7 +43,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div id="projects" className="w-full py-20 bg-white dark:bg-dark-bg">
+    <div id="projects" className="w-full py-20 bg-transparent">
       <div className="max-w-screen-lg px-6 mx-auto flex flex-col justify-center w-full h-full">
         <div className="space-y-12">
           <div className="text-center space-y-6">
