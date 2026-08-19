@@ -103,13 +103,13 @@ function OtherNavBar({ setNavBarState, navBarState }: OtherNavBarProps) {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 260, damping: 25 }}
-              className="absolute top-0 right-0 h-full w-4/5 max-w-sm bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 shadow-2xl pt-24 pb-10 flex flex-col items-center gap-4"
+              className="absolute top-0 right-0 h-full w-4/5 max-w-sm bg-[#fdfbf7] dark:bg-dark-bg text-slate-900 dark:text-slate-100 shadow-2xl pt-24 pb-10 flex flex-col items-center gap-4"
             >
               {componentLinks.map(({ id, link }) => (
                 <li
                   onClick={() => changeActiveTab(link)}
                   key={id}
-                  className="px-4 cursor-pointer capitalize py-4 text-2xl w-full text-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded"
+                  className="px-4 cursor-pointer capitalize py-4 text-2xl w-full text-center hover:bg-slate-50 dark:hover:bg-white/5 rounded"
                 >
                   <ScrollLink
                     onClick={() => setNavBarState(false)}

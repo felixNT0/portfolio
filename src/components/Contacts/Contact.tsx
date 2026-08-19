@@ -42,7 +42,7 @@ const Contact = () => {
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
             transition={{ duration: 0.6 }}
             className="flex items-center gap-6"
           >
@@ -56,7 +56,7 @@ const Contact = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
             className="flex flex-wrap items-center justify-center gap-6"
           >
             {socialLinks.map((social, idx) => (

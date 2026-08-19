@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { useAppContext } from "../../contexts/useAppContext";
 import "../../styles/scrollIndicator.css";
 
 function ScrollIndicator() {
-  const { darkMode } = useAppContext();
   const [scrollWidth, setScrollWidth] = useState(0);
 
   useEffect(() => {
@@ -30,7 +28,7 @@ function ScrollIndicator() {
       <div className="progress-container">
         <div
           style={{ 
-            background: darkMode ? "#4db5ff" : "#fca61f",
+            background: "#be9755",
             width: `${scrollWidth}%`,
             height: '4px',
             boxShadow: '0 0 10px rgba(0,0,0,0.1)'

@@ -21,6 +21,7 @@
     "framer-motion": "^10.16.4",
     "lib": "^4.3.3",
     "lottie-web": "^5.10.2",
+    "posthog-js": "^1.131.4",
     "react": "^18.1.0",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.1.0",

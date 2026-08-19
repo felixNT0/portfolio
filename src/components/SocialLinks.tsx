@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import cover_letter from "../assets/cover_letter.pdf";
 import resumePdf from "../assets/resume.pdf";
+import posthog from "posthog-js";
 // import { useAppContext } from "../contexts/useAppContext";
 import useSocialLinks from "../hooks/useSocialLinks";
 
@@ -39,7 +40,7 @@ const SocialLinks = () => {
               <li
                 key={id}
                 className={
-                  "flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-r-xl duration-300 glass border-l-0" +
+                  "flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-r-xl duration-300 glass border-l-0 hover:shadow-primary-500/20 hover:border-primary-500/30" +
                   " " +
                   style
                 }
@@ -48,7 +49,12 @@ const SocialLinks = () => {
                 {download ? (
                   <div
                     className="flex justify-between items-center w-full text-slate-900 dark:text-white cursor-pointer"
-                    onClick={() => type && openModal(type)}
+                    onClick={() => {
+                      if (type) {
+                        posthog.capture('Resume/Cover Letter Modal Opened', { document_type: type });
+                        openModal(type);
+                      }
+                    }}
                     aria-label={`Open ${label} modal`}
                   >
                     {child}
@@ -56,6 +62,7 @@ const SocialLinks = () => {
                 ) : (
                   <a
                     href={href}
+                    onClick={() => posthog.capture('Social Link Clicked', { network: label, location: 'sidebar' })}
                     className="flex justify-between items-center w-full text-slate-900 dark:text-white"
                     target="_blank"
                     rel="noreferrer"
@@ -145,7 +152,7 @@ function Modal({ isModalOpen, toggleModal, modalType }: ModalProps) {
             <button
               onClick={toggleModal}
               aria-label="Close modal"
-              className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center bg-slate-100/50 hover:bg-slate-200/50 dark:bg-white/5 dark:hover:bg-white/10 text-slate-800 dark:text-white transition-all duration-300 font-bold focus:outline-none"
+              className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center bg-slate-100/50 hover:bg-slate-200/50 dark:bg-white/5 dark:hover:bg-primary-500/20 text-slate-800 dark:text-white dark:hover:text-primary-400 transition-all duration-300 font-bold focus:outline-none"
               title="Close Modal"
             >
               &times;
@@ -163,18 +170,20 @@ function Modal({ isModalOpen, toggleModal, modalType }: ModalProps) {
               <div className="w-full flex flex-col gap-4 relative z-10">
                 <a
                   href={modalType === "resume" ? resumePdf : cover_letter}
+                  onClick={() => posthog.capture('Document Previewed', { document_type: modalType })}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full py-4 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 rounded-2xl font-black transition-all hover:scale-[1.03] active:scale-95 shadow-xl shadow-slate-900/10 flex items-center justify-center uppercase tracking-wider text-xs border border-transparent dark:border-white/10"
+                  className="w-full py-4 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white rounded-2xl font-black transition-all hover:scale-[1.03] active:scale-95 shadow-xl shadow-primary-900/20 flex items-center justify-center uppercase tracking-wider text-xs border border-transparent"
                 >
                   Preview Document
                 </a>
                 <a
                   href={modalType === "resume" ? resumePdf : cover_letter}
                   download
+                  onClick={() => posthog.capture('Document Downloaded', { document_type: modalType })}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full py-4 glass text-slate-900 dark:text-white rounded-2xl font-black transition-all hover:scale-[1.03] active:scale-95 shadow-xl hover:bg-slate-50 dark:hover:bg-slate-800/80 flex items-center justify-center uppercase tracking-wider text-xs border border-slate-200/50 dark:border-white/10"
+                  className="w-full py-4 glass text-slate-900 dark:text-white rounded-2xl font-black transition-all hover:scale-[1.03] active:scale-95 shadow-xl border-primary-500/30 hover:bg-primary-500/10 flex items-center justify-center uppercase tracking-wider text-xs"
                 >
                   Download Copy
                 </a>

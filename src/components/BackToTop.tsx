@@ -22,7 +22,7 @@ function BackToTop({ isVisible = false }: { isVisible?: boolean }) {
         >
           <ScrollLink to={"top-anchor"} smooth duration={1000}>
             <div
-              className="back_to_top bg-[#fca61f] dark:bg-[#4db5ff] duration-500 !static !m-0"
+              className="back_to_top bg-primary-500 duration-500 !static !m-0"
               style={{ display: "block" }} // Ensure it's visible since we handle visibility with Framer Motion
             >
               <FaArrowUp />

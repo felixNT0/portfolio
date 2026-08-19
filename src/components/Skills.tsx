@@ -39,7 +39,7 @@ const Skills = () => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
             transition={{ duration: 0.6 }}
             className="text-center space-y-6"
           >
@@ -59,7 +59,7 @@ const Skills = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
             className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-8"
           >
             {allSkills.map(({ id, src, title, style }) => (
@@ -94,7 +94,7 @@ const Skills = () => {
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 0.6 }}
               className="text-center space-y-6"
             >
@@ -114,7 +114,7 @@ const Skills = () => {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {[

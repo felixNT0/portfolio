@@ -50,7 +50,7 @@ const Portfolio = () => {
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white"
             >
@@ -62,7 +62,7 @@ const Portfolio = () => {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-3xl mx-auto text-lg md:text-xl font-medium text-slate-500 dark:text-slate-400 leading-relaxed"
             >
@@ -80,7 +80,7 @@ const Portfolio = () => {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-8"
           >
             {stats.map((stat, idx) => (
@@ -104,7 +104,7 @@ const Portfolio = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <AllPortfolios />

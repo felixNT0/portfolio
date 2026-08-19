@@ -26,7 +26,7 @@ class ErrorBoundary extends Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="flex min-h-screen items-center justify-center bg-white dark:bg-[#1f1f38]">
+        <div className="flex min-h-screen items-center justify-center bg-slate-50 dark:bg-dark-bg">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
               Something went wrong
@@ -36,7 +36,7 @@ class ErrorBoundary extends Component<Props, State> {
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="px-6 py-2 bg-[#fca61f] dark:bg-[#4db5ff] text-white rounded-lg hover:opacity-90 transition-opacity"
+              className="px-6 py-2 bg-primary-500 text-white rounded-lg hover:opacity-90 transition-opacity"
             >
               Reload Page
             </button>

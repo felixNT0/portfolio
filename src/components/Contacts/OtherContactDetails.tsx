@@ -7,7 +7,7 @@ function OtherContactDetails() {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight">
@@ -22,7 +22,7 @@ function OtherContactDetails() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-medium"
         >
@@ -34,7 +34,7 @@ function OtherContactDetails() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="p-10 rounded-[2.5rem] glass border-white/20 dark:border-white/5 space-y-4 shadow-2xl group hover:scale-[1.02] transition-all"
         >
@@ -54,7 +54,7 @@ function OtherContactDetails() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="p-10 rounded-[2.5rem] glass border-white/20 dark:border-white/5 space-y-4 shadow-2xl group hover:scale-[1.02] transition-all"
         >
@@ -73,7 +73,7 @@ function OtherContactDetails() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
         transition={{ duration: 0.6, delay: 0.6 }}
         className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8"
       >

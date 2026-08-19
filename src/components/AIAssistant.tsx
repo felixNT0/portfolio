@@ -12,6 +12,7 @@ import {
 import "regenerator-runtime/runtime";
 import { allPortfolios } from "../AllPortfolioDetails/AllPortfolios";
 import { db } from "../firebaseConfig";
+import posthog from "posthog-js";
 
 // --- Configuration ---
 
@@ -186,6 +187,7 @@ const AIAssistant = () => {
       }
     }
     setIsOpen(false);
+    posthog.capture('AI Assistant Closed');
     setIsMinimized(false);
     if (isVoiceMode) endCall();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -426,6 +428,7 @@ const AIAssistant = () => {
       lastInteractionTimeRef.current = Date.now();
       isWaitingForUserRef.current = false;
       const userMsg = text;
+      posthog.capture('AI Message Sent');
       setMessages((prev) => [...prev, { text: userMsg, isBot: false }]);
       setInput("");
       setIsTyping(true);
@@ -805,6 +808,7 @@ const AIAssistant = () => {
       {!isOpen && (
         <button
           onClick={() => {
+            posthog.capture('AI Assistant Opened');
             setIsOpen(true);
             setIsMinimized(false);
           }}

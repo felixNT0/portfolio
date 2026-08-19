@@ -40,6 +40,7 @@ import farmexVendor from "../assets/portfolio/farmexvendor.png";
 import favour from "../assets/portfolio/favour.png";
 import fktDocs from "../assets/portfolio/fkt-docs.png";
 import fktECommerce from "../assets/portfolio/fkt-e-commerce.png";
+import fktSolarhub from "../assets/portfolio/fkt-solarhub.png";
 import liqfinity from "../assets/portfolio/liqfinity.png";
 import mbcLogix from "../assets/portfolio/mbclogix.png";
 import mfc from "../assets/portfolio/mfc.png";
@@ -467,6 +468,14 @@ export const allPortfolios: PortfolioItem[] = [
   },
 
   // Legacy Projects
+  {
+    id: 92,
+    src: fktSolarhub,
+    link: "https://fkt-solarhub.vercel.app/",
+    name: "FKT SolarHub - Solar Intelligence Platform",
+    disc: "Premium solar calculations, weather intelligence, AI assistant, and learning resources.",
+    company: "Legacy",
+  },
   {
     id: 32,
     src: fktDocs,

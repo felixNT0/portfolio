@@ -70,7 +70,7 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
           transition={{ duration: 0.8 }}
           className="pb-16 text-center md:text-left"
         >
@@ -88,7 +88,7 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
             transition={{ duration: 0.8 }}
             className="md:w-1/3 space-y-8"
           >
@@ -146,7 +146,7 @@ const About = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl md:text-2xl text-slate-800 dark:text-slate-200 leading-[1.6] font-medium"
             >
@@ -170,7 +170,7 @@ const About = () => {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-6"
             >
               {services.map((service) => (
@@ -196,7 +196,7 @@ const About = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
@@ -256,7 +256,7 @@ const About = () => {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-slate-600 dark:text-slate-400 leading-relaxed italic border-l-4 border-primary-500 pl-4 py-2"
             >

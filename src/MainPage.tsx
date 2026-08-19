@@ -26,8 +26,9 @@ function MainPage() {
 
   useEffect(() => {
     const scrollFunction = () => {
-      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      
+      const winScroll =
+        document.documentElement.scrollTop || document.body.scrollTop;
+
       // Show back to top button when scrolled past 300px
       if (winScroll > 300) {
         setShowBackToTop(true);

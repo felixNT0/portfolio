@@ -136,7 +136,7 @@ const Experience = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
           transition={{ duration: 0.8 }}
           className="text-center mb-24"
         >
@@ -159,7 +159,7 @@ const Experience = () => {
               key={exp.id}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1, margin: "0px 0px -50px 0px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative pl-10 md:pl-16"
             >

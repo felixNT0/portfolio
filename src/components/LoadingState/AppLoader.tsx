@@ -8,7 +8,7 @@ function AppLoader() {
         height="100"
         width="100"
         radius="10"
-        color="#4db5ff"
+        color="#be9755"
         ariaLabel="three-dots-loading"
         wrapperStyle={{}}
         visible={true}
