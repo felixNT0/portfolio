@@ -41,6 +41,8 @@ import favour from "../assets/portfolio/favour.png";
 import fktDocs from "../assets/portfolio/fkt-docs.png";
 import fktECommerce from "../assets/portfolio/fkt-e-commerce.png";
 import fktSolarhub from "../assets/portfolio/fkt-solarhub.png";
+import idcKeppmanCoops from "../assets/portfolio/idckeppmancoops.png";
+import joInnovationsLimited from "../assets/portfolio/joinnovationslimited.png";
 import liqfinity from "../assets/portfolio/liqfinity.png";
 import mbcLogix from "../assets/portfolio/mbclogix.png";
 import mfc from "../assets/portfolio/mfc.png";
@@ -390,6 +392,22 @@ export const allPortfolios: PortfolioItem[] = [
   },
 
   // Contract Projects
+  {
+    id: 88,
+    src: idcKeppmanCoops,
+    link: "https://idckeppmancoops.com",
+    name: "IDC KEPPMAN MEMBER COOPERATIVE SOCIETY LTD",
+    disc: "Empowering member farmers through collective efforts, modern farming practices, and global market access. A leading international agricultural cooperative producing Kenaf and other premium agro commodities.",
+    company: "Contract",
+  },
+  {
+    id: 89,
+    src: joInnovationsLimited,
+    link: "https://joinnovationsltd.com",
+    name: "JO Innovations Limited",
+    disc: "A Nigerian technology and innovation company based in Sokoto. Developing digital solutions, delivering AI programmes, creative services, training and capacity development to empower people, organisations and communities across Nigeria.",
+    company: "Contract",
+  },
   {
     id: 30,
     src: risevest,
