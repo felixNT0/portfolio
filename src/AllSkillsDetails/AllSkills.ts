@@ -590,4 +590,16 @@ export const allSkills: SkillItem[] = [
     title: "ELECTRON.JS",
     style: "shadow-blue-500",
   },
+  {
+    id: 73,
+    src: "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg",
+    title: "WHATSAPP BOT API",
+    style: "shadow-green-500",
+  },
+  {
+    id: 74,
+    src: "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg",
+    title: "TELEGRAM BOT & MINI APPS",
+    style: "shadow-blue-400",
+  },
 ];
